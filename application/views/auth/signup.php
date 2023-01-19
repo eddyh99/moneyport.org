@@ -25,7 +25,7 @@
                     <input type="hidden" name="referral" value="<?= @$_SESSION["referral"] ?>">
                     <div class="col-12 mb-5 text-center">
                         <a href="<?= base_url() ?>">
-                            <img src="<?= base_url(); ?>assets/img/logo-login.png" alt="">
+                            <img src="<?= base_url(); ?>assets/img/logo.png" alt="">
                         </a>
                     </div>
                     <div class="col-12 mb-4">

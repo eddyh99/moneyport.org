@@ -6,7 +6,7 @@
                     action="<?= base_url(); ?>member">
                     <div class="col-12 mt-auto text-center my-auto">
                         <a href="<?= base_url() ?>">
-                            <img src="<?= base_url(); ?>assets/img/logo-login.png" alt="" class="img-fluid">
+                            <img src="<?= base_url(); ?>assets/img/logo.png" alt="" class="img-fluid">
                         </a>
                     </div>
                     <div class="col-12 d-grid gap-2 my-auto">
