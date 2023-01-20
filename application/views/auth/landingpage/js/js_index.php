@@ -71,7 +71,7 @@ $("#ucode").on("change", function() {
             if (data.type == 'show') {
                 $('#email_div').removeClass("bg-disable");
                 $('#question_div').removeClass("bg-disable");
-                $("#email").removeAttr("disabled");
+                // $("#email").removeAttr("disabled");
                 $("#question").removeAttr("disabled");
             }
             if (data.type == 'hide') {

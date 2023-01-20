@@ -5,12 +5,12 @@
             <div class="col-12">
                 <div class="link-back p-0">
                     <a href="<?= base_url() ?>">
-                        <img src="<?= base_url() ?>assets/img/back.png" alt="">
+                        <img src="<?= base_url() ?>assets/img/back-link.png" alt="">
                     </a>
                 </div>
             </div>
             <div class="col-12 my-5">
-                <h1>Coming soon!</h1>
+                    <h1>Coming soon!</h1>
             </div>
             <div class="col-12">
                 <div class="row">

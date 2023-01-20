@@ -5,7 +5,7 @@
             <div class="col-12">
                 <div class="link-back p-0">
                     <a href="<?= base_url() ?>">
-                        <img src="<?= base_url() ?>assets/img/back.png" alt="">
+                        <img src="<?= base_url() ?>assets/img/back-link.png" alt="">
                     </a>
                 </div>
             </div>
@@ -18,12 +18,12 @@
                         <h2 class="fw-bold subtitle-top-header">We Care About Your Privacy</h2>
                         <div class="my-3">
                             <p>
-                                Since <b translate="no">PiggyBank</b>, being part of the TracklessBank circuit, can
+                                Since <b translate="no"> PiggyBank </b>, being part of the TracklessBank circuit, can
                                 operate using multiple banking licenses, under different jurisdictions and providing
                                 offshore escrow accounts, it is not obliged to perform the Know your Customer (KYC)
                                 procedure.
 
-                                <b translate="no">PiggyBank</b> does not carry out anti-money laundering (AML)
+                                <b translate="no"> PiggyBank </b> does not carry out anti-money laundering (AML)
                                 compliance activities, as it legally makes use of the AML which, without fail by law, is
                                 carried out by the banking institutes that introduce FIAT into the banking circuit.
                             </p>
@@ -44,7 +44,7 @@
                     <h2 class="fw-bold title-top-header">We make money work in your favor</h2>
                     <div class="my-3">
                         <p>
-                            Opening a <b translate="no">PiggyBank</b> account you can activate banking data, for free,
+                            Opening a <b translate="no"> PiggyBank </b> account you can activate banking data, for free,
                             for each of the 10
                             currencies allowing you to receive bank transfers.
                         </p>

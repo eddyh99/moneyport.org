@@ -5,7 +5,7 @@
             <div class="col-12">
                 <div class="link-back p-0">
                     <a href="<?= base_url() ?>">
-                        <img src="<?= base_url() ?>assets/img/back.png" alt="">
+                        <img src="<?= base_url() ?>assets/img/back-link.png" alt="">
                     </a>
                 </div>
             </div>
@@ -21,7 +21,7 @@
                         with
                         the translate function
                     </p>
-                    <a class="translate-link fw-bold" href="https://www.google.com/chrome/">
+                    <a class="translate-link fw-bold" href="https://www.google.com/chrome/" translate="no">
                         <b class="g-b">G</b><b class="g-r">o</b><b class="g-y">o</b><b class="g-b">g</b><b
                             class="g-g">l</b><b class="g-r">e</b> Chrome
                     </a>

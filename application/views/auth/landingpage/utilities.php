@@ -5,7 +5,7 @@
             <div class="col-12">
                 <div class="link-back p-0">
                     <a href="<?= base_url() ?>">
-                        <img src="<?= base_url() ?>assets/img/back.png" alt="">
+                        <img src="<?= base_url() ?>assets/img/back-link.png" alt="">
                     </a>
                 </div>
             </div>
@@ -21,8 +21,8 @@
                 <div class="col-12 text-center mb-5">
                     <p>
                         Given the increasingly stringent and restrictive regulations on international bank transfers,
-                        <b translate="no">PiggyBank</b> offers a simple, risk-free and 100% legal solution.
-                        The user who wants to send capital abroad will have to open a <b translate="no">PiggyBank</b>
+                        <b translate="no"> PiggyBank </b> offers a simple, risk-free and 100% legal solution.
+                        The user who wants to send capital abroad will have to open a <b translate="no"> PiggyBank </b>
                         account and will
                         have to carry out the following procedure to remain in the legality and away from tax
                         assessments:
@@ -66,7 +66,8 @@
                         <img src="<?= base_url() ?>assets/img/img-10.png" alt="" class="img-fluid">
                     </div>
                     <p>
-                        <b translate="no">PiggyBank</b>, making use of the large capital, partners, and multiple offices
+                        <b translate="no"> PiggyBank </b>, making use of the large capital, partners, and multiple
+                        offices
                         at its disposal, in
                         order to respect the laws in force on the matter, will not carry out an international transfer
                         but will send a national transfer from the current account of the country of destination to the
@@ -88,7 +89,7 @@
                 <div class="row">
                     <div class="col-12 col-md-6">
                         <p>
-                            <b translate="no">PiggyBank</b> system is suitable for all daily payments, even for small
+                            <b translate="no"> PiggyBank </b> system is suitable for all daily payments, even for small
                             amounts, thanks to :
                         </p>
                         <div class="col-12 d-flex flex-column justify-content-center">
@@ -123,7 +124,7 @@
                 <div class="row">
                     <div class="col-12 col-md-6">
                         <p>
-                            <b translate="no">PiggyBank</b> offers to your company a multi-currency collection and
+                            <b translate="no"> PiggyBank </b> offers to your company a multi-currency collection and
                             payment system that can be easily integrated into you e-commerce:
                         </p>
                         <div class="col-12 d-flex flex-column justify-content-center">
@@ -191,12 +192,12 @@
                     </div>
                     <div class="col-12 col-md-6">
                         <p>
-                            <b translate="no">PiggyBank</b> allows you to increase the visibility of your business by
+                            <b translate="no"> PiggyBank </b> allows you to increase the visibility of your business by
                             including it in the
                             search section that will be in every single wallet of all the <b
                                 translate="no">PiggyBank</b> users.<br>
                             In this way your company will be easily accessible and traceable by all users who use
-                            <b translate="no">PiggyBank</b> for daily payments.
+                            <b translate="no"> PiggyBank </b> for daily payments.
                         </p>
 
                         <p>

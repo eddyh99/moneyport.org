@@ -21,7 +21,7 @@
                                 <input type="text" name="amount" id="amount" value="<?= $data["amount"] ?>" hidden>
                                 <div class="col-12 list-send-wallet d-flex flex-column mb-3">
                                     <span>Convert amount</span>
-                                    <span><?= $data['amount'] ?></span>
+                                    <span><?= number_format($data['amount'],2) ?></span>
                                 </div>
                                 <div class="col-12 list-send-wallet d-flex flex-column mb-3">
                                     <span>transaction fee</span>

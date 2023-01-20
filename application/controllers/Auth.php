@@ -227,7 +227,7 @@ class Auth extends CI_Controller
 			";
 
 			$urlqr = base_url() . 'wallet/send?' . base64_encode('cur=' . $_SESSION["currency"] . '&ucode=' . $result->message->ucode);
-			$this->sendmail($email, $subject, $message);
+			sendmail($email, $subject, $message, $this->phpmailer_lib->load());
 			$this->qrcodeuser($result->message->ucode);
 			$this->qrcodereceive($urlqr, $result->message->ucode);
 
@@ -446,7 +446,7 @@ class Auth extends CI_Controller
 
                   Thanks for reading.";
 
-			$this->sendmail($email, $subject, $message);
+			sendmail($email, $subject, $message, $this->phpmailer_lib->load());
 
 			$this->session->set_flashdata('success', "<p style='color:black'>Your password has been reset, please check your email to complete the process</p>");
 			redirect(base_url() . "auth/login");
@@ -498,31 +498,6 @@ class Auth extends CI_Controller
 		redirect('Auth/login');
 	}
 
-	public function sendmail($email, $subject, $message)
-	{
-		$mail = $this->phpmailer_lib->load();
-
-		$mail->isSMTP();
-		$mail->Host         = 'mail.piggybankservice.com';
-		$mail->SMTPAuth     = true;
-		$mail->Username     = 'no-reply@piggybankservice.com';
-		$mail->Password     = 'c4?v9JAM+6rG';
-		$mail->SMTPAutoTLS	= false;
-		$mail->SMTPSecure	= false;
-		$mail->Port			= 587;
-
-		$mail->setFrom('no-reply@piggybankservice.com', 'PiggyBank Service');
-		$mail->isHTML(true);
-
-		$mail->ClearAllRecipients();
-
-
-		$mail->Subject = $subject;
-		$mail->AddAddress($email);
-
-		$mail->msgHTML($message);
-		$mail->send();
-	}
 	public function qrcodereceive($url, $kodeqr)
 	{
 		if ($kodeqr) {

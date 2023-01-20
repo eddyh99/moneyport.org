@@ -5,7 +5,7 @@
             <div class="col-12">
                 <div class="link-back p-0">
                     <a href="<?= base_url() ?>">
-                        <img src="<?= base_url() ?>assets/img/back.png" alt="">
+                        <img src="<?= base_url() ?>assets/img/back-link.png" alt="">
                     </a>
                 </div>
             </div>

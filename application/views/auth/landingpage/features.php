@@ -5,7 +5,7 @@
             <div class="col-12">
                 <div class="link-back p-0">
                     <a href="<?= base_url() ?>">
-                        <img src="<?= base_url() ?>assets/img/back.png" alt="">
+                        <img src="<?= base_url() ?>assets/img/back-link.png" alt="">
                     </a>
                 </div>
             </div>
@@ -29,17 +29,19 @@
                             encrypted escrow accounts at the main credit institutions with which our payment gateway
                             works in the various countries.<br>
                         <p>To give total security to our customers, only the account holder will have access to the
-                            operations and even for <b translate="no">PiggyBank</b> it will be impossible to bypass this
+                            operations and even for <b translate="no"> PiggyBank </b> it will be impossible to bypass
+                            this
                             security system.</p>
 
-                        <p><b translate="no">PiggyBank</b>, being part of the TraclessBank circuit, offers to customers
+                        <p><b translate="no"> PiggyBank </b>, being part of the TraclessBank circuit, offers to
+                            customers
                             a great guarantee, as
                             any problem that may arise, the funds will always be accessible at another institution of
                             the TraklessBank circuit.</p>
 
                         <p>None of the tracklessbank institutions have the ability to make any type of investment or
                             money handling using clients’ funds, leaving the capital available to the customers in the
-                            fiat corresponding to the balance of the <b translate="no">PiggyBank</b> wallet</p>
+                            fiat corresponding to the balance of the <b translate="no"> PiggyBank </b> wallet</p>
                         </p>
                     </div>
                 </div>
@@ -150,7 +152,7 @@
                 <div class="row">
                     <div class="col-12 col-lg-6 text-start my-auto">
                         <p>is a Dapp running on NP
-                            <b translate="no">PiggyBank</b> is a Dapp running on NP, considered the evolution of
+                            <b translate="no"> PiggyBank </b> is a Dapp running on NP, considered the evolution of
                             the blockchain and it
                             uses SECC (SMART ELECTRONIC CREDIT CERTIFICATE), developed by MONEY INDUSTRIAL FACTORY on NP
                             and issued by PBS Online which converts FIAT by capitalizing the SECC 1: 1 with the currency
@@ -219,7 +221,7 @@
                             all the users of FreedyBank will be repaid with part of the<br>
                             <b>commissions in a clear, transparent and fair manner, as described in the section Earn
                                 with</b>
-                            <b translate="no">PiggyBank</b>.
+                            <b translate="no"> PiggyBank </b>.
                         </p>
                     </div>
                 </div>
@@ -233,7 +235,7 @@
                 </div>
             </div>
             <div class="col-12">
-                <h2 class="fw-bold mb-3 f-lexend text-dark">Our mission, through the <b translate="no">PIGGYBANK</b>
+                <h2 class="fw-bold mb-3 f-lexend text-dark">Our mission, through the <b translate="no"> PiggyBank </b>
                     Dapp, is to
                     give back to the individual</h2>
             </div>
