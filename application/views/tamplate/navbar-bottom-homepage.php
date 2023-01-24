@@ -3,7 +3,7 @@
         class="col-12 col-lg-8 col-xl-6 box-navbar-freedy d-flex flex-row justify-content-start align-items-center bottom">
         <a href="<?= base_url() ?>homepage" class="d-flex align-items-center border-0 ms-0 me-auto">
             <div class="icon-menus d-flex align-items-center home-svg py-0">
-                <img src="<?= base_url() ?>assets/img/logo-login.png" alt="">
+                <img src="<?= base_url() ?>assets/img/logo-rtext.png" alt="">
             </div>
         </a>
 
@@ -31,18 +31,18 @@
                     <defs>
                         <linearGradient id="paint0_linear_319_7" x1="10.7999" y1="2.08743" x2="14.9766" y2="23.6873"
                             gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#23832C" />
-                            <stop offset="1" stop-color="#1C6701" />
+                            <stop stop-color="#FF5C01" />
+                            <stop offset="1" stop-color="#FF5C01" />
                         </linearGradient>
                         <linearGradient id="paint1_linear_319_7" x1="26" y1="13.4414" x2="26" y2="12.4414"
                             gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#23832C" />
-                            <stop offset="1" stop-color="#1C6701" />
+                            <stop stop-color="#FF5C01" />
+                            <stop offset="1" stop-color="#FF5C01" />
                         </linearGradient>
                         <linearGradient id="paint2_linear_319_7" x1="30" y1="19.8789" x2="30" y2="7.00036"
                             gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#23832C" />
-                            <stop offset="1" stop-color="#1C6701" />
+                            <stop stop-color="#FF5C01" />
+                            <stop offset="1" stop-color="#FF5C01" />
                         </linearGradient>
                     </defs>
                 </svg>

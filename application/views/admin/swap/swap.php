@@ -14,11 +14,17 @@
                             value="<?php echo $this->security->get_csrf_hash(); ?>">
                         <input type="hidden" id="amountget" name="amountget">
                         <input type="hidden" id="quoteid" name="quoteid">
+
+                        <div class="col-12 alert alert-warning alert-dismissible fade show" role="alert">
+                            <span class="notif-login f-poppins">Tess</span>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+
                         <div class="swap-form-icon d-flex flex-row align-items-center my-4">
                             <label for=""><?= $_SESSION["symbol"] ?></label>
                             <input type="text" class="form-control text-end" name="amount" id="amount"
                                 placeholder="0.00"
-                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
+                                oninput="this.value = this.value.replace(/[^0-9.,]/g, '').replace(/(\..*)\./g, '$1');input(this);">
                         </div>
 
                         <div class="swap-selection d-flex flex-column align-items-center justify-content-center">
@@ -50,7 +56,7 @@
                             <label for=""><span id="tocurrency"></span></label>
                             <input type="text" class="form-control text-end" name="receive" id="receive"
                                 placeholder="0.00"
-                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                                oninput="this.value = this.value.replace(/[^0-9.,]/g, '').replace(/(\..*)\./g, '$1');"
                                 readonly>
                         </div>
                         <div class="row">

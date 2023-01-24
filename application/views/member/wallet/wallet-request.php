@@ -11,6 +11,13 @@
                     </div>
                     <div class="col-12 infobank-list-app my-4">
                         <div class="py-4">
+                            <?php if (@isset($_SESSION["failed"])) { ?>
+                            <div class="col-12 alert alert-danger alert-dismissible fade show" role="alert">
+                                <span class="notif-login f-poppins"><?= $_SESSION["failed"] ?></span>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                            <?php } ?>
                             <form method="POST" action="<?= base_url() ?>wallet/request_qrcode"
                                 class="input-piggy-style" id="form_submit" onsubmit="return validate()">
                                 <input type="hidden" id="token"
@@ -56,8 +63,8 @@
                     <defs>
                         <linearGradient id="paint0_linear_30_4821" x1="20.5" y1="0" x2="20.5" y2="35"
                             gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#23832C" />
-                            <stop offset="1" stop-color="#1C6701" />
+                            <stop stop-color="#FF5C01" />
+                            <stop offset="1" stop-color="#FF5C01" />
                         </linearGradient>
                     </defs>
                 </svg>

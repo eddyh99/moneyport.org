@@ -62,7 +62,7 @@
                         Get your MoneyPort account instantly
                     </h2>
                     <div class="text-center">
-                        <a href="<?= base_url(); ?>auth/signup_referral"
+                        <a href="<?= base_url(); ?>auth/signup"
                             class="btn-content-freedy d-inline-flex align-items-center justify-content-center align-self-center mt-5">
                             <span class="f-lexend">Sign up</span>
                         </a>
@@ -101,7 +101,7 @@
                                     <li>Convert FIAT currencies with zero fees</li>
                                 </ul>
                                 <div class="text-start">
-                                    <a href="<?= base_url(); ?>auth/signup_referral"
+                                    <a href="<?= base_url(); ?>auth/signup"
                                         class="btn-content-freedy d-inline-flex align-items-center justify-content-center align-self-center">
                                         <span class="f-lexend">Sign up</span>
                                     </a>
@@ -124,7 +124,322 @@
                     </div>
                 </div>
                 <div class="col-12 text-center">
-                    COMING SOON!
+                    <div id="carousel1" class="carousel slide d-none d-lg-grid">
+                        <div class="row">
+                            <div class="carousel-inner p-5">
+                                <div class="carousel-item active">
+                                    <div class="row">
+                                        <div class="col-12 col-lg-6 p-3">
+                                            <div class="box-list-carousel d-flex flex-row p-3">
+                                                <div class="icon">
+                                                    <img src="<?= base_url()?>assets/img/c-1.png" alt="">
+                                                </div>
+                                                <div
+                                                    class="content-carousel d-flex flex-column justify-content-center align-items-start text-start px-3">
+                                                    <span class="my-auto">Funds are really yours,
+                                                        Non-custodial wallet provided</span>
+                                                    <a href="" class="my-auto">
+                                                        <b>Read more</b>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-lg-6 p-3">
+                                            <div class="box-list-carousel d-flex flex-row p-3">
+                                                <div class="icon">
+                                                    <img src="<?= base_url()?>assets/img/c-2.png" alt="">
+                                                </div>
+                                                <div
+                                                    class="content-carousel d-flex flex-column justify-content-center align-items-start text-start px-3">
+                                                    <span class="my-auto">Fully protection of your privacy,
+                                                        No KYC & No AML</span>
+                                                    <a href="" class="my-auto">
+                                                        <b>Read more</b>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-lg-6 p-3">
+                                            <div class="box-list-carousel d-flex flex-row p-3">
+                                                <div class="icon">
+                                                    <img src="<?= base_url()?>assets/img/c-3.png" alt="">
+                                                </div>
+                                                <div
+                                                    class="content-carousel d-flex flex-column justify-content-center align-items-start text-start px-3">
+                                                    <span class="my-auto">Receive funds in 10 FIAT currencies</span>
+                                                    <a href="" class="my-auto">
+                                                        <b>Read more</b>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-lg-6 p-3">
+                                            <div class="box-list-carousel d-flex flex-row p-3">
+                                                <div class="icon">
+                                                    <img src="<?= base_url()?>assets/img/c-4.png" alt="">
+                                                </div>
+                                                <div
+                                                    class="content-carousel d-flex flex-column justify-content-center align-items-start text-start px-3">
+                                                    <span class="my-auto">Swap, custody & send
+                                                        worldwide in over 50 FIAT
+                                                        currencies </span>
+                                                    <a href="" class="my-auto">
+                                                        <b>Read more</b>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-12 col-lg-6 p-3">
+                                            <div class="box-list-carousel d-flex flex-row p-3">
+                                                <div class="icon">
+                                                    <img src="<?= base_url()?>assets/img/c-5.png" alt="">
+                                                </div>
+                                                <div
+                                                    class="content-carousel d-flex flex-column justify-content-center align-items-start text-start px-3">
+                                                    <span class="my-auto">Zero exchange fees &
+                                                        favorable rates for FIAT to FIAT</span>
+                                                    <a href="" class="my-auto">
+                                                        <b>Read more</b>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-lg-6 p-3">
+                                            <div class="box-list-carousel d-flex flex-row p-3">
+                                                <div class="icon">
+                                                    <img src="<?= base_url()?>assets/img/c-6.png" alt="">
+                                                </div>
+                                                <div
+                                                    class="content-carousel d-flex flex-column justify-content-center align-items-start text-start px-3">
+                                                    <span class="my-auto">Buy and sell crypto from the balance of your
+                                                        FIAT wallet
+                                                    </span>
+                                                    <a href="" class="my-auto">
+                                                        <b>Read more</b>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-lg-6 p-3">
+                                            <div class="box-list-carousel d-flex flex-row p-3">
+                                                <div class="icon">
+                                                    <img src="<?= base_url()?>assets/img/c-7.png" alt="">
+                                                </div>
+                                                <div
+                                                    class="content-carousel d-flex flex-column justify-content-center align-items-start text-start px-3">
+                                                    <span class="my-auto">Fees for FIAT and crypto
+                                                        No hidden costs</span>
+                                                    <a href="" class="my-auto">
+                                                        <b>Read more</b>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-lg-6 p-3">
+                                            <div class="box-list-carousel d-flex flex-row p-3">
+                                                <div class="icon">
+                                                    <img src="<?= base_url()?>assets/img/c-8.png" alt="">
+                                                </div>
+                                                <div
+                                                    class="content-carousel d-flex flex-column justify-content-center align-items-start text-start px-3">
+                                                    <span class="my-auto">API/Plugin for the integration into your
+                                                        business </span>
+                                                    <a href="" class="my-auto">
+                                                        <b>Read more</b>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel1"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carousel1"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            </button>
+
+                            <div class="carousel-indicators m-0">
+                                <button type="button" data-bs-target="#carousel1" data-bs-slide-to="0"
+                                    class="rounded-circle active" aria-current="true"></button>
+                                <button type="button" data-bs-target="#carousel1" data-bs-slide-to="1"
+                                    class="rounded-circle"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="carousel12" class="carousel slide d-lg-none">
+                        <div class="row">
+                            <div class="carousel-inner p-5">
+                                <div class="carousel-item active">
+                                    <div class="row">
+                                        <div class="col-12 col-lg-6 p-3">
+                                            <div class="box-list-carousel d-flex flex-row p-3">
+                                                <div class="icon">
+                                                    <img src="<?= base_url()?>assets/img/c-1.png" alt="">
+                                                </div>
+                                                <div
+                                                    class="content-carousel d-flex flex-column justify-content-center align-items-start text-start px-3">
+                                                    <span class="my-auto">Funds are really yours,
+                                                        Non-custodial wallet provided</span>
+                                                    <a href="" class="my-auto">
+                                                        <b>Read more</b>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-lg-6 p-3">
+                                            <div class="box-list-carousel d-flex flex-row p-3">
+                                                <div class="icon">
+                                                    <img src="<?= base_url()?>assets/img/c-2.png" alt="">
+                                                </div>
+                                                <div
+                                                    class="content-carousel d-flex flex-column justify-content-center align-items-start text-start px-3">
+                                                    <span class="my-auto">Fully protection of your privacy,
+                                                        No KYC & No AML</span>
+                                                    <a href="" class="my-auto">
+                                                        <b>Read more</b>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-12 col-lg-6 p-3">
+                                            <div class="box-list-carousel d-flex flex-row p-3">
+                                                <div class="icon">
+                                                    <img src="<?= base_url()?>assets/img/c-3.png" alt="">
+                                                </div>
+                                                <div
+                                                    class="content-carousel d-flex flex-column justify-content-center align-items-start text-start px-3">
+                                                    <span class="my-auto">Receive funds in 10 FIAT currencies</span>
+                                                    <a href="" class="my-auto">
+                                                        <b>Read more</b>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-lg-6 p-3">
+                                            <div class="box-list-carousel d-flex flex-row p-3">
+                                                <div class="icon">
+                                                    <img src="<?= base_url()?>assets/img/c-4.png" alt="">
+                                                </div>
+                                                <div
+                                                    class="content-carousel d-flex flex-column justify-content-center align-items-start text-start px-3">
+                                                    <span class="my-auto">Swap, custody & send
+                                                        worldwide in over 50 FIAT
+                                                        currencies </span>
+                                                    <a href="" class="my-auto">
+                                                        <b>Read more</b>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-12 col-lg-6 p-3">
+                                            <div class="box-list-carousel d-flex flex-row p-3">
+                                                <div class="icon">
+                                                    <img src="<?= base_url()?>assets/img/c-5.png" alt="">
+                                                </div>
+                                                <div
+                                                    class="content-carousel d-flex flex-column justify-content-center align-items-start text-start px-3">
+                                                    <span class="my-auto">Zero exchange fees &
+                                                        favorable rates for FIAT to FIAT</span>
+                                                    <a href="" class="my-auto">
+                                                        <b>Read more</b>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-lg-6 p-3">
+                                            <div class="box-list-carousel d-flex flex-row p-3">
+                                                <div class="icon">
+                                                    <img src="<?= base_url()?>assets/img/c-6.png" alt="">
+                                                </div>
+                                                <div
+                                                    class="content-carousel d-flex flex-column justify-content-center align-items-start text-start px-3">
+                                                    <span class="my-auto">Buy and sell crypto from the balance of your
+                                                        FIAT wallet
+                                                    </span>
+                                                    <a href="" class="my-auto">
+                                                        <b>Read more</b>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-12 col-lg-6 p-3">
+                                            <div class="box-list-carousel d-flex flex-row p-3">
+                                                <div class="icon">
+                                                    <img src="<?= base_url()?>assets/img/c-7.png" alt="">
+                                                </div>
+                                                <div
+                                                    class="content-carousel d-flex flex-column justify-content-center align-items-start text-start px-3">
+                                                    <span class="my-auto">Fees for FIAT and crypto
+                                                        No hidden costs</span>
+                                                    <a href="" class="my-auto">
+                                                        <b>Read more</b>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-lg-6 p-3">
+                                            <div class="box-list-carousel d-flex flex-row p-3">
+                                                <div class="icon">
+                                                    <img src="<?= base_url()?>assets/img/c-8.png" alt="">
+                                                </div>
+                                                <div
+                                                    class="content-carousel d-flex flex-column justify-content-center align-items-start text-start px-3">
+                                                    <span class="my-auto">API/Plugin for the integration into your
+                                                        business </span>
+                                                    <a href="" class="my-auto">
+                                                        <b>Read more</b>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="carousel-control-prev d-lg-none" type="button" data-bs-target="#carousel12"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            </button>
+                            <button class="carousel-control-next d-lg-none" type="button" data-bs-target="#carousel12"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            </button>
+
+                            <div class="carousel-indicators m-0">
+                                <button type="button" data-bs-target="#carousel12" data-bs-slide-to="0"
+                                    class="rounded-circle d-lg-none active" aria-current="true"></button>
+                                <button type="button" data-bs-target="#carousel12" data-bs-slide-to="1"
+                                    class="rounded-circle d-lg-none"></button>
+                                <button type="button" data-bs-target="#carousel12" data-bs-slide-to="2"
+                                    class="rounded-circle d-lg-none" aria-current="true"></button>
+                                <button type="button" data-bs-target="#carousel12" data-bs-slide-to="3"
+                                    class="rounded-circle d-lg-none"></button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -196,64 +511,398 @@
     <section id="reward" class="about">
         <div class="container p-r border-guide">
             <div class="row gx-0">
-                <div class="col-12 mb-5">
+                <div class="col-12">
                     <div class="content-freedy p-r text-center">
-                        <h2 class="f-lexend">MoneyPort Guide</h2>
+                        <h2 class="f-lexend mt-5">MoneyPort Guide</h2>
                     </div>
                 </div>
                 <div class="col-12">
-                    <div id="carouselExampleIndicators" class="carousel slide">
+                    <div id="carousel2" class="carousel slide d-none d-lg-grid">
                         <div class="row">
-                            <div class="col-3">
-                                <button class="carousel-control-prev" type="button"
-                                    data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                </button>
-                            </div>
-                            <div class="col-6">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <div class="row">
-                                            <div class="col-6">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                                Vel,
-                                                esse!</div>
-                                            <div class="col-6">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                                Vel,
-                                                esse!</div>
+                            <div class="carousel-inner p-5">
+                                <div class="carousel-item active">
+                                    <div class="row">
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <div class="carousel-item-bot d-flex flex-column align-items-start  m-auto">
+                                                <div class="d-flex flex-row w-100 py-3 border-bgradient">
+                                                    <img src="<?= base_url(); ?>assets/img/c2-1.png" alt="">
+                                                    <h4 class="f-lexend ms-3 my-auto">Wallet</h4>
+                                                </div>
+                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                        more</b></a>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <div class="row">
-                                            <div class="col-6">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                                Vel,
-                                                esse!</div>
-                                            <div class="col-6">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                                Vel,
-                                                esse!</div>
-                                            <div class="col-6">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                                Vel,
-                                                esse!</div>
-                                            <div class="col-6">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                                Vel,
-                                                esse!</div>
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <div class="carousel-item-bot d-flex flex-column align-items-start  m-auto">
+                                                <div class="d-flex flex-row w-100 py-3 border-bgradient">
+                                                    <img src="<?= base_url(); ?>assets/img/c2-2.png" alt="">
+                                                    <h4 class="f-lexend ms-3 my-auto">Daily use</h4>
+                                                </div>
+                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                        more</b></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <div class="carousel-item-bot d-flex flex-column align-items-start  m-auto">
+                                                <div class="d-flex flex-row w-100 py-3 border-bgradient">
+                                                    <img src="<?= base_url(); ?>assets/img/c2-3.png" alt="">
+                                                    <h4 class="f-lexend ms-3 my-auto">Capital
+                                                        Exportation</h4>
+                                                </div>
+                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                        more</b></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <div class="carousel-item-bot d-flex flex-column align-items-start  m-auto">
+                                                <div class="d-flex flex-row w-100 py-3 border-bgradient">
+                                                    <img src="<?= base_url(); ?>assets/img/c2-4.png" alt="">
+                                                    <h4 class="f-lexend ms-3 my-auto">Crypto Trading</h4>
+                                                </div>
+                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                        more</b></a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-3">
-                                <button class="carousel-control-next" type="button"
-                                    data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                </button>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <div class="carousel-item-bot d-flex flex-column align-items-start  m-auto">
+                                                <div class="d-flex flex-row w-100 py-3 border-bgradient">
+                                                    <img src="<?= base_url(); ?>assets/img/c2-5.png" alt="">
+                                                    <h4 class="f-lexend ms-3 my-auto">Essential for your
+                                                        trip</h4>
+                                                </div>
+                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                        more</b></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <div class="carousel-item-bot d-flex flex-column align-items-start  m-auto">
+                                                <div class="d-flex flex-row w-100 py-3 border-bgradient">
+                                                    <img src="<?= base_url(); ?>assets/img/c2-6.png" alt="">
+                                                    <h4 class="f-lexend ms-3 my-auto">Collection &
+                                                        Payment</h4>
+                                                </div>
+                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                        more</b></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <div class="carousel-item-bot d-flex flex-column align-items-start  m-auto">
+                                                <div class="d-flex flex-row w-100 py-3 border-bgradient">
+                                                    <img src="<?= base_url(); ?>assets/img/c2-7.png" alt="">
+                                                    <h4 class="f-lexend ms-3 my-auto">Find me</h4>
+                                                </div>
+                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                        more</b></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <div class="carousel-item-bot d-flex flex-column align-items-start  m-auto">
+                                                <div class="d-flex flex-row w-100 py-3 border-bgradient">
+                                                    <img src="<?= base_url(); ?>assets/img/c2-8.png" alt="">
+                                                    <h4 class="f-lexend ms-3 my-auto">Search</h4>
+                                                </div>
+                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                        more</b></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="col-12">
-                                <div class="carousel-indicators">
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="0" class="active" aria-current="true"></button>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators"
-                                        data-bs-slide-to="1"></button>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel2"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carousel2"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            </button>
+
+                            <div class="carousel-indicators m-0">
+                                <button type="button" data-bs-target="#carousel2" data-bs-slide-to="0"
+                                    class="rounded-circle active" aria-current="true"></button>
+                                <button type="button" data-bs-target="#carousel2" data-bs-slide-to="1"
+                                    class="rounded-circle"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="carousel22" class="carousel slide d-none d-md-grid d-lg-none">
+                        <div class="row">
+                            <div class="carousel-inner p-5">
+                                <div class="carousel-item active">
+                                    <div class="row">
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <div class="carousel-item-bot d-flex flex-column align-items-start  m-auto">
+                                                <div class="d-flex flex-row w-100 py-3 border-bgradient">
+                                                    <img src="<?= base_url(); ?>assets/img/c2-1.png" alt="">
+                                                    <h4 class="f-lexend ms-3 my-auto">Wallet</h4>
+                                                </div>
+                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                        more</b></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <div class="carousel-item-bot d-flex flex-column align-items-start  m-auto">
+                                                <div class="d-flex flex-row w-100 py-3 border-bgradient">
+                                                    <img src="<?= base_url(); ?>assets/img/c2-2.png" alt="">
+                                                    <h4 class="f-lexend ms-3 my-auto">Daily use</h4>
+                                                </div>
+                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                        more</b></a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <div class="carousel-item-bot d-flex flex-column align-items-start  m-auto">
+                                                <div class="d-flex flex-row w-100 py-3 border-bgradient">
+                                                    <img src="<?= base_url(); ?>assets/img/c2-3.png" alt="">
+                                                    <h4 class="f-lexend ms-3 my-auto">Capital
+                                                        Exportation</h4>
+                                                </div>
+                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                        more</b></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <div class="carousel-item-bot d-flex flex-column align-items-start  m-auto">
+                                                <div class="d-flex flex-row w-100 py-3 border-bgradient">
+                                                    <img src="<?= base_url(); ?>assets/img/c2-4.png" alt="">
+                                                    <h4 class="f-lexend ms-3 my-auto">Crypto Trading</h4>
+                                                </div>
+                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                        more</b></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <div class="carousel-item-bot d-flex flex-column align-items-start  m-auto">
+                                                <div class="d-flex flex-row w-100 py-3 border-bgradient">
+                                                    <img src="<?= base_url(); ?>assets/img/c2-5.png" alt="">
+                                                    <h4 class="f-lexend ms-3 my-auto">Essential for your
+                                                        trip</h4>
+                                                </div>
+                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                        more</b></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <div class="carousel-item-bot d-flex flex-column align-items-start  m-auto">
+                                                <div class="d-flex flex-row w-100 py-3 border-bgradient">
+                                                    <img src="<?= base_url(); ?>assets/img/c2-6.png" alt="">
+                                                    <h4 class="f-lexend ms-3 my-auto">Collection &
+                                                        Payment</h4>
+                                                </div>
+                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                        more</b></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <div class="carousel-item-bot d-flex flex-column align-items-start  m-auto">
+                                                <div class="d-flex flex-row w-100 py-3 border-bgradient">
+                                                    <img src="<?= base_url(); ?>assets/img/c2-7.png" alt="">
+                                                    <h4 class="f-lexend ms-3 my-auto">Find me</h4>
+                                                </div>
+                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                        more</b></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <div class="carousel-item-bot d-flex flex-column align-items-start  m-auto">
+                                                <div class="d-flex flex-row w-100 py-3 border-bgradient">
+                                                    <img src="<?= base_url(); ?>assets/img/c2-8.png" alt="">
+                                                    <h4 class="f-lexend ms-3 my-auto">Search</h4>
+                                                </div>
+                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                        more</b></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel22"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carousel22"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            </button>
+
+                            <div class="carousel-indicators m-0">
+                                <button type="button" data-bs-target="#carousel22" data-bs-slide-to="0"
+                                    class="rounded-circle active" aria-current="true"></button>
+                                <button type="button" data-bs-target="#carousel22" data-bs-slide-to="1"
+                                    class="rounded-circle"></button>
+                                <button type="button" data-bs-target="#carousel22" data-bs-slide-to="2"
+                                    class="rounded-circle"></button>
+                                <button type="button" data-bs-target="#carousel22" data-bs-slide-to="3"
+                                    class="rounded-circle"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="carousel23" class="carousel slide d-md-none">
+                        <div class="row">
+                            <div class="carousel-inner p-5">
+                                <div class="carousel-item active">
+                                    <div class="row">
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <div class="carousel-item-bot d-flex flex-column align-items-start  m-auto">
+                                                <div class="d-flex flex-row w-100 py-3 border-bgradient">
+                                                    <img src="<?= base_url(); ?>assets/img/c2-1.png" alt="">
+                                                    <h4 class="f-lexend ms-3 my-auto">Wallet</h4>
+                                                </div>
+                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                        more</b></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <div class="carousel-item-bot d-flex flex-column align-items-start  m-auto">
+                                                <div class="d-flex flex-row w-100 py-3 border-bgradient">
+                                                    <img src="<?= base_url(); ?>assets/img/c2-2.png" alt="">
+                                                    <h4 class="f-lexend ms-3 my-auto">Daily use</h4>
+                                                </div>
+                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                        more</b></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <div class="carousel-item-bot d-flex flex-column align-items-start  m-auto">
+                                                <div class="d-flex flex-row w-100 py-3 border-bgradient">
+                                                    <img src="<?= base_url(); ?>assets/img/c2-3.png" alt="">
+                                                    <h4 class="f-lexend ms-3 my-auto">Capital
+                                                        Exportation</h4>
+                                                </div>
+                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                        more</b></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <div class="carousel-item-bot d-flex flex-column align-items-start  m-auto">
+                                                <div class="d-flex flex-row w-100 py-3 border-bgradient">
+                                                    <img src="<?= base_url(); ?>assets/img/c2-4.png" alt="">
+                                                    <h4 class="f-lexend ms-3 my-auto">Crypto Trading</h4>
+                                                </div>
+                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                        more</b></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <div class="carousel-item-bot d-flex flex-column align-items-start  m-auto">
+                                                <div class="d-flex flex-row w-100 py-3 border-bgradient">
+                                                    <img src="<?= base_url(); ?>assets/img/c2-5.png" alt="">
+                                                    <h4 class="f-lexend ms-3 my-auto">Essential for your
+                                                        trip</h4>
+                                                </div>
+                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                        more</b></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <div class="carousel-item-bot d-flex flex-column align-items-start  m-auto">
+                                                <div class="d-flex flex-row w-100 py-3 border-bgradient">
+                                                    <img src="<?= base_url(); ?>assets/img/c2-6.png" alt="">
+                                                    <h4 class="f-lexend ms-3 my-auto">Collection &
+                                                        Payment</h4>
+                                                </div>
+                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                        more</b></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <div class="carousel-item-bot d-flex flex-column align-items-start  m-auto">
+                                                <div class="d-flex flex-row w-100 py-3 border-bgradient">
+                                                    <img src="<?= base_url(); ?>assets/img/c2-7.png" alt="">
+                                                    <h4 class="f-lexend ms-3 my-auto">Find me</h4>
+                                                </div>
+                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                        more</b></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <div class="carousel-item-bot d-flex flex-column align-items-start  m-auto">
+                                                <div class="d-flex flex-row w-100 py-3 border-bgradient">
+                                                    <img src="<?= base_url(); ?>assets/img/c2-8.png" alt="">
+                                                    <h4 class="f-lexend ms-3 my-auto">Search</h4>
+                                                </div>
+                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                        more</b></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel23"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carousel23"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            </button>
+
+                            <div class="carousel-indicators m-0">
+                                <button type="button" data-bs-target="#carousel23" data-bs-slide-to="0"
+                                    class="rounded-circle active" aria-current="true"></button>
+                                <button type="button" data-bs-target="#carousel23" data-bs-slide-to="1"
+                                    class="rounded-circle"></button>
+                                <button type="button" data-bs-target="#carousel23" data-bs-slide-to="2"
+                                    class="rounded-circle"></button>
+                                <button type="button" data-bs-target="#carousel23" data-bs-slide-to="3"
+                                    class="rounded-circle"></button>
+                                <button type="button" data-bs-target="#carousel23" data-bs-slide-to="4"
+                                    class="rounded-circle"></button>
+                                <button type="button" data-bs-target="#carousel23" data-bs-slide-to="5"
+                                    class="rounded-circle"></button>
+                                <button type="button" data-bs-target="#carousel23" data-bs-slide-to="6"
+                                    class="rounded-circle"></button>
+                                <button type="button" data-bs-target="#carousel23" data-bs-slide-to="7"
+                                    class="rounded-circle"></button>
                             </div>
                         </div>
                     </div>
@@ -280,7 +929,7 @@
                             </ul>
                         </div>
                         <div class="text-start">
-                            <a href="<?= base_url(); ?>auth/signup_referral"
+                            <a href="<?= base_url(); ?>auth/signup"
                                 class="btn-content-freedy d-inline-flex align-items-center justify-content-center align-self-center">
                                 <span class="f-lexend">Sign up</span>
                             </a>

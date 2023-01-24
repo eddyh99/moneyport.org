@@ -4,7 +4,7 @@ $(function() {
 })
 
 function calculate() {
-    if ($("#amount").val() > 0) {
+    if ($("#amount").val().replace(/,/g, '') > 0) {
         $.ajax({
             url: "<?= base_url() ?>admin/swap/swapcalculate",
             method: "post",
@@ -20,7 +20,7 @@ function calculate() {
                 var data = JSON.parse(xhr.responseText);
                 $("#amountget").val("0.00");
                 $("#token").val(data.token);
-                alert(data.message);
+                console.log(data.message);
             }
         });
     }

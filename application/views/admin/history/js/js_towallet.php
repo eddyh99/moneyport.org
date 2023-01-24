@@ -29,7 +29,9 @@ $('#tgl').daterangepicker({
 
 var tblhistory =
     $('#tbl_history').DataTable({
-        "order": [[5, 'desc']],
+        "order": [
+            [5, 'desc']
+        ],
         "scrollX": true,
         "responsive": true,
         "ajax": {
@@ -46,31 +48,41 @@ var tblhistory =
             },
         },
         "aoColumnDefs": [{
-    	    "aTargets" :[6],
-    	    "mRender" : function (data, type, row) {
-                return parseFloat(row.referral_sender_fee)+parseFloat(row.referral_receiver_fee)+parseFloat(row.sender_fee)+parseFloat(row.receiver_fee)
-    	    }
-    	}],        
+            "aTargets": [6],
+            "mRender": function(data, type, row) {
+                return "<?= $_SESSION['symbol']?> " + (parseFloat(row.referral_sender_fee) + parseFloat(
+                        row.referral_receiver_fee) +
+                    parseFloat(row.sender_fee) + parseFloat(row.receiver_fee)).toLocaleString(
+                    'en', {
+                        minimumFractionDigits: 2
+                    })
+            }
+        }],
         "columns": [{
                 "data": "ket"
             },
             {
-                "data": "cost"
+                "data": "cost",
+                render: $.fn.dataTable.render.number(',', '.', 2, '<?= $_SESSION['symbol']?> ')
             },
             {
-                "data": "referral_sender_fee"
+                "data": "referral_sender_fee",
+                render: $.fn.dataTable.render.number(',', '.', 2, '<?= $_SESSION['symbol']?> ')
             },
             {
-                "data": "referral_receiver_fee"
+                "data": "referral_receiver_fee",
+                render: $.fn.dataTable.render.number(',', '.', 2, '<?= $_SESSION['symbol']?> ')
             },
             {
-                "data": "sender_fee"
+                "data": "sender_fee",
+                render: $.fn.dataTable.render.number(',', '.', 2, '<?= $_SESSION['symbol']?> ')
+            },
+            {
+                "data": "receiver_fee",
+                render: $.fn.dataTable.render.number(',', '.', 2, '<?= $_SESSION['symbol']?> ')
             },
             {
                 "data": "receiver_fee"
-            },
-            {
-                "data": "date_created"
             },
             {
                 "data": "date_created"
@@ -82,7 +94,7 @@ $('#tgl').on("change", function(e) {
     e.preventDefault();
     tblhistory.ajax.reload();
     $($.fn.dataTable.tables(true)).DataTable()
-      .columns.adjust()
-      .responsive.recalc();
+        .columns.adjust()
+        .responsive.recalc();
 });
 </script>

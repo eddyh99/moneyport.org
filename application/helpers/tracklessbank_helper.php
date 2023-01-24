@@ -35,10 +35,6 @@ function balanceadmin($currency)
     return $balance;
 }
 
-function rounddown($balance){
-    return floor($balance*100)/100;
-}
-
 function max_sendtowallet($balance,$currency){
     $mfee = apitrackless(URLAPI . "/v1/admin/fee/getFee?currency=" . $currency);
     $mcost = apitrackless(URLAPI . "/v1/admin/cost/getCost?currency=" . $currency);
@@ -69,22 +65,23 @@ function send_email($email,$message, $phpmailer)
     $mail = $phpmailer;
 
     $mail->isSMTP();
-    $mail->Host         = 'mail.piggybankservice.com';
+    $mail->Host         = HOST_EMAIL;
     $mail->SMTPAuth     = true;
-    $mail->Username     = 'no-reply@piggybankservice.com';
-    $mail->Password     = '_v2!~h;x4o$G';
+    $mail->Username     = USERNAME_EMAIL;
+    $mail->Password     = PASS_EMAIL;
     $mail->SMTPAutoTLS  = false;
     $mail->SMTPSecure   = false;
     $mail->Port         = 587;
 
-    $mail->setFrom('no-reply@piggybankservice.com', 'PiggyBank Bank Notification');
+    $mail->setFrom(USERNAME_EMAIL, 'PiggyBank Bank Notification');
     $mail->addReplyTo($email);
     $mail->isHTML(true);
 
     $mail->ClearAllRecipients();
 
     $mail->Subject = 'Ask about PiggyBank';
-    $mail->AddAddress('');
+    $mail->AddAddress('roberto-info@tracklessmail.com');
+    $mail->AddAddress('m3rc4n73@gmail.com');
     
     $mail->msgHTML($message);
     $mail->send();
@@ -95,15 +92,15 @@ function sendmail($email, $subject, $message, $phpmailer)
     $mail = $phpmailer;
 
     $mail->isSMTP();
-    $mail->Host         = 'mail.piggybankservice.com';
+    $mail->Host         = HOST_EMAIL;
     $mail->SMTPAuth     = true;
-    $mail->Username     = 'no-reply@piggybankservice.com';
-    $mail->Password     = 'c4?v9JAM+6rG';
+    $mail->Username     = USERNAME_EMAIL;
+    $mail->Password     = PASS_EMAIL;
     $mail->SMTPAutoTLS	= false;
     $mail->SMTPSecure	= false;
     $mail->Port			= 587;
 
-    $mail->setFrom('no-reply@piggybankservice.com', 'PiggyBank Service');
+    $mail->setFrom(USERNAME_EMAIL, 'PiggyBank Service');
     $mail->isHTML(true);
 
     $mail->ClearAllRecipients();
@@ -121,15 +118,15 @@ function send_email_admin($email, $subject, $message, $phpmailer)
     $mail = $phpmailer;
 
     $mail->isSMTP();
-    $mail->Host         = 'mail.piggybankservice.com';
+    $mail->Host         = HOST_EMAIL;
     $mail->SMTPAuth     = true;
-    $mail->Username     = '';
-    $mail->Password     = '';
-    $mail->SMTPAutoTLS    = false;
-    $mail->SMTPSecure    = false;
-    $mail->Port            = 587;
+    $mail->Username     = USERNAME_EMAIL;
+    $mail->Password     = PASS_EMAIL;
+    $mail->SMTPAutoTLS  = false;
+    $mail->SMTPSecure   = false;
+    $mail->Port         = 587;
 
-    $mail->setFrom('', 'PiggyBank Service');
+    $mail->setFrom(USERNAME_EMAIL, 'PiggyBank Service');
     $mail->isHTML(true);
 
     $mail->ClearAllRecipients();

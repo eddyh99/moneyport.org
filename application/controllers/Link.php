@@ -22,7 +22,7 @@ class Link extends CI_Controller
     public function translate()
     {
         $data = array(
-            "title"     => NAMETITLE . " - Work with us",
+            "title"     => NAMETITLE . " - Translate",
             "content"   => "auth/landingpage/translate",
             // "extra"     => "auth/landingpage/js/js_index",
         );
@@ -30,28 +30,28 @@ class Link extends CI_Controller
         $this->load->view('tamplate/wrapper', $data);
     }
 
-    public function utilities()
+    public function guide()
     {
-        $utilities = base64_decode($_GET['utilities']);
-
+        $guide = base64_decode($_GET['guide']);
         $data = array(
-            "title"     => NAMETITLE . " - Work with us",
-            "content"   => "auth/landingpage/utilities",
-            "utilities"   => $utilities,
-            // "extra"     => "auth/landingpage/js/js_index",
+            "title"     => NAMETITLE,
+            "content"   => "auth/landingpage/guide",
+            "guide"   => $guide,
+            "extra"     => "auth/landingpage/js/js_index",
         );
 
         $this->load->view('tamplate/wrapper', $data);
     }
 
-    public function service()
+    public function spec()
     {
-        $service = base64_decode($_GET['service']);
+        $spec = base64_decode($_GET['spec']);
+
         $data = array(
-            "title"     => NAMETITLE . " - Work with us",
-            "content"   => "auth/landingpage/service",
-            "service"   => $service,
-            "extra"     => "auth/landingpage/js/js_index",
+            "title"     => NAMETITLE,
+            "content"   => "auth/landingpage/specifications",
+            "spec"   => $spec,
+            // "extra"     => "auth/landingpage/js/js_index",
         );
 
         $this->load->view('tamplate/wrapper', $data);
@@ -190,55 +190,6 @@ class Link extends CI_Controller
 
         $this->load->view('tamplate/wrapper', $data);
     }
-
-    public function mailproses()
-    {
-        // $this->form_validation->set_rules('email', 'Email', 'trim|required');
-
-        // if ($this->form_validation->run() == FALSE) {
-        //     $this->session->set_flashdata('failed', validation_errors());
-        //     redirect(base_url('#contactus'));
-        //     return;
-        // }
-
-        // $input        = $this->input;
-        // $email   = $this->security->xss_clean($input->post("email"));
-
-        // $result = $this->send_email($email);
-        // if ($result) {
-        //     $this->session->set_flashdata("success", "Message successfully sent!");
-        //     redirect(base_url('#contactus'));
-        //     return;
-        // } else {
-        //     $this->session->set_flashdata("failed", 'Message failed to send!');
-        //     redirect(base_url('#contactus'));
-        //     return;
-        // }
-
-        $this->form_validation->set_rules('ucode', 'Ucode', 'trim|required');
-        $this->form_validation->set_rules('email', 'Email', 'trim|required');
-        $this->form_validation->set_rules('message', 'Message', 'trim|required');
-
-        if ($this->form_validation->run() == FALSE) {
-            $this->session->set_flashdata('failed', validation_errors());
-            redirect(base_url("#contactus"));
-            return;
-        }
-
-        $input        = $this->input;
-        $ucode   = $this->security->xss_clean($input->post("ucode"));
-        $email   = $this->security->xss_clean($input->post("email"));
-        $message   = $this->security->xss_clean($input->post("message"));
-
-        $result = send_email($email, $message, $this->phpmailer_lib->load());
-        if ($result) {
-            $this->session->set_flashdata("success", "Message successfully sent!");
-            redirect(base_url("#contactus"));
-        } else {
-            $this->session->set_flashdata("failed", 'Message failed to send!');
-            redirect(base_url("#contactus"));
-        }
-    }
     
     public function send_message()
     {
@@ -252,6 +203,15 @@ class Link extends CI_Controller
         
         $input        = $this->input;
         $email   = $this->security->xss_clean($input->post("email"));
+        
+        $url = URLAPI . "/v1/auth/getmember_byemail?email=" . $email;
+        $result   = apitrackless($url);
+
+        if (@$result->code != 200) {
+            $this->session->set_flashdata('failed', $result->message);
+            redirect(base_url('#contactus'));
+            return;
+        }
 
         $data = array(
             "title"     => NAMETITLE . " - Send Message",
@@ -262,39 +222,54 @@ class Link extends CI_Controller
 
         $this->load->view('tamplate/wrapper', $data);
     }
-    
-    public function check_ucode()
-    {
-        $ucode = $_GET['ucode'];
-        $url = URLAPI . "/v1/auth/getmember_byucode?ucode=" . $ucode;
-        $result   = apitrackless($url);
 
-        $mdata = array();
-        if (@$result->code == 200) {
-            $mdata = array(
-                "type" => 'show',
-                "url" => $url,
-            );
-        } else {
-            $mdata = array(
-                "type" => 'hide',
-                "url" => $url
-            );
+    public function mailproses()
+    {
+        $this->form_validation->set_rules('email', 'Email', 'trim|required');
+        $this->form_validation->set_rules('message', 'Message', 'trim|required');
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('failed', validation_errors());
+            redirect(base_url("#contactus"));
+            return;
         }
 
-        echo json_encode($mdata);
+        $input        = $this->input;
+        $email   = $this->security->xss_clean($input->post("email"));
+        $message   = $this->security->xss_clean($input->post("message"));
+
+        $result = send_email($email, $message, $this->phpmailer_lib->load());
+        if ($result) {
+            $this->session->set_flashdata("success", "Message successfully sent!");
+            redirect(base_url("#contactus"));
+        } else {
+            $this->session->set_flashdata("failed", 'Message failed to send!');
+            redirect(base_url("#contactus"));
+        }
     }
 
     public function about()
     {
         $data = array(
-            "title"     => NAMETITLE . " - About Piggybank",
+            "title"     => NAMETITLE . " - About Moneyport",
             "content"   => "auth/landingpage/aboutus",
             "extra"     => "auth/landingpage/js/js_index",
         );
 
         $this->load->view('tamplate/wrapper', $data);
     }
+
+    public function crypto()
+    {
+        $data = array(
+            "title"     => NAMETITLE,
+            "content"   => "auth/landingpage/crypto",
+            "extra"     => "auth/landingpage/js/js_index",
+        );
+
+        $this->load->view('tamplate/wrapper', $data);
+    }
+
     public function soon()
     {
         $data = array(

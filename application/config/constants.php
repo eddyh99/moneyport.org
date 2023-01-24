@@ -102,8 +102,15 @@ live server:
     "/wallet/send"
 
 local server
-    "/piggybank.com/wallet/send"
+    "/moneyport.com/wallet/send"
 */
-define('LINKQRCODE', "/piggybank.com/wallet/send");
+define('LINKQRCODE', "/moneyport.com/wallet/send");
 
-define('NAMETITLE', "Piggybank");
+define('NAMETITLE', "Moneyport");
+
+define('BANK_ID', "5");
+
+/*email config*/
+define('HOST_EMAIL', "mail.tracklessbank.com");
+define('USERNAME_EMAIL', "no-reply@tracklessbank.com");
+define('PASS_EMAIL', 'DLgV4o?L1B]m');

@@ -31,12 +31,12 @@
                                     name="<?php echo $this->security->get_csrf_token_name(); ?>"
                                     value="<?php echo $this->security->get_csrf_hash(); ?>">
                                 <div class="mb-3">
-                                    <label class="ms-2 form-label">RECIPIENT’S UNIQE CODE</label>
+                                    <label class="ms-2 form-label">RECIPIENT’S UNIQUE CODE</label>
                                     <input type="text" class="form-control" name="ucode" id="ucode"
                                         value="<?= @$ucode ?>" <?php echo (empty($ucode) ? "" : "readonly") ?>>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="ms-2 form-label">CONFIRM RECIPIENT’S UNIQE CODE</label>
+                                    <label class="ms-2 form-label">CONFIRM RECIPIENT’S UNIQUE CODE</label>
                                     <input type="text" class="form-control" name="confirm_ucode" id="confirm_ucode"
                                         value="<?= $ucode ?>" <?php echo (empty($ucode) ? "" : "readonly") ?>>
                                 </div>
@@ -46,14 +46,14 @@
                                         )</label>
                                     <input type="text" class="form-control" name="amount" id="amount"
                                         placeholder="Amount (ex. 0.01)"
-                                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);"
+                                        oninput="this.value = this.value.replace(/[^0-9.,]/g, '').replace(/(\..*)\./g, '$1');input(this);"
                                         value="<?= $amount ?>" <?php echo (empty($amount) ? "" : "readonly") ?>>
                                 </div>
                                 <div class="mb-3">
                                     <label class="ms-2 form-label">CONFIRM AMOUNT</label>
                                     <input type="text" class="form-control" name="confirm_amount" id="confirm_amount"
                                         placeholder="Confirm Amount (ex. 0.01)"
-                                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);"
+                                        oninput="this.value = this.value.replace(/[^0-9.,]/g, '').replace(/(\..*)\./g, '$1');input(this);"
                                         value="<?= $amount ?>" <?php echo (empty($amount) ? "" : "readonly") ?>>
                                 </div>
                                 <div class="row">
@@ -86,8 +86,8 @@
                     <defs>
                         <linearGradient id="paint0_linear_30_4821" x1="20.5" y1="0" x2="20.5" y2="35"
                             gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#23832C" />
-                            <stop offset="1" stop-color="#1C6701" />
+                            <stop stop-color="#FF5C01" />
+                            <stop offset="1" stop-color="#FF5C01" />
                         </linearGradient>
                     </defs>
                 </svg>

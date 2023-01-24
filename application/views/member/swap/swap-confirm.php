@@ -21,19 +21,20 @@
                                 <input type="text" name="amount" id="amount" value="<?= $data["amount"] ?>" hidden>
                                 <div class="col-12 list-send-wallet d-flex flex-column mb-3">
                                     <span>Convert amount</span>
-                                    <span><?= number_format($data['amount'],2) ?></span>
+                                    <span><?= $_SESSION['symbol'] ?> <?= number_format($data['amount'],2) ?></span>
                                 </div>
                                 <div class="col-12 list-send-wallet d-flex flex-column mb-3">
                                     <span>transaction fee</span>
-                                    <span><?= number_format(0, 2) ?></span>
+                                    <span><?= $_SESSION['symbol'] ?> <?= number_format(0, 2) ?></span>
                                 </div>
                                 <div class="col-12 list-send-wallet d-flex flex-column mb-3">
                                     <span>You receive</span>
-                                    <span><?= $data["amountget"] ?></span>
+                                    <span><?= $data['symbol'] ?> <?= $data["amountget"] ?></span>
                                 </div>
                                 <div class="col-12 list-send-wallet d-flex flex-column mb-3">
                                     <span>New Balance</span>
-                                    <span><?= number_format(balance($_SESSION['user_id'], $_SESSION["currency"]) - $data["amount"], 2) ?></span>
+                                    <span><?= $_SESSION['symbol'] ?>
+                                        <?= number_format(balance($_SESSION['user_id'], $_SESSION["currency"]) - $data["amount"], 2) ?></span>
                                 </div>
                                 <div class="col-12 d-flex flex-row mt-5">
                                     <a href="<?= base_url() ?>swap"
@@ -63,8 +64,8 @@
                     <defs>
                         <linearGradient id="paint0_linear_30_4821" x1="20.5" y1="0" x2="20.5" y2="35"
                             gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#23832C" />
-                            <stop offset="1" stop-color="#1C6701" />
+                            <stop stop-color="#FF5C01" />
+                            <stop offset="1" stop-color="#FF5C01" />
                         </linearGradient>
                     </defs>
                 </svg>
