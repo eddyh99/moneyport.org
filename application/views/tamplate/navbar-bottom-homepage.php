@@ -17,7 +17,7 @@
 
 <div class="navbar-app fixed-bottom d-flex justify-content-center">
     <div class="col-12 col-lg-8 col-xl-6 box-navbar-freedy d-flex justify-content-end align-items-center top">
-        <a href="<?= base_url() ?>auth/logout" class="d-flex align-items-center border-0">
+        <a href="<?= base_url() ?>auth/logout" class="d-flex align-items-center">
             <span>Log out</span>
             <div class="icon-menus d-flex align-items-center home-svg">
                 <svg width="35" height="26" viewBox="0 0 35 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -31,18 +31,18 @@
                     <defs>
                         <linearGradient id="paint0_linear_319_7" x1="10.7999" y1="2.08743" x2="14.9766" y2="23.6873"
                             gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#FF5C01" />
-                            <stop offset="1" stop-color="#FF5C01" />
+                            <stop stop-color="#9E00FF" />
+                            <stop offset="1" stop-color="#9E00FF" />
                         </linearGradient>
                         <linearGradient id="paint1_linear_319_7" x1="26" y1="13.4414" x2="26" y2="12.4414"
                             gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#FF5C01" />
-                            <stop offset="1" stop-color="#FF5C01" />
+                            <stop stop-color="#9E00FF" />
+                            <stop offset="1" stop-color="#9E00FF" />
                         </linearGradient>
                         <linearGradient id="paint2_linear_319_7" x1="30" y1="19.8789" x2="30" y2="7.00036"
                             gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#FF5C01" />
-                            <stop offset="1" stop-color="#FF5C01" />
+                            <stop stop-color="#9E00FF" />
+                            <stop offset="1" stop-color="#9E00FF" />
                         </linearGradient>
                     </defs>
                 </svg>

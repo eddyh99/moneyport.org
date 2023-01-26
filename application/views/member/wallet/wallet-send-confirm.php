@@ -77,8 +77,8 @@
                     <defs>
                         <linearGradient id="paint0_linear_30_4821" x1="20.5" y1="0" x2="20.5" y2="35"
                             gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#FF5C01" />
-                            <stop offset="1" stop-color="#FF5C01" />
+                            <stop stop-color="#9E00FF" />
+                            <stop offset="1" stop-color="#9E00FF" />
                         </linearGradient>
                     </defs>
                 </svg>

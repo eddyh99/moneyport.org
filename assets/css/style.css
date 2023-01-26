@@ -2514,7 +2514,7 @@ section {
 }
 
 .tutorial-box {
-  border: 2px solid #9E00FF;
+  border: 2px solid #FF5C01;
   border-radius: 7px;
 }
 
@@ -3412,7 +3412,7 @@ section {
     font-weight: 700;
     font-size: 12px;
     line-height: 20px;
-    color: #FF5C01;
+    color: #9E00FF;
     text-align: center;
 
     border: 1px solid #9E00FF;
@@ -3433,12 +3433,12 @@ section {
   }
 
   .navbar-app>.box-navbar-freedy a .icon-menus.home-svg>svg {
-    stroke: #FF5C01;
+    stroke: #9E00FF;
     fill: #fff;
   }
 
   .navbar-app>.box-navbar-freedy a .icon-menus.home-svg>img {
-    height: 75px;
+    height: 50px;
   }
 
   .app-logo {
@@ -3446,7 +3446,7 @@ section {
   }
 
   .box-code-freedy {
-    border: none;
+    border: 1px solid #9E00FF;
     background: #FFEDDD;
     border-radius: 13px;
   }
@@ -3554,7 +3554,7 @@ section {
 
   .menus-list-app a {
     background: #ffffff;
-    border: 1px solid #9E00FF;
+    border: 1px solid #FF5C01;
     border-radius: 5px;
 
     font-weight: 500;
@@ -3613,7 +3613,7 @@ section {
   }
 
   .curencies-list-app .curencies-list {
-    border: 1px solid #9E00FF;
+    border: 1px solid #FF5C01;
     border-radius: 5px;
     color: #000000;
 
@@ -3623,7 +3623,7 @@ section {
   }
 
   .curencies-list-app .curencies-list:hover {
-    background: linear-gradient(180deg, #9E00FF 0%, #FF00D6 100%);
+    background: linear-gradient(89.72deg, #CF4B00 0%, #F88923 30.98%, #FF5C01 70.75%);
     border: 1px solid #c6c6c6;
     border-radius: 5px;
 
@@ -4375,8 +4375,8 @@ section {
   }
 
   .recive-bank a {
-    background: linear-gradient(180deg, #9E00FF 0%, #FF00D6 100%);
-    border: 1px solid #000000;
+    background: linear-gradient(89.72deg, #CF4B00 0%, #F88923 30.98%, #FF5C01 70.75%);
+    border: 1px solid #FF5C01;
     color: #000000;
     border-radius: 8px;
 
@@ -4386,8 +4386,8 @@ section {
   }
 
   .recive-bank a:hover {
-    background: linear-gradient(180deg, #FF00D6 0%, #9E00FF 100%);
-    border: 1px solid #000000;
+    background: linear-gradient(89.72deg, #FF5C01 0%, #F88923 30.98%, #CF4B00 70.75%);
+    border: 1px solid #FF5C01;
     color: #000000;
     border-radius: 8px;
 
@@ -4398,7 +4398,7 @@ section {
 
   .infobank-list-app {
     background: #ffffff;
-    border: 1px solid #9E00FF;
+    border: 1px solid #FF5C01;
     border-radius: 5px;
   }
 
@@ -4985,7 +4985,7 @@ section {
     font-weight: 700;
     font-size: 12px;
     line-height: 20px;
-    color: #FF5C01;
+    color: #9E00FF;
     text-align: center;
 
     border: 1px solid #9E00FF;
@@ -5006,7 +5006,7 @@ section {
   }
 
   .navbar-app>.box-navbar-freedy a .icon-menus.home-svg>svg {
-    stroke: #FF5C01;
+    stroke: #9E00FF;
     fill: #fff;
   }
 }
@@ -5714,7 +5714,7 @@ section {
     font-weight: 700;
     font-size: 12px;
     line-height: 20px;
-    color: #FF5C01;
+    color: #9E00FF;
     text-align: center;
 
     border: 1px solid #9E00FF;
@@ -5735,12 +5735,12 @@ section {
   }
 
   .navbar-app>.box-navbar-freedy a .icon-menus.home-svg>svg {
-    stroke: #FF5C01;
+    stroke: #9E00FF;
     fill: #fff;
   }
 
   .navbar-app>.box-navbar-freedy a .icon-menus.home-svg>img {
-    height: 75px;
+    height: 50px;
   }
 
   .app-logo {
@@ -5748,7 +5748,7 @@ section {
   }
 
   .box-code-freedy {
-    border: none;
+    border: 1px solid #9E00FF;
     background: #FFEDDD;
     border-radius: 13px;
   }
@@ -5856,7 +5856,7 @@ section {
 
   .menus-list-app a {
     background: #ffffff;
-    border: 1px solid #9E00FF;
+    border: 1px solid #FF5C01;
     border-radius: 5px;
 
     font-weight: 500;
@@ -5915,7 +5915,7 @@ section {
   }
 
   .curencies-list-app .curencies-list {
-    border: 1px solid #9E00FF;
+    border: 1px solid #FF5C01;
     border-radius: 5px;
     color: #000000;
 
@@ -5925,7 +5925,7 @@ section {
   }
 
   .curencies-list-app .curencies-list:hover {
-    background: linear-gradient(180deg, #9E00FF 0%, #FF00D6 100%);
+    background: linear-gradient(89.72deg, #CF4B00 0%, #F88923 30.98%, #FF5C01 70.75%);
     border: 1px solid #c6c6c6;
     border-radius: 5px;
 
@@ -6677,8 +6677,8 @@ section {
   }
 
   .recive-bank a {
-    background: linear-gradient(180deg, #9E00FF 0%, #FF00D6 100%);
-    border: 1px solid #000000;
+    background: linear-gradient(89.72deg, #CF4B00 0%, #F88923 30.98%, #FF5C01 70.75%);
+    border: 1px solid #FF5C01;
     color: #000000;
     border-radius: 8px;
 
@@ -6688,8 +6688,8 @@ section {
   }
 
   .recive-bank a:hover {
-    background: linear-gradient(180deg, #FF00D6 0%, #9E00FF 100%);
-    border: 1px solid #000000;
+    background: linear-gradient(89.72deg, #FF5C01 0%, #F88923 30.98%, #CF4B00 70.75%);
+    border: 1px solid #FF5C01;
     color: #000000;
     border-radius: 8px;
 
@@ -6700,7 +6700,7 @@ section {
 
   .infobank-list-app {
     background: #ffffff;
-    border: 1px solid #9E00FF;
+    border: 1px solid #FF5C01;
     border-radius: 5px;
   }
 
@@ -7942,7 +7942,7 @@ section {
     font-weight: 700;
     font-size: 12px;
     line-height: 20px;
-    color: #FF5C01;
+    color: #9E00FF;
     text-align: center;
 
     border: 1px solid #9E00FF;
@@ -7963,7 +7963,7 @@ section {
   }
 
   .navbar-app>.box-navbar-freedy a .icon-menus.home-svg>svg {
-    stroke: #FF5C01;
+    stroke: #9E00FF;
     fill: #fff;
   }
 
@@ -7976,7 +7976,7 @@ section {
   }
 
   .box-code-freedy {
-    border: none;
+    border: 1px solid #9E00FF;
     background: #FFEDDD;
     border-radius: 13px;
   }
@@ -8084,7 +8084,7 @@ section {
 
   .menus-list-app a {
     background: #ffffff;
-    border: 1px solid #9E00FF;
+    border: 1px solid #FF5C01;
     border-radius: 5px;
 
     font-weight: 500;
@@ -8143,7 +8143,7 @@ section {
   }
 
   .curencies-list-app .curencies-list {
-    border: 1px solid #9E00FF;
+    border: 1px solid #FF5C01;
     border-radius: 5px;
     color: #000000;
 
@@ -8153,7 +8153,7 @@ section {
   }
 
   .curencies-list-app .curencies-list:hover {
-    background: linear-gradient(180deg, #9E00FF 0%, #FF00D6 100%);
+    background: linear-gradient(89.72deg, #CF4B00 0%, #F88923 30.98%, #FF5C01 70.75%);
     border: 1px solid #c6c6c6;
     border-radius: 5px;
 
@@ -8905,8 +8905,8 @@ section {
   }
 
   .recive-bank a {
-    background: linear-gradient(180deg, #9E00FF 0%, #FF00D6 100%);
-    border: 1px solid #000000;
+    background: linear-gradient(89.72deg, #CF4B00 0%, #F88923 30.98%, #FF5C01 70.75%);
+    border: 1px solid #FF5C01;
     color: #000000;
     border-radius: 8px;
 
@@ -8916,8 +8916,8 @@ section {
   }
 
   .recive-bank a:hover {
-    background: linear-gradient(180deg, #FF00D6 0%, #9E00FF 100%);
-    border: 1px solid #000000;
+    background: linear-gradient(89.72deg, #FF5C01 0%, #F88923 30.98%, #CF4B00 70.75%);
+    border: 1px solid #FF5C01;
     color: #000000;
     border-radius: 8px;
 
@@ -8928,7 +8928,7 @@ section {
 
   .infobank-list-app {
     background: #ffffff;
-    border: 1px solid #9E00FF;
+    border: 1px solid #FF5C01;
     border-radius: 5px;
   }
 
@@ -10494,7 +10494,7 @@ section {
     font-weight: 700;
     font-size: 12px;
     line-height: 20px;
-    color: #FF5C01;
+    color: #9E00FF;
     text-align: center;
 
     border: 1px solid #9E00FF;
@@ -10515,7 +10515,7 @@ section {
   }
 
   .navbar-app>.box-navbar-freedy a .icon-menus.home-svg>svg {
-    stroke: #FF5C01;
+    stroke: #9E00FF;
     fill: #fff;
   }
 
@@ -10528,7 +10528,7 @@ section {
   }
 
   .box-code-freedy {
-    border: none;
+    border: 1px solid #9E00FF;
     background: #FFEDDD;
     border-radius: 13px;
   }
@@ -10636,7 +10636,7 @@ section {
 
   .menus-list-app a {
     background: #ffffff;
-    border: 1px solid #9E00FF;
+    border: 1px solid #FF5C01;
     border-radius: 5px;
 
     font-weight: 500;
@@ -10695,7 +10695,7 @@ section {
   }
 
   .curencies-list-app .curencies-list {
-    border: 1px solid #9E00FF;
+    border: 1px solid #FF5C01;
     border-radius: 5px;
     color: #000000;
 
@@ -10705,7 +10705,7 @@ section {
   }
 
   .curencies-list-app .curencies-list:hover {
-    background: linear-gradient(180deg, #9E00FF 0%, #FF00D6 100%);
+    background: linear-gradient(89.72deg, #CF4B00 0%, #F88923 30.98%, #FF5C01 70.75%);
     border: 1px solid #c6c6c6;
     border-radius: 5px;
 
@@ -11457,8 +11457,8 @@ section {
   }
 
   .recive-bank a {
-    background: linear-gradient(180deg, #9E00FF 0%, #FF00D6 100%);
-    border: 1px solid #000000;
+    background: linear-gradient(89.72deg, #CF4B00 0%, #F88923 30.98%, #FF5C01 70.75%);
+    border: 1px solid #FF5C01;
     color: #000000;
     border-radius: 8px;
 
@@ -11468,8 +11468,8 @@ section {
   }
 
   .recive-bank a:hover {
-    background: linear-gradient(180deg, #FF00D6 0%, #9E00FF 100%);
-    border: 1px solid #000000;
+    background: linear-gradient(89.72deg, #FF5C01 0%, #F88923 30.98%, #CF4B00 70.75%);
+    border: 1px solid #FF5C01;
     color: #000000;
     border-radius: 8px;
 
@@ -11480,7 +11480,7 @@ section {
 
   .infobank-list-app {
     background: #ffffff;
-    border: 1px solid #9E00FF;
+    border: 1px solid #FF5C01;
     border-radius: 5px;
   }
 
@@ -12053,10 +12053,8 @@ section {
 .input-piggy-style input:focus,
 .input-piggy-style input:hover {
   background: #FFFFFF !important;
-  box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.5),
-    inset 2px 2px 4px rgba(170, 170, 204, 0.25),
-    inset 5px 5px 10px rgba(170, 170, 204, 0.5), inset -5px -5px 10px #ffffff !important;
-  border-radius: 40px !important;
+  border: 1.5px solid #FF5C01;
+  border-radius: 10px !important;
   color: #000000 !important;
 }
 
@@ -12066,11 +12064,7 @@ section {
 
 .input-piggy-style label {
   font-weight: 700;
-  background: linear-gradient(180deg, #9E00FF 0%, #FF00D6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
+  color: #000000;
 }
 
 .iconside-serach a {
@@ -12130,11 +12124,11 @@ section {
 }
 
 .navbar-app>.box-navbar-freedy.top {
-  border-top: 1px solid #9E00FF;
+  border-top: 1px solid #FF0F00;
 }
 
 .navbar-app>.box-navbar-freedy.bottom {
-  border-bottom: 1px solid #9E00FF;
+  border-bottom: 1px solid #FF0F00;
 }
 
 .btn-head-crypto {
@@ -12150,7 +12144,7 @@ section {
   display: inline-block;
   background: transparent;
   border-radius: 8px;
-  color: #FF5C01;
+  color: #9E00FF;
 }
 
 .btn-head-crypto .crypto.active {

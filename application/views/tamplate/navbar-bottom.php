@@ -4,7 +4,7 @@
         <a href="<?= base_url() ?>homepage/wallet" class="d-flex align-items-center border-0 me-auto">
             <div class="icon-menus d-flex align-items-center home-svg">
                 <svg width="194" height="53" viewBox="0 0 194 53" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="0.605957" y="0.498291" width="193.394" height="51.8862" rx="5" fill="#FF5C01" />
+                    <rect x="0.605957" y="0.498291" width="193.394" height="51.8862" rx="5" fill="#9E00FF" />
                     <path d="M41.8503 26.4404H17.9336" stroke="white" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
                     <path d="M29.8919 36.6506L17.9336 26.4414L29.8919 16.2322" stroke="white" stroke-width="2"
@@ -29,18 +29,18 @@
                     <defs>
                         <linearGradient id="paint0_linear_319_7" x1="10.7999" y1="2.08743" x2="14.9766" y2="23.6873"
                             gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#FF5C01" />
-                            <stop offset="1" stop-color="#FF5C01" />
+                            <stop stop-color="#9E00FF" />
+                            <stop offset="1" stop-color="#9E00FF" />
                         </linearGradient>
                         <linearGradient id="paint1_linear_319_7" x1="26" y1="13.4414" x2="26" y2="12.4414"
                             gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#FF5C01" />
-                            <stop offset="1" stop-color="#FF5C01" />
+                            <stop stop-color="#9E00FF" />
+                            <stop offset="1" stop-color="#9E00FF" />
                         </linearGradient>
                         <linearGradient id="paint2_linear_319_7" x1="30" y1="19.8789" x2="30" y2="7.00036"
                             gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#FF5C01" />
-                            <stop offset="1" stop-color="#FF5C01" />
+                            <stop stop-color="#9E00FF" />
+                            <stop offset="1" stop-color="#9E00FF" />
                         </linearGradient>
                     </defs>
                 </svg>

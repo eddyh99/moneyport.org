@@ -1009,7 +1009,7 @@
                     <div class="col-10 box-contactus px-3 py-3 mx-auto">
                         <div class="d-flex flex-row justify-content-center align-items-center">
                             <div class="form-contactus py-2 w-100">
-                                <form id="form_submit" method="POST" action="<?= base_url(); ?>link/mailproses"
+                                <form id="form_submit" method="POST" action="<?= base_url(); ?>link/send_message"
                                     class="w-100 d-flex flex-row justify-content-center align-items-center"
                                     onsubmit="return validate()">
                                     <input type="hidden" id="token"
