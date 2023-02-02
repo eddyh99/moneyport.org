@@ -1,7 +1,7 @@
 <?php
 function apitrackless($url, $postData = NULL)
 {
-    $token = "VwRKnXjI7yQCn3mNBw0Kur3VhVtCZwJA90OE72YElFEpStHbor";
+    $token = "XWWUTAU77Vu9bR79kv3yxWKHhm3dmm6G3d84Duf5QGpdcbmBgL";
 
     $ch     = curl_init($url);
     $headers    = array(
@@ -35,6 +35,10 @@ function balanceadmin($currency)
     return $balance;
 }
 
+function rounddown($balance){
+    return floor($balance*100)/100;
+}
+
 function max_sendtowallet($balance,$currency){
     $mfee = apitrackless(URLAPI . "/v1/admin/fee/getFee?currency=" . $currency);
     $mcost = apitrackless(URLAPI . "/v1/admin/cost/getCost?currency=" . $currency);
@@ -60,8 +64,9 @@ function max_sendtowallet($balance,$currency){
 }
 
 
-function send_email($email,$message, $phpmailer)
+function send_email($email, $message, $phpmailer)
 {
+    // $mail = $this->phpmailer_lib->load();
     $mail = $phpmailer;
 
     $mail->isSMTP();
@@ -73,19 +78,19 @@ function send_email($email,$message, $phpmailer)
     $mail->SMTPSecure   = false;
     $mail->Port         = 587;
 
-    $mail->setFrom(USERNAME_EMAIL, 'PiggyBank Bank Notification');
+    $mail->setFrom(USERNAME_EMAIL, 'MoneyPort Bank Notification');
     $mail->addReplyTo($email);
     $mail->isHTML(true);
 
     $mail->ClearAllRecipients();
 
-    $mail->Subject = 'Ask about PiggyBank';
-    $mail->AddAddress('roberto-info@tracklessmail.com');
-    $mail->AddAddress('m3rc4n73@gmail.com');
-    
+    $mail->Subject = 'Ask about MoneyPort';
+    $mail->AddAddress('');
+
     $mail->msgHTML($message);
     $mail->send();
 }
+
 
 function sendmail($email, $subject, $message, $phpmailer)
 {
@@ -100,7 +105,7 @@ function sendmail($email, $subject, $message, $phpmailer)
     $mail->SMTPSecure	= false;
     $mail->Port			= 587;
 
-    $mail->setFrom(USERNAME_EMAIL, 'PiggyBank Service');
+    $mail->setFrom(USERNAME_EMAIL, 'MoneyPort');
     $mail->isHTML(true);
 
     $mail->ClearAllRecipients();
@@ -126,7 +131,7 @@ function send_email_admin($email, $subject, $message, $phpmailer)
     $mail->SMTPSecure   = false;
     $mail->Port         = 587;
 
-    $mail->setFrom(USERNAME_EMAIL, 'PiggyBank Service');
+    $mail->setFrom(USERNAME_EMAIL, 'MoneyPort Service');
     $mail->isHTML(true);
 
     $mail->ClearAllRecipients();

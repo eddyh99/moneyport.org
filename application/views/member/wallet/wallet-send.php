@@ -44,16 +44,14 @@
                                     <label class="ms-2 form-label">AMOUNT ( max :
                                         <?= max_sendtowallet(balance($_SESSION['user_id'], $_SESSION["currency"]),$_SESSION["currency"]); ?>
                                         )</label>
-                                    <input type="text" class="form-control" name="amount" id="amount"
-                                        placeholder="Amount (ex. 0.01)"
-                                        oninput="this.value = this.value.replace(/[^0-9.,]/g, '').replace(/(\..*)\./g, '$1');input(this);"
-                                        value="<?= $amount ?>" <?php echo (empty($amount) ? "" : "readonly") ?>>
+                                    <input type="text" class="form-control money-input" name="amount" id="amount"
+                                        placeholder="Amount (ex. 0.01)" value="<?= $amount ?>"
+                                        <?php echo (empty($amount) ? "" : "readonly") ?>>
                                 </div>
                                 <div class="mb-3">
                                     <label class="ms-2 form-label">CONFIRM AMOUNT</label>
-                                    <input type="text" class="form-control" name="confirm_amount" id="confirm_amount"
-                                        placeholder="Confirm Amount (ex. 0.01)"
-                                        oninput="this.value = this.value.replace(/[^0-9.,]/g, '').replace(/(\..*)\./g, '$1');input(this);"
+                                    <input type="text" class="form-control money-input" name="confirm_amount"
+                                        id="confirm_amount" placeholder="Confirm Amount (ex. 0.01)"
                                         value="<?= $amount ?>" <?php echo (empty($amount) ? "" : "readonly") ?>>
                                 </div>
                                 <div class="row">

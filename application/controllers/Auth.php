@@ -117,8 +117,8 @@ class Auth extends CI_Controller
 		if ($result->code == 200) {
 			//kirim email registrasi
 
-			$subject = "Moneyport Registration";
-			$message = "Thank you for registering on Moneyport<br><br>
+			$subject = "MoneyPort Registration";
+			$message = "Thank you for registering on MoneyPort<br><br>
 			username : " . $email . "<br>
 			password : (your chosen password)<br><br>
 			click this <a href='" . base_url("auth/activate?token=") . $result->message->token . "'>link</a> to activate your account<br><br>
@@ -228,14 +228,14 @@ class Auth extends CI_Controller
 			$this->session->set_userdata($member_session);
 
 			$src = base_url() . 'qr/user/' . $result->message->ucode . '.png';
-			$srcr = base_url() . 'qr/receive/' . $result->message->ucode . '.png';
+			// $srcr = base_url() . 'qr/receive/' . $result->message->ucode . '.png';
 			if (@getimagesize($src) == FALSE) {
 				$this->qrcodeuser($result->message->ucode);
 			}
-			if (@getimagesize($srcr) == FALSE) {
-				$urlqr = base_url() . 'wallet/send?' . base64_encode('ucode=' . $_SESSION["ucode"]);
-				$this->qrcodereceive($urlqr, $result->message->ucode);
-			}
+			// if (@getimagesize($srcr) == FALSE) {
+			// 	$urlqr = base_url() . 'wallet/send?' . base64_encode('ucode=' . $_SESSION["ucode"]);
+			// 	$this->qrcodereceive($urlqr, $result->message->ucode);
+			// }
 			if (empty($this->session->userdata('wallet_req'))) {
 				redirect("homepage");
 			} else {
@@ -332,7 +332,7 @@ class Auth extends CI_Controller
 		$result = apitrackless($url);
 		if (!empty(@$result->code == 200)) {
 
-			$subject = "Reset Password for Moneyport Account";
+			$subject = "Reset Password for MoneyPort Account";
 			// kirim email forgot password dengan token validasi, lebih dari 1jam expired tokennya
 			$message = "Hi,<br><br>
 
@@ -439,5 +439,30 @@ class Auth extends CI_Controller
 			$params['savename'] = FCPATH . $config['imagedir'] . $image_name; //simpan image QR CODE ke folder assets/images/
 			return  $this->ciqrcode->generate($params); // fungsi untuk generate QR CODE
 		}
+	}
+	
+	public function requestbank($curr = '', $ucode = '', $amount=NULL)
+	{
+		if ((empty($curr)) || (empty($ucode))) {
+			redirect(base_url());
+		}
+
+		$banks = URLAPI . "/v1/member/wallet/getAllbank";
+		$symbol = URLAPI . "/v1/trackless/currency/getsymbol?currency=".base64_decode($curr);
+
+		if ($amount) {
+			$data['urlamount'] = "&amount=".base64_decode(@$amount);
+		}
+		$data['banks'] = apitrackless($banks)->message;
+		$data['symbol'] = apitrackless($symbol)->message;
+		$data['curr'] = base64_decode($curr);
+		$data['ucode'] = base64_decode($ucode);
+		$data['amount'] = base64_decode(@$amount);
+
+		$data['title'] = NAMETITLE . " - Request";
+
+		$this->load->view('tamplate/header', $data);
+		$this->load->view('auth/request-bank', $data);
+		$this->load->view('tamplate/footer');
 	}
 }

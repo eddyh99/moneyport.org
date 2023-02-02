@@ -43,14 +43,14 @@ class Link extends CI_Controller
         $this->load->view('tamplate/wrapper', $data);
     }
 
-    public function spec()
+    public function service($url)
     {
-        $spec = base64_decode($_GET['spec']);
+        $service = base64_decode($url);
 
         $data = array(
             "title"     => NAMETITLE,
-            "content"   => "auth/landingpage/specifications",
-            "spec"   => $spec,
+            "content"   => "auth/landingpage/service",
+            "service"   => $service,
             // "extra"     => "auth/landingpage/js/js_index",
         );
 
@@ -251,7 +251,7 @@ class Link extends CI_Controller
     public function about()
     {
         $data = array(
-            "title"     => NAMETITLE . " - About Moneyport",
+            "title"     => NAMETITLE . " - About",
             "content"   => "auth/landingpage/aboutus",
             "extra"     => "auth/landingpage/js/js_index",
         );

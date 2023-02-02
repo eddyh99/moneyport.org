@@ -30,8 +30,10 @@
                         <input type="hidden" name="url" value="wdinter">
 
                         <div class="mb-3">
-                            <input class="form-control" type="text" name="amount" placeholder="Amount"
-                                oninput="this.value = this.value.replace(/[^0-9.,]/g, '').replace(/(\..*)\./g, '$1');input(this);">
+                            <small class="text-danger">MAX
+                                : <?= $_SESSION["symbol"] ?>
+                                <?= number_format(balanceadmin($_SESSION["currency"]) - $bankcost,2) ?></small>
+                            <input class="form-control money-input" type="text" name="amount" placeholder="Amount">
                         </div>
                         <div class="mb-3">
                             <input class="form-control" type="text" name="accountHolderName"
@@ -39,7 +41,8 @@
                         </div>
 
                         <?php
-                        $data['type'] = "wdinter";
+                        $data['type'] = "inter";
+                        $data['countries_list'] = $countries_list;
                         $this->load->view('admin/mwallet/currency/' . @$_SESSION['currency'], $data);
                         ?>
 

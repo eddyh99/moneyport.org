@@ -72,7 +72,7 @@
         </div>
     </section>
     <!-- ======= Section ======= -->
-    <section id="reward" class="about bg-picture-2">
+    <section id="" class="about bg-picture-2">
         <div class="container p-r">
             <div class="row gx-0">
                 <div class="col-6 d-none d-lg-grid m-auto">
@@ -85,8 +85,7 @@
                             MoneyPort is fast and easy, you just need to register using an email and password and your
                             Non-Custodial wallet will be immediately active and ready to use without any
                             restriction.<br>
-                            (<a href="<?= base_url(); ?>link/service?service=<?= base64_encode('1') ?>"
-                                class="text-blue-freedy">No KYC & No
+                            (<a href="#" class="text-blue-freedy">No KYC & No
                                 AML</a>)
                         </p>
                     </div>
@@ -114,7 +113,7 @@
         </div>
     </section><!-- Section -->
 
-    <section id="reward" class="about">
+    <section id="services" class="about">
         <div class="container p-r">
             <div class="row gx-0">
                 <div class="col-12 mb-5">
@@ -138,7 +137,8 @@
                                                     class="content-carousel d-flex flex-column justify-content-center align-items-start text-start px-3">
                                                     <span class="my-auto">Funds are really yours,
                                                         Non-custodial wallet provided</span>
-                                                    <a href="" class="my-auto">
+                                                    <a href="<?= base_url() ?>link/service/<?= base64_encode('1') ?>"
+                                                        class="my-auto">
                                                         <b>Read more</b>
                                                     </a>
                                                 </div>
@@ -153,7 +153,8 @@
                                                     class="content-carousel d-flex flex-column justify-content-center align-items-start text-start px-3">
                                                     <span class="my-auto">Fully protection of your privacy,
                                                         No KYC & No AML</span>
-                                                    <a href="" class="my-auto">
+                                                    <a href="<?= base_url() ?>link/service/<?= base64_encode('2') ?>"
+                                                        class="my-auto">
                                                         <b>Read more</b>
                                                     </a>
                                                 </div>
@@ -167,7 +168,8 @@
                                                 <div
                                                     class="content-carousel d-flex flex-column justify-content-center align-items-start text-start px-3">
                                                     <span class="my-auto">Receive funds in 10 FIAT currencies</span>
-                                                    <a href="" class="my-auto">
+                                                    <a href="<?= base_url() ?>link/service/<?= base64_encode('3') ?>"
+                                                        class="my-auto">
                                                         <b>Read more</b>
                                                     </a>
                                                 </div>
@@ -183,7 +185,8 @@
                                                     <span class="my-auto">Swap, custody & send
                                                         worldwide in over 50 FIAT
                                                         currencies </span>
-                                                    <a href="" class="my-auto">
+                                                    <a href="<?= base_url() ?>link/service/<?= base64_encode('4') ?>"
+                                                        class="my-auto">
                                                         <b>Read more</b>
                                                     </a>
                                                 </div>
@@ -202,7 +205,8 @@
                                                     class="content-carousel d-flex flex-column justify-content-center align-items-start text-start px-3">
                                                     <span class="my-auto">Zero exchange fees &
                                                         favorable rates for FIAT to FIAT</span>
-                                                    <a href="" class="my-auto">
+                                                    <a href="<?= base_url() ?>link/service/<?= base64_encode('5') ?>"
+                                                        class="my-auto">
                                                         <b>Read more</b>
                                                     </a>
                                                 </div>
@@ -218,7 +222,8 @@
                                                     <span class="my-auto">Buy and sell crypto from the balance of your
                                                         FIAT wallet
                                                     </span>
-                                                    <a href="" class="my-auto">
+                                                    <a href="<?= base_url() ?>link/service/<?= base64_encode('6') ?>"
+                                                        class="my-auto">
                                                         <b>Read more</b>
                                                     </a>
                                                 </div>
@@ -233,7 +238,8 @@
                                                     class="content-carousel d-flex flex-column justify-content-center align-items-start text-start px-3">
                                                     <span class="my-auto">Fees for FIAT and crypto
                                                         No hidden costs</span>
-                                                    <a href="" class="my-auto">
+                                                    <a href="<?= base_url() ?>link/service/<?= base64_encode('7') ?>"
+                                                        class="my-auto">
                                                         <b>Read more</b>
                                                     </a>
                                                 </div>
@@ -248,7 +254,8 @@
                                                     class="content-carousel d-flex flex-column justify-content-center align-items-start text-start px-3">
                                                     <span class="my-auto">API/Plugin for the integration into your
                                                         business </span>
-                                                    <a href="" class="my-auto">
+                                                    <a href="<?= base_url() ?>link/service/<?= base64_encode('8') ?>"
+                                                        class="my-auto">
                                                         <b>Read more</b>
                                                     </a>
                                                 </div>
@@ -290,7 +297,8 @@
                                                     class="content-carousel d-flex flex-column justify-content-center align-items-start text-start px-3">
                                                     <span class="my-auto">Funds are really yours,
                                                         Non-custodial wallet provided</span>
-                                                    <a href="" class="my-auto">
+                                                    <a href="<?= base_url() ?>link/service/<?= base64_encode('1') ?>"
+                                                        class="my-auto">
                                                         <b>Read more</b>
                                                     </a>
                                                 </div>
@@ -305,7 +313,8 @@
                                                     class="content-carousel d-flex flex-column justify-content-center align-items-start text-start px-3">
                                                     <span class="my-auto">Fully protection of your privacy,
                                                         No KYC & No AML</span>
-                                                    <a href="" class="my-auto">
+                                                    <a href="<?= base_url() ?>link/service/<?= base64_encode('2') ?>"
+                                                        class="my-auto">
                                                         <b>Read more</b>
                                                     </a>
                                                 </div>
@@ -324,7 +333,8 @@
                                                 <div
                                                     class="content-carousel d-flex flex-column justify-content-center align-items-start text-start px-3">
                                                     <span class="my-auto">Receive funds in 10 FIAT currencies</span>
-                                                    <a href="" class="my-auto">
+                                                    <a href="<?= base_url() ?>link/service/<?= base64_encode('3') ?>"
+                                                        class="my-auto">
                                                         <b>Read more</b>
                                                     </a>
                                                 </div>
@@ -340,7 +350,8 @@
                                                     <span class="my-auto">Swap, custody & send
                                                         worldwide in over 50 FIAT
                                                         currencies </span>
-                                                    <a href="" class="my-auto">
+                                                    <a href="<?= base_url() ?>link/service/<?= base64_encode('4') ?>"
+                                                        class="my-auto">
                                                         <b>Read more</b>
                                                     </a>
                                                 </div>
@@ -359,7 +370,8 @@
                                                     class="content-carousel d-flex flex-column justify-content-center align-items-start text-start px-3">
                                                     <span class="my-auto">Zero exchange fees &
                                                         favorable rates for FIAT to FIAT</span>
-                                                    <a href="" class="my-auto">
+                                                    <a href="<?= base_url() ?>link/service/<?= base64_encode('5') ?>"
+                                                        class="my-auto">
                                                         <b>Read more</b>
                                                     </a>
                                                 </div>
@@ -375,7 +387,8 @@
                                                     <span class="my-auto">Buy and sell crypto from the balance of your
                                                         FIAT wallet
                                                     </span>
-                                                    <a href="" class="my-auto">
+                                                    <a href="<?= base_url() ?>link/service/<?= base64_encode('6') ?>"
+                                                        class="my-auto">
                                                         <b>Read more</b>
                                                     </a>
                                                 </div>
@@ -394,7 +407,8 @@
                                                     class="content-carousel d-flex flex-column justify-content-center align-items-start text-start px-3">
                                                     <span class="my-auto">Fees for FIAT and crypto
                                                         No hidden costs</span>
-                                                    <a href="" class="my-auto">
+                                                    <a href="<?= base_url() ?>link/service/<?= base64_encode('7') ?>"
+                                                        class="my-auto">
                                                         <b>Read more</b>
                                                     </a>
                                                 </div>
@@ -409,7 +423,8 @@
                                                     class="content-carousel d-flex flex-column justify-content-center align-items-start text-start px-3">
                                                     <span class="my-auto">API/Plugin for the integration into your
                                                         business </span>
-                                                    <a href="" class="my-auto">
+                                                    <a href="<?= base_url() ?>link/service/<?= base64_encode('8') ?>"
+                                                        class="my-auto">
                                                         <b>Read more</b>
                                                     </a>
                                                 </div>
@@ -508,7 +523,7 @@
         </div>
     </section><!-- Section -->
 
-    <section id="reward" class="about">
+    <section id="guide" class="about">
         <div class="container p-r border-guide">
             <div class="row gx-0">
                 <div class="col-12">

@@ -25,15 +25,13 @@
                                     value="<?php echo $this->security->get_csrf_hash(); ?>">
                                 <div class="mb-3">
                                     <label class="ms-2 form-label">AMOUNT</label>
-                                    <input type="text" class="form-control" name="amount" id="amount"
-                                        placeholder="Amount"
-                                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
+                                    <input type="text" class="form-control money-input" name="amount" id="amount"
+                                        placeholder="Amount">
                                 </div>
                                 <div class="mb-3">
                                     <label class="ms-2 form-label">CONFIRM AMOUNT</label>
-                                    <input type="text" class="form-control" name="confirm_amount" id="confirm_amount"
-                                        placeholder="Confirm Amount"
-                                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
+                                    <input type="text" class="form-control money-input" name="confirm_amount"
+                                        id="confirm_amount" placeholder="Confirm Amount">
                                 </div>
                                 <div class="row">
                                     <div class="d-flex flex-row mt-4">

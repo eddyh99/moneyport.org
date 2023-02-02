@@ -31,11 +31,9 @@ class Swap extends CI_Controller
 
     public function swapcalculate()
     {
-        $amount        = $this->security->xss_clean($this->input->post("amount"));
-        
-        $a = $this->input->post("amount");
-        $b = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $a);
-        $_POST["amount"]=$b;
+        $amount = $this->input->post("amount");
+        $new_amount = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $amount);
+        $_POST["amount"]=$new_amount;
         
         $this->form_validation->set_rules('toswap', 'Currency Target', 'trim|required|max_length[3]|min_length[3]');
         $this->form_validation->set_rules('amount', 'Amount', 'trim|required|greater_than[0]');
@@ -90,16 +88,19 @@ class Swap extends CI_Controller
     }
     public function confirm()
     {
-        $amount        = $this->security->xss_clean($this->input->post("amount"));
         
-        $a = $this->input->post("amount");
-        $b = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $a);
-        $_POST["amount"]=$b;
+        $amount = $this->input->post("amount");
+        $new_amount = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $amount);
+        $_POST["amount"]=$new_amount;
+
+        $amountget = $this->input->post("amountget");
+        $new_amountget = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $amountget);
+        $_POST["amountget"]=$new_amountget;
         
         $this->form_validation->set_rules('toswap', 'Currency Target', 'trim|required|max_length[3]|min_length[3]');
         $this->form_validation->set_rules('amount', 'Amount', 'trim|required|greater_than[0]');
         $this->form_validation->set_rules('quoteid', 'quoteid', 'trim|required');
-        $this->form_validation->set_rules('amountget', 'Amount Get', 'trim|required');
+        $this->form_validation->set_rules('amountget', 'Amount Get', 'trim|required|greater_than[0]');
 
         if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata("failed", validation_errors());
@@ -107,7 +108,25 @@ class Swap extends CI_Controller
         }
 
         $input    = $this->input;
+        $amount        = $this->security->xss_clean($this->input->post("amount"));
         $target = $this->security->xss_clean($input->post("toswap"));
+        
+        $mdata  = array(
+            "source"    => $_SESSION["currency"],
+            "target"    => $target,
+            "amount"    => $amount,
+            "userid"    => $_SESSION["user_id"]
+        );
+
+        $result = apitrackless(URLAPI . "/v1/member/swap/getSummary", json_encode($mdata));
+        
+        if (@$result->code != 200) {
+            header("HTTP/1.1 500 Internal Server Error");
+            
+            $this->session->set_flashdata("failed", $result->message);
+            redirect('swap');
+        }
+        
         $data = array(
             "target"    => $target,
             "amount"    => $this->security->xss_clean($input->post("amount")),

@@ -54,10 +54,24 @@ class Bank extends CI_Controller
             $url = URLAPI . "/v1/member/wallet/getBankCode?country=" . $currencyCode[$_SESSION['currency']];
             $data["codecur"]   = apitrackless($url)->message->values;
         }
+        
+        $bankcost = apitrackless(URLAPI . "/v1/admin/cost/getCost?currency=" . $_SESSION['currency']);
+        $bankfee = apitrackless(URLAPI . "/v1/admin/fee/getFee?currency=" . $_SESSION['currency']);
+
+        $fee = (balance($_SESSION['user_id'], $_SESSION["currency"]) * $bankcost->message->walletbank_circuit_pct) + (balance($_SESSION['user_id'], $_SESSION["currency"]) * $bankfee->message->walletbank_circuit_pct) + $bankcost->message->walletbank_circuit_fxd + $bankfee->message->walletbank_circuit_fxd;
+
+        if ((balance($_SESSION['user_id'], $_SESSION["currency"])*100) <= 0) {
+            $fee = 0;
+        }
+        
+        if ((balance($_SESSION['user_id'], $_SESSION["currency"])*100) < ($fee*100)) {
+            $fee = balance($_SESSION['user_id'], $_SESSION["currency"]);
+        }
 
         $data['title'] = NAMETITLE . " - Wallet to Bank";
         $footer['extra'] = "member/tobank/currency/js/js_form_currency";
         $data['currencycode'] = @$currencyCode[$_SESSION['currency']];
+        $data['fee'] = @$fee;
 
         $this->load->view('tamplate/header', $data);
         $this->load->view('tamplate/navbar-bottom', $data);
@@ -97,10 +111,24 @@ class Bank extends CI_Controller
             $url = URLAPI . "/v1/member/wallet/getBankCode?country=" . $currencyCode[$_SESSION['currency']];
             $data["codecur"]   = apitrackless($url)->message->values;
         }
+        
+        $bankcost = apitrackless(URLAPI . "/v1/admin/cost/getCost?currency=" . $_SESSION['currency']);
+        $bankfee = apitrackless(URLAPI . "/v1/admin/fee/getFee?currency=" . $_SESSION['currency']);
+
+        $fee = (balance($_SESSION['user_id'], $_SESSION["currency"]) * $bankcost->message->walletbank_outside_pct) + (balance($_SESSION['user_id'], $_SESSION["currency"]) * $bankfee->message->walletbank_outside_pct) + $bankcost->message->walletbank_outside_fxd + $bankfee->message->walletbank_outside_fxd;
+
+        if ((balance($_SESSION['user_id'], $_SESSION["currency"])*100) <= 0) {
+            $fee = 0;
+        }
+        
+        if ((balance($_SESSION['user_id'], $_SESSION["currency"])*100) < ($fee*100)) {
+            $fee = balance($_SESSION['user_id'], $_SESSION["currency"]);
+        }
 
         $data['title'] = NAMETITLE . " - Wallet to Bank";
         $footer['extra'] = "admin/js/js_btn_disabled";
         $data['currencycode'] = @$currencyCode[$_SESSION['currency']];
+        $data['fee'] = @$fee;
 
         $this->load->view('tamplate/header', $data);
         $this->load->view('tamplate/navbar-bottom', $data);
@@ -442,13 +470,13 @@ class Bank extends CI_Controller
         $result = apitrackless(URLAPI . "/v1/member/wallet/bankSummary", json_encode($mdata));
 
         if (@$result->code != 200) {
-            $this->session->set_flashdata("failed", "Insuffisient Fund");
-            redirect(base_url() . "bank/local");
+            $this->session->set_flashdata("failed", $result->message);
+            redirect(base_url() . "bank/" . $this->security->xss_clean($input->post("url")));
         }
 
         $transfer_type  = $this->security->xss_clean($input->post("transfer_type"));
         $temp["fee"]               = $result->message->fee;
-        $temp["deduct"]            = $result->message->deduct;
+        $temp["deduct"]            = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $result->message->deduct);
         $temp["accountHolderName"] = $this->security->xss_clean($input->post("accountHolderName"));
         $temp["amount"]            = $this->security->xss_clean($input->post("amount"));
         $temp["causal"]            = $this->security->xss_clean($input->post("causal"));
@@ -1885,7 +1913,7 @@ class Bank extends CI_Controller
 
         if (@$result->code != 200) {
             if (@$result->code == 5055) {
-                $this->session->set_flashdata("failed", "Something wrong, please try again later!");
+                $this->session->set_flashdata("failed", $result->message);
                 redirect(base_url() . "bank");
             }
             $this->session->set_flashdata("failed", $result->message);
