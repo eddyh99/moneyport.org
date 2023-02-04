@@ -33,7 +33,8 @@
                 <p class="f-lexend my-3">
                     Get out from the global elite's control. <br>
                     Stay with us and take back your freedom and your anonymity. <br>
-                    MoneyPort is the only system that protects your privacy, and does not allow any institutions to
+                    <b translate="no"> MoneyPort </b> is the only system that protects your privacy, and does not allow
+                    any institutions to
                     track your money.
                 </p>
                 <div class="d-flex flex-wrap">
@@ -59,7 +60,7 @@
             <div class="row">
                 <div class="col-12 text-center bg-layout-singup py-5">
                     <h2 class="f-lexend m-0">
-                        Get your MoneyPort account instantly
+                        Get your <b translate="no"> MoneyPort </b> account instantly
                     </h2>
                     <div class="text-center">
                         <a href="<?= base_url(); ?>auth/signup"
@@ -82,8 +83,10 @@
                     <div class="content-freedy p-r">
                         <h2 class="f-lexend">Fast and Easy </h2>
                         <p class="f-lexend">
-                            MoneyPort is fast and easy, you just need to register using an email and password and your
-                            Non-Custodial wallet will be immediately active and ready to use without any
+                            <b translate="no"> MoneyPort </b> is fast and easy, you just need to register using an email
+                            and password and your
+                            <b translate="no"> Non-Custodial wallet </b> will be immediately active and ready to use
+                            without any
                             restriction.<br>
                             (<a href="#" class="text-blue-freedy">No KYC & No
                                 AML</a>)
@@ -119,7 +122,7 @@
                 <div class="col-12 mb-5">
                     <div class="content-freedy p-r text-center">
                         <h2 class="f-lexend">From now and forever, freedom<br>
-                            with MoneyPort</h2>
+                            with <b translate="no"> MoneyPort </b></h2>
                     </div>
                 </div>
                 <div class="col-12 text-center">
@@ -136,7 +139,7 @@
                                                 <div
                                                     class="content-carousel d-flex flex-column justify-content-center align-items-start text-start px-3">
                                                     <span class="my-auto">Funds are really yours,
-                                                        Non-custodial wallet provided</span>
+                                                        <b translate="no"> Non-custodial wallet </b> provided</span>
                                                     <a href="<?= base_url() ?>link/service/<?= base64_encode('1') ?>"
                                                         class="my-auto">
                                                         <b>Read more</b>
@@ -296,7 +299,7 @@
                                                 <div
                                                     class="content-carousel d-flex flex-column justify-content-center align-items-start text-start px-3">
                                                     <span class="my-auto">Funds are really yours,
-                                                        Non-custodial wallet provided</span>
+                                                        <b translate="no"> Non-custodial wallet </b> provided</span>
                                                     <a href="<?= base_url() ?>link/service/<?= base64_encode('1') ?>"
                                                         class="my-auto">
                                                         <b>Read more</b>
@@ -461,7 +464,33 @@
     </section><!-- Section -->
 
     <!-- ======= Section ======= -->
-    <section id="" class="about bg-picture-3">
+    <section id="" class="about">
+        <div class="container p-r">
+            <div class="row gx-0 mb-5">
+                <div class="col-lg-8 mb-5 ps-lg-5">
+                    <div class="content-freedy">
+                        <h2 class="f-lexend">Instant payments between all TracklessProject users of all over the world
+                        </h2>
+                        <div class="my-3">
+                            <p><b translate="no"> Moneyport </b>, being part of TracklessProject ecosystem, will be able
+                                to instantly send and
+                                receive FIAT currencies to all the wallets of the platforms of the ecosystem formed by
+                                TracklessBank, TracklessCrypto, TracklessMoney, TracklessChat, sharing  with them the
+                                single collection and payment gateway.</p>
+                            <p class="fw-semibold">Receive/send/request instant payments using ‘’wallet to wallet’’
+                                method</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 d-none d-lg-grid text-center m-auto">
+                    <img src="<?= base_url(); ?>assets/img/img-10.png" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section><!-- Section -->
+
+    <!-- ======= Section ======= -->
+    <section id="crypto" class="about bg-picture-3">
         <div class="container p-r">
             <div class="row gx-0 mb-5">
                 <div class="col-6 d-none d-lg-grid text-center">
@@ -469,12 +498,13 @@
                 </div>
                 <div class="col-lg-6 mb-5 ps-lg-5">
                     <div class="content-freedy">
-                        <h2 class="f-lexend">The best revolutionary system with integrated a crypto trade-off platform
+                        <h2 class="f-lexend">The best revolutionary system with integrated a crypto <b translate="no">
+                                trade-off </b> platform
                         </h2>
                         <div class="my-3">
                             <ul class="p-0 f-lexend">
-                                <li>Trade off platform</li>
-                                <li>Shared order book</li>
+                                <li><b translate="no"> Trade off </b> platform</li>
+                                <li>Shared <b translate="no"> order book </b></li>
                                 <li>Distributed and decentralized</li>
                                 <li>Buy crypto from your FIAT balance of your PiggyBank wallet</li>
                                 <li>Withdraw your earning by bank transfer in more than
@@ -482,7 +512,7 @@
                             </ul>
                         </div>
                         <div class="text-start">
-                            <a href="<?=base_url()?>link/soon"
+                            <a href="<?=base_url()?>link/crypto"
                                 class="btn-content-freedy d-inline-flex align-items-center justify-content-center align-self-center">
                                 <span class="f-lexend">Learn more</span>
                             </a>
@@ -503,7 +533,8 @@
                             <h2>Get Reward<br>
                                 with our Affiliate Campaign</h2>
                             <p>
-                                MoneyPort assigns a personal referral link (with a referral code) to every account; you
+                                <b translate="no"> MoneyPort </b> assigns a personal referral link (with a referral
+                                code) to every account; you
                                 just need to share it and let your friend register on the platform using your referral
                                 link/code. You will be rewarded for every single FIAT transaction and every crypto
                                 buy&sell carried out by who signed up using your personal referral link.
@@ -528,7 +559,7 @@
             <div class="row gx-0">
                 <div class="col-12">
                     <div class="content-freedy p-r text-center">
-                        <h2 class="f-lexend mt-5">MoneyPort Guide</h2>
+                        <h2 class="f-lexend mt-5"><b translate="no"> MoneyPort </b> Guide</h2>
                     </div>
                 </div>
                 <div class="col-12">
@@ -543,7 +574,8 @@
                                                     <img src="<?= base_url(); ?>assets/img/c2-1.png" alt="">
                                                     <h4 class="f-lexend ms-3 my-auto">Wallet</h4>
                                                 </div>
-                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                <a class="f-lexend my-auto"
+                                                    href="<?= base_url(); ?>link/guide?guide=<?= base64_encode('1') ?>"><b>Learn
                                                         more</b></a>
                                             </div>
                                         </div>
@@ -553,7 +585,8 @@
                                                     <img src="<?= base_url(); ?>assets/img/c2-2.png" alt="">
                                                     <h4 class="f-lexend ms-3 my-auto">Daily use</h4>
                                                 </div>
-                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                <a class="f-lexend my-auto"
+                                                    href="<?= base_url(); ?>link/guide?guide=<?= base64_encode('2') ?>"><b>Learn
                                                         more</b></a>
                                             </div>
                                         </div>
@@ -564,7 +597,8 @@
                                                     <h4 class="f-lexend ms-3 my-auto">Capital
                                                         Exportation</h4>
                                                 </div>
-                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                <a class="f-lexend my-auto"
+                                                    href="<?= base_url(); ?>link/guide?guide=<?= base64_encode('3') ?>"><b>Learn
                                                         more</b></a>
                                             </div>
                                         </div>
@@ -574,7 +608,8 @@
                                                     <img src="<?= base_url(); ?>assets/img/c2-4.png" alt="">
                                                     <h4 class="f-lexend ms-3 my-auto">Crypto Trading</h4>
                                                 </div>
-                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                <a class="f-lexend my-auto"
+                                                    href="<?= base_url(); ?>link/guide?guide=<?= base64_encode('4') ?>"><b>Learn
                                                         more</b></a>
                                             </div>
                                         </div>
@@ -589,7 +624,8 @@
                                                     <h4 class="f-lexend ms-3 my-auto">Essential for your
                                                         trip</h4>
                                                 </div>
-                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                <a class="f-lexend my-auto"
+                                                    href="<?= base_url(); ?>link/guide?guide=<?= base64_encode('5') ?>"><b>Learn
                                                         more</b></a>
                                             </div>
                                         </div>
@@ -600,7 +636,8 @@
                                                     <h4 class="f-lexend ms-3 my-auto">Collection &
                                                         Payment</h4>
                                                 </div>
-                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                <a class="f-lexend my-auto"
+                                                    href="<?= base_url(); ?>link/guide?guide=<?= base64_encode('6') ?>"><b>Learn
                                                         more</b></a>
                                             </div>
                                         </div>
@@ -610,7 +647,8 @@
                                                     <img src="<?= base_url(); ?>assets/img/c2-7.png" alt="">
                                                     <h4 class="f-lexend ms-3 my-auto">Find me</h4>
                                                 </div>
-                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                <a class="f-lexend my-auto"
+                                                    href="<?= base_url(); ?>link/guide?guide=<?= base64_encode('7') ?>"><b>Learn
                                                         more</b></a>
                                             </div>
                                         </div>
@@ -620,7 +658,8 @@
                                                     <img src="<?= base_url(); ?>assets/img/c2-8.png" alt="">
                                                     <h4 class="f-lexend ms-3 my-auto">Search</h4>
                                                 </div>
-                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                <a class="f-lexend my-auto"
+                                                    href="<?= base_url(); ?>link/guide?guide=<?= base64_encode('8') ?>"><b>Learn
                                                         more</b></a>
                                             </div>
                                         </div>
@@ -657,7 +696,8 @@
                                                     <img src="<?= base_url(); ?>assets/img/c2-1.png" alt="">
                                                     <h4 class="f-lexend ms-3 my-auto">Wallet</h4>
                                                 </div>
-                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                <a class="f-lexend my-auto"
+                                                    href="<?= base_url(); ?>link/guide?guide=<?= base64_encode('1') ?>"><b>Learn
                                                         more</b></a>
                                             </div>
                                         </div>
@@ -667,7 +707,8 @@
                                                     <img src="<?= base_url(); ?>assets/img/c2-2.png" alt="">
                                                     <h4 class="f-lexend ms-3 my-auto">Daily use</h4>
                                                 </div>
-                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                <a class="f-lexend my-auto"
+                                                    href="<?= base_url(); ?>link/guide?guide=<?= base64_encode('2') ?>"><b>Learn
                                                         more</b></a>
                                             </div>
                                         </div>
@@ -682,7 +723,8 @@
                                                     <h4 class="f-lexend ms-3 my-auto">Capital
                                                         Exportation</h4>
                                                 </div>
-                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                <a class="f-lexend my-auto"
+                                                    href="<?= base_url(); ?>link/guide?guide=<?= base64_encode('3') ?>"><b>Learn
                                                         more</b></a>
                                             </div>
                                         </div>
@@ -692,7 +734,8 @@
                                                     <img src="<?= base_url(); ?>assets/img/c2-4.png" alt="">
                                                     <h4 class="f-lexend ms-3 my-auto">Crypto Trading</h4>
                                                 </div>
-                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                <a class="f-lexend my-auto"
+                                                    href="<?= base_url(); ?>link/guide?guide=<?= base64_encode('4') ?>"><b>Learn
                                                         more</b></a>
                                             </div>
                                         </div>
@@ -707,7 +750,8 @@
                                                     <h4 class="f-lexend ms-3 my-auto">Essential for your
                                                         trip</h4>
                                                 </div>
-                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                <a class="f-lexend my-auto"
+                                                    href="<?= base_url(); ?>link/guide?guide=<?= base64_encode('5') ?>"><b>Learn
                                                         more</b></a>
                                             </div>
                                         </div>
@@ -718,7 +762,8 @@
                                                     <h4 class="f-lexend ms-3 my-auto">Collection &
                                                         Payment</h4>
                                                 </div>
-                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                <a class="f-lexend my-auto"
+                                                    href="<?= base_url(); ?>link/guide?guide=<?= base64_encode('6') ?>"><b>Learn
                                                         more</b></a>
                                             </div>
                                         </div>
@@ -732,7 +777,8 @@
                                                     <img src="<?= base_url(); ?>assets/img/c2-7.png" alt="">
                                                     <h4 class="f-lexend ms-3 my-auto">Find me</h4>
                                                 </div>
-                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                <a class="f-lexend my-auto"
+                                                    href="<?= base_url(); ?>link/guide?guide=<?= base64_encode('7') ?>"><b>Learn
                                                         more</b></a>
                                             </div>
                                         </div>
@@ -742,7 +788,8 @@
                                                     <img src="<?= base_url(); ?>assets/img/c2-8.png" alt="">
                                                     <h4 class="f-lexend ms-3 my-auto">Search</h4>
                                                 </div>
-                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                <a class="f-lexend my-auto"
+                                                    href="<?= base_url(); ?>link/guide?guide=<?= base64_encode('8') ?>"><b>Learn
                                                         more</b></a>
                                             </div>
                                         </div>
@@ -783,7 +830,8 @@
                                                     <img src="<?= base_url(); ?>assets/img/c2-1.png" alt="">
                                                     <h4 class="f-lexend ms-3 my-auto">Wallet</h4>
                                                 </div>
-                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                <a class="f-lexend my-auto"
+                                                    href="<?= base_url(); ?>link/guide?guide=<?= base64_encode('1') ?>"><b>Learn
                                                         more</b></a>
                                             </div>
                                         </div>
@@ -797,7 +845,8 @@
                                                     <img src="<?= base_url(); ?>assets/img/c2-2.png" alt="">
                                                     <h4 class="f-lexend ms-3 my-auto">Daily use</h4>
                                                 </div>
-                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                <a class="f-lexend my-auto"
+                                                    href="<?= base_url(); ?>link/guide?guide=<?= base64_encode('2') ?>"><b>Learn
                                                         more</b></a>
                                             </div>
                                         </div>
@@ -812,7 +861,8 @@
                                                     <h4 class="f-lexend ms-3 my-auto">Capital
                                                         Exportation</h4>
                                                 </div>
-                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                <a class="f-lexend my-auto"
+                                                    href="<?= base_url(); ?>link/guide?guide=<?= base64_encode('3') ?>"><b>Learn
                                                         more</b></a>
                                             </div>
                                         </div>
@@ -826,7 +876,8 @@
                                                     <img src="<?= base_url(); ?>assets/img/c2-4.png" alt="">
                                                     <h4 class="f-lexend ms-3 my-auto">Crypto Trading</h4>
                                                 </div>
-                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                <a class="f-lexend my-auto"
+                                                    href="<?= base_url(); ?>link/guide?guide=<?= base64_encode('4') ?>"><b>Learn
                                                         more</b></a>
                                             </div>
                                         </div>
@@ -841,7 +892,8 @@
                                                     <h4 class="f-lexend ms-3 my-auto">Essential for your
                                                         trip</h4>
                                                 </div>
-                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                <a class="f-lexend my-auto"
+                                                    href="<?= base_url(); ?>link/guide?guide=<?= base64_encode('5') ?>"><b>Learn
                                                         more</b></a>
                                             </div>
                                         </div>
@@ -856,7 +908,8 @@
                                                     <h4 class="f-lexend ms-3 my-auto">Collection &
                                                         Payment</h4>
                                                 </div>
-                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                <a class="f-lexend my-auto"
+                                                    href="<?= base_url(); ?>link/guide?guide=<?= base64_encode('6') ?>"><b>Learn
                                                         more</b></a>
                                             </div>
                                         </div>
@@ -870,7 +923,8 @@
                                                     <img src="<?= base_url(); ?>assets/img/c2-7.png" alt="">
                                                     <h4 class="f-lexend ms-3 my-auto">Find me</h4>
                                                 </div>
-                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                <a class="f-lexend my-auto"
+                                                    href="<?= base_url(); ?>link/guide?guide=<?= base64_encode('7') ?>"><b>Learn
                                                         more</b></a>
                                             </div>
                                         </div>
@@ -884,7 +938,8 @@
                                                     <img src="<?= base_url(); ?>assets/img/c2-8.png" alt="">
                                                     <h4 class="f-lexend ms-3 my-auto">Search</h4>
                                                 </div>
-                                                <a class="f-lexend my-auto" href=""><b>Learn
+                                                <a class="f-lexend my-auto"
+                                                    href="<?= base_url(); ?>link/guide?guide=<?= base64_encode('8') ?>"><b>Learn
                                                         more</b></a>
                                             </div>
                                         </div>
@@ -992,7 +1047,7 @@
                                             <h4 class="f-lexend ms-3 mt-3">Technology</h4>
                                         </div>
                                         <a class="f-lexend my-auto"
-                                            href="<?= base_url(); ?>link/features?features=<?= base64_encode('3') ?>">Learn
+                                            href="<?= base_url(); ?>link/features?features=<?= base64_encode('2') ?>">Learn
                                             more</a>
                                     </div>
                                 </div>
@@ -1004,7 +1059,7 @@
                                             <h4 class="f-lexend ms-3 mt-3">Mission</h4>
                                         </div>
                                         <a class="f-lexend my-auto"
-                                            href="<?= base_url(); ?>link/features?features=<?= base64_encode('4') ?>">Learn
+                                            href="<?= base_url(); ?>link/features?features=<?= base64_encode('3') ?>">Learn
                                             more</a>
                                     </div>
                                 </div>

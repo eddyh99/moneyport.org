@@ -12,7 +12,7 @@
             <div class="col-12 my-5 d-flex flex-row">
                 <div class="col-12 text-center">
                     <h2 class="title-top-header fw-bold">
-                        Tell everyone about <b translate="no"> PiggyBank </b> and earn every time they use it.
+                        Tell everyone about <b translate="no"> MoneyPort </b> And earn every time they use it.
                     </h2>
                     <h2 class="subtitle-top-header fw-bold">Share it!</h2>
                 </div>

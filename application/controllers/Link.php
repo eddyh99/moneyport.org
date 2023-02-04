@@ -10,13 +10,73 @@ class Link extends CI_Controller
 
     public function lern_reward()
     {
+        $url = URLAPI . "/v1/trackless/currency/getAllCurrency";
+        $currency   = apitrackless($url)->message;
+
         $data = array(
             "title"     => NAMETITLE . " - Lern Get Reward",
             "content"   => "auth/landingpage/lern_reward",
             "extra"     => "auth/landingpage/js/js_index",
+            "currency"     => $currency,
         );
 
         $this->load->view('tamplate/wrapper', $data);
+    }
+
+    public function get_reff($curr)
+    {
+		$mfee = apitrackless(URLAPI . "/v1/admin/fee/getFee?currency=" . $curr);
+
+		$mdata = array();
+		if (@$mfee->code == 200) {
+			$mdata = array(
+				"topup_circuit_fxd" => number_format($mfee->message->topup_circuit_fxd, 2, ".", ","),
+				"topup_circuit_pct" => number_format($mfee->message->topup_circuit_pct * 100, 2, ".", ","),
+				"topup_outside_fxd" => number_format($mfee->message->topup_outside_fxd, 2, ".", ","),
+				"topup_outside_pct" => number_format($mfee->message->topup_outside_pct * 100, 2, ".", ","),
+				"wallet_sender_fxd" => number_format($mfee->message->wallet_sender_fxd, 2, ".", ","),
+				"wallet_sender_pct" => number_format($mfee->message->wallet_sender_pct * 100, 2, ".", ","),
+				"wallet_receiver_fxd" => number_format($mfee->message->wallet_receiver_fxd, 2, ".", ","),
+				"wallet_receiver_pct" => number_format($mfee->message->wallet_receiver_pct * 100, 2, ".", ","),
+				"walletbank_circuit_fxd" => number_format($mfee->message->walletbank_circuit_fxd, 2, ".", ","),
+				"walletbank_circuit_pct" => number_format($mfee->message->walletbank_circuit_pct * 100, 2, ".", ","),
+				"walletbank_outside_fxd" => number_format($mfee->message->walletbank_outside_fxd, 2, ".", ","),
+				"walletbank_outside_pct" => number_format($mfee->message->walletbank_outside_pct * 100, 2, ".", ","),
+				"referral_send_fxd" => number_format($mfee->message->referral_send_fxd, 2, ".", ","),
+				"referral_send_pct" => number_format($mfee->message->referral_send_pct * 100, 2, ".", ","),
+				"referral_receive_fxd" => number_format($mfee->message->referral_receive_fxd, 2, ".", ","),
+				"referral_receive_pct" => number_format($mfee->message->referral_receive_pct * 100, 2, ".", ","),
+				"referral_topup_fxd" => number_format($mfee->message->referral_topup_fxd, 2, ".", ","),
+				"referral_topup_pct" => number_format($mfee->message->referral_topup_pct * 100, 2, ".", ","),
+				"referral_bank_fxd" => number_format($mfee->message->referral_bank_fxd, 2, ".", ","),
+				"referral_bank_pct" => number_format($mfee->message->referral_bank_pct * 100, 2, ".", ","),
+			);
+		} else {
+			$mdata = array(
+				"topup_circuit_fxd" => number_format(0, 2, ".", ","),
+				"topup_circuit_pct" => number_format(0 * 100, 2, ".", ","),
+				"topup_outside_fxd" => number_format(0, 2, ".", ","),
+				"topup_outside_pct" => number_format(0 * 100, 2, ".", ","),
+				"wallet_sender_fxd" => number_format(0, 2, ".", ","),
+				"wallet_sender_pct" => number_format(0 * 100, 2, ".", ","),
+				"wallet_receiver_fxd" => number_format(0, 2, ".", ","),
+				"wallet_receiver_pct" => number_format(0 * 100, 2, ".", ","),
+				"walletbank_circuit_fxd" => number_format(0, 2, ".", ","),
+				"walletbank_circuit_pct" => number_format(0 * 100, 2, ".", ","),
+				"walletbank_outside_fxd" => number_format(0, 2, ".", ","),
+				"walletbank_outside_pct" => number_format(0 * 100, 2, ".", ","),
+				"referral_send_fxd" => number_format(0, 2, ".", ","),
+				"referral_send_pct" => number_format(0 * 100, 2, ".", ","),
+				"referral_receive_fxd" => number_format(0, 2, ".", ","),
+				"referral_receive_pct" => number_format(0 * 100, 2, ".", ","),
+				"referral_topup_fxd" => number_format(0, 2, ".", ","),
+				"referral_topup_pct" => number_format(0 * 100, 2, ".", ","),
+				"referral_bank_fxd" => number_format(0, 2, ".", ","),
+				"referral_bank_pct" => number_format(0 * 100, 2, ".", ","),
+			);
+		}
+        
+		echo json_encode($mdata);
     }
 
     public function translate()

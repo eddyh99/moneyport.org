@@ -104,4 +104,28 @@ function validate() {
     $("#btnconfirm").attr("disabled", true);
     $("#form_submit").submit();
 }
+
+
+function readreff() {
+    var readcurrency = $("#currency").val();
+
+    $.ajax({
+        url: "<?= base_url() ?>link/get_reff/" + readcurrency,
+        success: function(response) {
+            console.log(response);
+            var data = JSON.parse(response);
+            $("#tu").html(data.referral_topup_pct + "%" + " + " + data.referral_topup_fxd)
+            $("#wtwr").html(data.referral_receive_pct + "%" + " + " + data.referral_receive_fxd)
+            $("#wtws").html(data.referral_send_pct + "%" + " + " + data.referral_send_fxd)
+            $("#wtb").html(data.referral_bank_pct + "%" + " + " + data.referral_bank_fxd)
+        },
+        error: function(response) {
+            alert(response);
+        }
+    })
+}
+
+$("#currency").on("change", function() {
+    readreff();
+})
 </script>
