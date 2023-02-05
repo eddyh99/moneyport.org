@@ -91,9 +91,18 @@ live server:
     "https://api.tracklessbank.com"
 
 sandbox server
-    "https://sandbox.tracklessbank.com"
+    "https://api.sandbox.tracklessbank.com"
 */
-define('URLAPI', "https://sandbox.tracklessbank.com");
+if (stripos($_SERVER['HTTP_HOST'],'sandbox') === 0){
+    define('URLAPI', "https://api.sandbox.tracklessbank.com");
+    define('LINKQRCODE', "/wallet/send");
+}elseif(stripos($_SERVER['HTTP_HOST'],'localhost') === 0){
+    define('URLAPI', "https://api.sandbox.tracklessbank.com");
+    define('LINKQRCODE', "/moneyport.com/wallet/send");
+}else{
+    define('URLAPI', "https://api.tracklessbank.com");
+    define('LINKQRCODE', "/wallet/send");
+}
 
 /*
 custom link qrcode
@@ -102,8 +111,15 @@ live server:
     "/wallet/send"
 
 local server
-    "/piggybank.com/wallet/send"
+    "/moneyport.com/wallet/send"
 */
-define('LINKQRCODE', "/piggybank.com/wallet/send");
 
-define('NAMETITLE', "Piggybank");
+// define('LINKQRCODE', "/moneyport.com/wallet/send");
+define('NAMETITLE', "Money Port");
+
+define('BANK_ID', "5");
+
+/*email config*/
+define('HOST_EMAIL', "mail.tracklessbank.com");
+define('USERNAME_EMAIL', "no-reply@tracklessbank.com");
+define('PASS_EMAIL', 'DLgV4o?L1B]m');

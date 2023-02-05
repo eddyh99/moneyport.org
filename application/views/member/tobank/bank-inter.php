@@ -34,11 +34,30 @@
                                     value="<?php echo $this->security->get_csrf_hash(); ?>">
                                 <input type="hidden" name="transfer_type" value="outside">
                                 <input type="hidden" name="currencycode" id="currencycode" value="<?= $currencycode ?>">
+                                <input type="hidden" name="url" value="inter">
                                 <div class="tab-pane box-tab-bank" id="us">
-                                    <?php
+
+                                    <div class="align-items-center my-3">
+                                        <small class="text-danger">MAX
+                                            : <?= $_SESSION["symbol"] ?>
+                                            <?= number_format(balance($_SESSION['user_id'], $_SESSION["currency"]) - $fee,2) ?></small>
+                                        <input class="form-control money-input me-2" type="text" name="amount"
+                                            placeholder="Amount">
+                                    </div>
+                                    <div class="align-items-center my-3">
+                                        <input class="form-control me-2" type="text" name="accountHolderName"
+                                            placeholder="Recipient Name">
+                                    </div>
+
+                                    <?php 
                                         $data['type'] = "inter";
-                                        $this->load->view('member/tobank/currency/' . @$_SESSION['currency'], $data)
-                                        ?>
+                                        $data['countries_list'] = $countries_list;
+                                        $this->load->view('member/tobank/currency/' . @$_SESSION['currency'], $data) ?>
+
+                                    <div class="align-items-center my-3">
+                                        <input class="form-control me-2" type="text" name="causal" placeholder="Causal">
+                                    </div>
+
                                     <div class="col-12 d-flex flex-row mt-5">
                                         <a href="<?= base_url() ?>bank"
                                             class="btn btn-wallet-cancle py-2 me-auto">Cancel</a>
@@ -79,8 +98,8 @@
                     <defs>
                         <linearGradient id="paint0_linear_30_4821" x1="20.5" y1="0" x2="20.5" y2="35"
                             gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#23832C" />
-                            <stop offset="1" stop-color="#1C6701" />
+                            <stop stop-color="#8B0000" />
+                            <stop offset="1" stop-color="#CB0000" />
                         </linearGradient>
                     </defs>
                 </svg>

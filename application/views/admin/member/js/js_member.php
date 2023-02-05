@@ -19,6 +19,7 @@ $(function() {
         order: [
             [0, 'asc']
         ],
+        "pageLength": 100,
         "columns": [{
                 "mRender": function(data, type, full, meta) {
                     return i++;

@@ -1,26 +1,32 @@
-<input type="hidden" name="url" value="<?= $type ?>">
-<div class="d-flex flex-row align-items-center my-3">
-    <input class="form-control me-2" type="text" name="amount" placeholder="Amount">
-</div>
-<div class="d-flex flex-row align-items-center my-3">
-    <input class="form-control me-2" type="text" name="accountHolderName" placeholder="Recipient Name">
-</div>
 <div class="d-flex flex-row align-items-center my-3">
     <input class="form-control me-2" type="text" name="accountNumber" placeholder="Account Number">
 </div>
 
 <?php if ($type == "local") { ?>
 <div class="d-flex flex-row align-items-center my-3">
+    <input class="form-control me-2" type="text" name="abartn" placeholder="Abartn">
+</div>
+<?php } ?>
+
+<?php if ($type == "inter") { ?>
+<div class="d-flex flex-row align-items-center my-3">
+    <input class="form-control me-2" type="text" name="swiftCode" placeholder="Swift Code">
+</div>
+
+<input type="hidden" name="abartn" value="">
+<input type="hidden" name="accountType" value="">
+<?php } ?>
+
+<?php if ($type == "local") { ?>
+<div class="d-flex flex-row align-items-center my-3">
     <select name="accountType" class="form-control me-2" id="accountType">
+        <option value="">--Account Type--</option>
         <option value="saving">Saving</option>
         <option value="checking">Checking</option>
     </select>
 </div>
 <?php } ?>
 
-<div class="d-flex flex-row align-items-center my-3">
-    <input class="form-control me-2" type="text" name="causal" placeholder="Causal">
-</div>
 <div class="d-flex flex-row align-items-center my-3">
     <input class="form-control me-2" type="text" name="city" placeholder="City">
 </div>
@@ -43,20 +49,11 @@
 <?php } ?>
 
 <div class="d-flex flex-row align-items-center my-3">
-    <input class="form-control me-2" type="text" name="countryCode" placeholder="Country initial" maxlength="2">
+    <select name="countryCode" class="form-select me-2" id="countryCode">
+        <option value="">--Country Initial--</option>
+        <?php foreach ($countries_list as $cur) { ?>
+        <option value="<?= $cur['code'] ?>"><?= $cur['code'] . ' - ' . $cur['name'] ?></option>
+        <?php } ?>
+    </select>
+    <!-- <input class="form-control me-2" type="text" name="countryCode" placeholder="Country initial" maxlength="2"> -->
 </div>
-
-<?php if ($type == "local") { ?>
-<div class="d-flex flex-row align-items-center my-3">
-    <input class="form-control me-2" type="text" name="abartn" placeholder="Abartn">
-</div>
-<?php } ?>
-
-<?php if ($type == "inter") { ?>
-<div class="d-flex flex-row align-items-center my-3">
-    <input class="form-control me-2" type="text" name="swiftCode" placeholder="Swift Code">
-</div>
-
-<input type="hidden" name="abartn" value="">
-<input type="hidden" name="accountType" value="">
-<?php } ?>

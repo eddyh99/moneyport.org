@@ -94,11 +94,23 @@ class Mwallet extends CI_Controller
             "VND" => "VN",
             "ZAR" => "ZA"
         );
-        if ($currencyCode[$_SESSION['currency']] == '') {
+        if (@$currencyCode[$_SESSION['currency']] == '') {
             $codecur = '';
         } else {
             $url = URLAPI . "/v1/member/wallet/getBankCode?country=" . $currencyCode[$_SESSION['currency']];
             $codecur   = apitrackless($url)->message->values;
+        }
+        
+        $bankcost = apitrackless(URLAPI . "/v1/admin/cost/getCost?currency=" . $_SESSION['currency']);
+
+        $fee = (balanceadmin($_SESSION["currency"]) * $bankcost->message->walletbank_circuit_pct) + $bankcost->message->walletbank_circuit_fxd;
+
+        if ((balanceadmin($_SESSION["currency"])*100) <= 0) {
+            $fee = 0;
+        }
+        
+        if ((balanceadmin($_SESSION["currency"])*100) < ($fee*100)) {
+            $fee = balanceadmin($_SESSION["currency"]);
         }
 
         $data = array(
@@ -106,7 +118,8 @@ class Mwallet extends CI_Controller
             "extra"     => "admin/mwallet/currency/js/js_form_currency",
             "content"   => "admin/mwallet/withdraw-local",
             "codecur"   => $codecur,
-            'currencycode' => $currencyCode[$_SESSION['currency']],
+            "bankcost"   => $fee,
+            'currencycode' => @$currencyCode[$_SESSION['currency']],
         );
 
         $this->load->view('admin_template/wrapper2', $data);
@@ -138,18 +151,32 @@ class Mwallet extends CI_Controller
             "VND" => "VN",
             "ZAR" => "ZA"
         );
-        if ($currencyCode[$_SESSION['currency']] == '') {
+        if (@$currencyCode[$_SESSION['currency']] == '') {
             $codecur = '';
         } else {
             $url = URLAPI . "/v1/member/wallet/getBankCode?country=" . $currencyCode[$_SESSION['currency']];
             $codecur   = apitrackless($url)->message->values;
         }
+        
+        $bankcost = apitrackless(URLAPI . "/v1/admin/cost/getCost?currency=" . $_SESSION['currency']);
+
+        $fee = (balanceadmin($_SESSION["currency"]) * $bankcost->message->walletbank_outside_pct) + $bankcost->message->walletbank_outside_fxd;
+        
+        if ((balanceadmin($_SESSION["currency"])*100) <= 0) {
+            $fee = 0;
+        }
+        
+        if ((balanceadmin($_SESSION["currency"])*100) < ($fee*100)) {
+            $fee = balanceadmin($_SESSION["currency"]);
+        }
+        
         $data = array(
             "title"     => NAMETITLE . " - Withdraw International",
             "extra"     => "admin/mwallet/currency/js/js_form_currency",
             "content"   => "admin/mwallet/withdraw-inter",
             "codecur"   => $codecur,
-            'currencycode' => $currencyCode[$_SESSION['currency']],
+            "bankcost"   => $fee,
+            'currencycode' => @$currencyCode[$_SESSION['currency']],
         );
 
         $this->load->view('admin_template/wrapper2', $data);
@@ -157,6 +184,12 @@ class Mwallet extends CI_Controller
 
     public function wdconfirm()
     {
+        $amount = $this->security->xss_clean($this->input->post("amount"));
+
+        $a = $this->input->post("amount");
+        $b = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $a);
+        $_POST["amount"]=$b;
+        
         $input    = $this->input;
         $this->form_validation->set_rules('amount', 'Amount', 'trim|required|greater_than[0]');
         $this->form_validation->set_rules('causal', 'Causal', 'trim|required');
@@ -451,16 +484,16 @@ class Mwallet extends CI_Controller
             "transfer_type"     => $this->security->xss_clean($input->post("transfer_type")),
         );
 
-        $result = apitrackless(URLAPI . "/v1/member/wallet/bankSummary", json_encode($mdata));
+        $result = apitrackless(URLAPI . "/v1/admin/withdraw/withdrawSummary", json_encode($mdata));
 
         if (@$result->code != 200) {
-            $this->session->set_flashdata("failed", "Insuffisient Fund");
-            redirect(base_url() . "admin/mwallet/withdraw");
+            $this->session->set_flashdata("failed", $result->message);
+            redirect(base_url() . "admin/mwallet/" . $this->security->xss_clean($input->post("url")));
         }
 
         $transfer_type  = $this->security->xss_clean($input->post("transfer_type"));
         $temp["fee"]               = $result->message->fee;
-        $temp["deduct"]            = $result->message->deduct;
+        $temp["deduct"]            = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $result->message->deduct);
         $temp["accountHolderName"] = $this->security->xss_clean($input->post("accountHolderName"));
         $temp["amount"]            = $this->security->xss_clean($input->post("amount"));
         $temp["causal"]            = $this->security->xss_clean($input->post("causal"));
@@ -1892,11 +1925,11 @@ class Mwallet extends CI_Controller
             );
         }
 
-        $result = apitrackless(URLAPI . "/v1/member/wallet/bankTransfer", json_encode($mdata));
+        $result = apitrackless(URLAPI . "/v1/admin/withdraw/withdrawTransfer", json_encode($mdata));
 
         if (@$result->code != 200) {
             if (@$result->code == 5055) {
-                $this->session->set_flashdata("failed", "Something wrong, please try again later!");
+                $this->session->set_flashdata("failed", $result->message);
                 redirect(base_url() . "admin/mwallet/withdraw");
             }
             $this->session->set_flashdata("failed", $result->message);

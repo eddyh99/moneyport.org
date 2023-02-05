@@ -17,12 +17,12 @@
                 <div class="card-body">
                     <input class="datepicker-af" type="text" name="tgl" id="tgl" readonly>
                     <table class="table table-bordered" id="tbl_history">
-                        <thead class="table-success">
+                        <thead class="table-warning">
                             <tr>
                                 <th>Description</th>
                                 <th>Trackless Cost</th>
-                                <th>Referral Comission</th>
-                                <th>Piggy Cost</th>
+                                <th>Referral Commission</th>
+                                <th><?= NAMETITLE ?> Cost</th>
                                 <th>Income</th>
                                 <th>Date</th>
                             </tr>

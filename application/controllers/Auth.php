@@ -36,23 +36,6 @@ class Auth extends CI_Controller
 		$this->load->view('tamplate/footer');
 	}
 
-	public function signup_referral()
-	{
-		$data['title'] = NAMETITLE . " - Signup";
-
-		if ($this->session->userdata('user_id')) {
-			if ($this->session->userdata('role') == 'member') {
-				redirect("homepage");
-			} elseif ($this->session->userdata('role') == 'admin') {
-				redirect("/admin/dashboard");
-			}
-		}
-
-		$this->load->view('tamplate/header', $data);
-		$this->load->view('auth/signup-referral');
-		$this->load->view('tamplate/footer');
-	}
-
 	public function signup()
 	{
 		$data['title'] = NAMETITLE . " - Signup";
@@ -65,90 +48,9 @@ class Auth extends CI_Controller
 			}
 		}
 
-		if (!isset($_GET['ref'])) {
-			if (!$this->session->userdata('referral')) {
-				$this->session->set_flashdata('failed', 'Must enter Referral Code');
-				redirect(base_url() . "auth/signup_referral");
-				return;
-			} else {
-				$cek = apitrackless(URLAPI . "/v1/auth/getmember_byrefcode?referral=" . $_SESSION['referral']);
-				if ($cek->code == '5051') {
-					if ($_SESSION['referral'] != "p1ggy34") {
-						$this->session->set_flashdata('failed', $cek->message);
-						$this->session->set_flashdata('referral', set_value('referral'));
-						redirect(base_url() . "auth/signup_referral");
-						return;
-					}
-				}
-			}
-		} else {
-			$cek = apitrackless(URLAPI . "/v1/auth/getmember_byrefcode?referral=" . $_GET['ref']);
-			if ($cek->code == '5051') {
-				if ($_GET['ref'] != "p1ggy34") {
-					$this->session->set_flashdata('failed', $cek->message);
-					$this->session->set_flashdata('referral', set_value('referral'));
-					redirect(base_url() . "auth/signup_referral");
-					return;
-				}
-			}
-			
-			$session_referral = array(
-				'referral'   => $_GET['ref']
-			);
-			$this->session->set_userdata($session_referral);
-			
-		}
 		$this->load->view('tamplate/header', $data);
 		$this->load->view('auth/signup');
 		$this->load->view('tamplate/footer');
-	}
-
-	public function register_referral()
-	{
-		if ($this->session->userdata('user_id')) {
-			if ($this->session->userdata('role') == 'member') {
-				redirect("homepage");
-			} elseif ($this->session->userdata('role') == 'admin') {
-				redirect("/admin/dashboard");
-			}
-		}
-
-		$this->form_validation->set_rules('referral', 'Referral', 'trim|required');
-
-		if ($this->form_validation->run() == FALSE) {
-			$this->session->set_flashdata('failed', "<p style='color:black'>" . validation_errors() . "</p>");
-			$this->session->set_flashdata('referral', set_value('referral'));
-			redirect(base_url() . "auth/signup_referral");
-			return;
-		}
-
-		$input		= $this->input;
-		$referral	= $this->security->xss_clean($input->post("referral"));
-
-		$cek = apitrackless(URLAPI . "/v1/auth/getmember_byrefcode?referral=" . $referral);
-
-		if ($cek->code != '5051') {
-			$session_referral = array(
-				'referral'   => $referral
-			);
-			$this->session->set_userdata($session_referral);
-			redirect(base_url() . "auth/signup");
-			return;
-		} else {
-			if ($referral == "p1ggy34") {
-				$session_referral = array(
-					'referral'   => $referral
-				);
-				$this->session->set_userdata($session_referral);
-				redirect(base_url() . "auth/signup");
-				return;
-			} else {
-				$this->session->set_flashdata('failed', $cek->message);
-				$this->session->set_flashdata('referral', set_value('referral'));
-				redirect(base_url() . "auth/signup_referral");
-				return;
-			}
-		}
 	}
 
 	public function register()
@@ -183,7 +85,7 @@ class Auth extends CI_Controller
 		$this->form_validation->set_rules('confirmemail', 'Confirm Email', 'trim|required|valid_email|matches[email]');
 		$this->form_validation->set_rules('pass', 'Password', 'trim|required|min_length[9]|max_length[15]');
 		$this->form_validation->set_rules('confirmpass', 'Confirm Password', 'trim|required|matches[pass]');
-		$this->form_validation->set_rules('referral', 'Referral', 'trim|required');
+		$this->form_validation->set_rules('referral', 'Referral', 'trim');
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->session->set_flashdata('failed', "<p style='color:black'>" . validation_errors() . "</p>");
@@ -203,10 +105,6 @@ class Auth extends CI_Controller
 			$time_location = "Asia/Singapore";
 		}
 
-		if ($referral == "p1ggy34") {
-			$referral = NULL;
-		}
-
 		$mdata = array(
 			'email'     => $email,
 			'password'  => $pass,
@@ -219,14 +117,14 @@ class Auth extends CI_Controller
 		if ($result->code == 200) {
 			//kirim email registrasi
 
-			$subject = "PiggyBank Registration";
-			$message = "Thank you for registering on PiggyBank<br><br>
+			$subject = "MoneyPort Registration";
+			$message = "Thank you for registering on MoneyPort<br><br>
 			username : " . $email . "<br>
 			password : (your chosen password)<br><br>
 			click this <a href='" . base_url("auth/activate?token=") . $result->message->token . "'>link</a> to activate your account<br><br>
 			";
 
-			$urlqr = base_url() . 'wallet/send?' . base64_encode('cur=' . $_SESSION["currency"] . '&ucode=' . $result->message->ucode);
+			$urlqr = base_url() . 'wallet/send?' . base64_encode('cur=' . @$_SESSION["currency"] . '&ucode=' . $result->message->ucode);
 			sendmail($email, $subject, $message, $this->phpmailer_lib->load());
 			$this->qrcodeuser($result->message->ucode);
 			$this->qrcodereceive($urlqr, $result->message->ucode);
@@ -330,14 +228,14 @@ class Auth extends CI_Controller
 			$this->session->set_userdata($member_session);
 
 			$src = base_url() . 'qr/user/' . $result->message->ucode . '.png';
-			$srcr = base_url() . 'qr/receive/' . $result->message->ucode . '.png';
+			// $srcr = base_url() . 'qr/receive/' . $result->message->ucode . '.png';
 			if (@getimagesize($src) == FALSE) {
 				$this->qrcodeuser($result->message->ucode);
 			}
-			if (@getimagesize($srcr) == FALSE) {
-				$urlqr = base_url() . 'wallet/send?' . base64_encode('ucode=' . $_SESSION["ucode"]);
-				$this->qrcodereceive($urlqr, $result->message->ucode);
-			}
+			// if (@getimagesize($srcr) == FALSE) {
+			// 	$urlqr = base_url() . 'wallet/send?' . base64_encode('ucode=' . $_SESSION["ucode"]);
+			// 	$this->qrcodereceive($urlqr, $result->message->ucode);
+			// }
 			if (empty($this->session->userdata('wallet_req'))) {
 				redirect("homepage");
 			} else {
@@ -434,7 +332,7 @@ class Auth extends CI_Controller
 		$result = apitrackless($url);
 		if (!empty(@$result->code == 200)) {
 
-			$subject = "Reset Password for PiggyBank Account";
+			$subject = "Reset Password for MoneyPort Account";
 			// kirim email forgot password dengan token validasi, lebih dari 1jam expired tokennya
 			$message = "Hi,<br><br>
 
@@ -541,5 +439,30 @@ class Auth extends CI_Controller
 			$params['savename'] = FCPATH . $config['imagedir'] . $image_name; //simpan image QR CODE ke folder assets/images/
 			return  $this->ciqrcode->generate($params); // fungsi untuk generate QR CODE
 		}
+	}
+	
+	public function requestbank($curr = '', $ucode = '', $amount=NULL)
+	{
+		if ((empty($curr)) || (empty($ucode))) {
+			redirect(base_url());
+		}
+
+		$banks = URLAPI . "/v1/member/wallet/getAllbank";
+		$symbol = URLAPI . "/v1/trackless/currency/getsymbol?currency=".base64_decode($curr);
+
+		if ($amount) {
+			$data['urlamount'] = "&amount=".base64_decode(@$amount);
+		}
+		$data['banks'] = apitrackless($banks)->message;
+		$data['symbol'] = apitrackless($symbol)->message;
+		$data['curr'] = base64_decode($curr);
+		$data['ucode'] = base64_decode($ucode);
+		$data['amount'] = base64_decode(@$amount);
+
+		$data['title'] = NAMETITLE . " - Request";
+
+		$this->load->view('tamplate/header', $data);
+		$this->load->view('auth/request-bank', $data);
+		$this->load->view('tamplate/footer');
 	}
 }

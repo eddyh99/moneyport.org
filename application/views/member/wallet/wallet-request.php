@@ -11,6 +11,13 @@
                     </div>
                     <div class="col-12 infobank-list-app my-4">
                         <div class="py-4">
+                            <?php if (@isset($_SESSION["failed"])) { ?>
+                            <div class="col-12 alert alert-danger alert-dismissible fade show" role="alert">
+                                <span class="notif-login f-poppins"><?= $_SESSION["failed"] ?></span>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                            <?php } ?>
                             <form method="POST" action="<?= base_url() ?>wallet/request_qrcode"
                                 class="input-piggy-style" id="form_submit" onsubmit="return validate()">
                                 <input type="hidden" id="token"
@@ -18,15 +25,13 @@
                                     value="<?php echo $this->security->get_csrf_hash(); ?>">
                                 <div class="mb-3">
                                     <label class="ms-2 form-label">AMOUNT</label>
-                                    <input type="text" class="form-control" name="amount" id="amount"
-                                        placeholder="Amount"
-                                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
+                                    <input type="text" class="form-control money-input" name="amount" id="amount"
+                                        placeholder="Amount">
                                 </div>
                                 <div class="mb-3">
                                     <label class="ms-2 form-label">CONFIRM AMOUNT</label>
-                                    <input type="text" class="form-control" name="confirm_amount" id="confirm_amount"
-                                        placeholder="Confirm Amount"
-                                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
+                                    <input type="text" class="form-control money-input" name="confirm_amount"
+                                        id="confirm_amount" placeholder="Confirm Amount">
                                 </div>
                                 <div class="row">
                                     <div class="d-flex flex-row mt-4">
@@ -56,8 +61,8 @@
                     <defs>
                         <linearGradient id="paint0_linear_30_4821" x1="20.5" y1="0" x2="20.5" y2="35"
                             gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#23832C" />
-                            <stop offset="1" stop-color="#1C6701" />
+                            <stop stop-color="#9E00FF" />
+                            <stop offset="1" stop-color="#9E00FF" />
                         </linearGradient>
                     </defs>
                 </svg>

@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row d-flex d-lg-inline-grid justify-content-center">
             <div class="col-10 col-sm-9 col-md-7 col-lg-5 box-form">
-                <a href="<?= base_url(); ?>auth/signup_referral" class="link-back">
+                <a href="<?= base_url(); ?>auth/login" class="link-back">
                     <img src="<?= base_url() ?>assets/img/back.png" alt="">
                 </a>
                 <form class="form-login-freedy d-flex align-items-start flex-column" style="height: 100%;" method="POST"
@@ -82,9 +82,26 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-12 mb-5">
+                        <label for="email" class="form-label f-publicsans">Refferal code <span class="text-mute">(
+                                optional )</span>
+                        </label>
+                        <div class="input-group">
+                            <input type="text" class="form-control f-publicsans py-2" id="referral" name="referral"
+                                value="<?php
+                                                                                                                            if (@$_GET['ref'] == '') {
+                                                                                                                                if (@isset($_SESSION['referral'])) {
+                                                                                                                                    echo $_SESSION['referral'];
+                                                                                                                                }
+                                                                                                                            } else {
+                                                                                                                                echo @$_GET['ref'];
+                                                                                                                            } ?>">
+                        </div>
+                    </div>
                     <div class="g-recaptcha" data-sitekey="<?php echo $this->config->item('google_key') ?>"></div>
                     <div class="col-12 mt-5 d-grid gap-2">
                         <button type="submit" class="btn btn-login f-roboto">SIGN UP</button>
+                        <a href="<?= base_url(); ?>auth/login">Do you have account ? LOG IN</a>
                     </div>
                 </form>
             </div>

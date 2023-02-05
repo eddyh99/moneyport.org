@@ -51,7 +51,7 @@
                     </div>
                     <div class="col-12">
                         <div class="d-flex justify-content-between">
-                            <a href="<?= base_url(); ?>auth/signup_referral" class="f-publicsans">Sign up</a>
+                            <a href="<?= base_url(); ?>auth/signup" class="f-publicsans">Sign up</a>
                             <a href="<?= base_url(); ?>auth/forget_pass" class="f-publicsans">Forgot password?</a>
                         </div>
                     </div>

@@ -56,6 +56,35 @@
                     </div>
                 </div>
             </div>
+            <div class="col-12 my-5 px-md-5">
+                <div class="row">
+                    <div class="col-12 text-start mx-auto">
+                        <h2 class="title-top-header mb-5 fw-bold">Fees for Fiat to crypto and crypto to FIAT</h2>
+                    </div>
+                    <div class="col-12 text-start mx-auto table-responsive">
+                        <table class="table tbl-piggy-service text-center">
+                            <tr>
+                                <th></th>
+                                <th>Maker</th>
+                                <th>Taker</th>
+                            </tr>
+                            <tr>
+                                <th>Buy</th>
+                                <td>0.05%</td>
+                                <td>0.05%</td>
+                            </tr>
+                            <tr>
+                                <th>Sell</th>
+                                <td>0.05%</td>
+                                <td>0.05%</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-12 my-5 text-center">
+                        <h3>Coming soon!</h3>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section><!-- End Hero -->

@@ -9,7 +9,7 @@
                             <span class="title">Open your account</span>
                         </div>
                         <div class="bot">
-                            <p>You can easly open your account in a minute</p>
+                            <p>You can easliy open your account in a minute</p>
                         </div>
                     </div>
                     <div class="icon">
@@ -43,7 +43,7 @@
                         </div>
                         <div class="bot">
                             <p>
-                                Invite people/companies to register on <b translate="no"> PiggyBank </b>
+                                Invite people/companies to register on <b translate="no"> MoneyPort </b>
                                 using your link
                             </p>
                         </div>
@@ -62,8 +62,8 @@
                         </div>
                         <div class="bot">
                             <p>
-                                Now you will receive a commission on every fiat transaction or on every buy or selling
-                                of crypto that the
+                                Now you will receive a commission on every fiat transaction or on every crypto buy /sell
+                                that the
                                 person/company makes.
                             </p>
                         </div>
@@ -81,7 +81,20 @@
         <div class="col-12 text-start mx-auto table-responsive my-5">
             <table class="table tbl-piggy-service text-center">
                 <tr>
-                    <th>Select currency</th>
+                    <th>
+                        <select name="currency" id="currency" class="btn">
+                            <option>Select currency</option>
+                            <?php foreach ($currency as $dt) {
+                                if (($dt->currency == "USD") || ($dt->currency == "EUR")) {?>
+                            <option value="<?= $dt->currency ?>"><?= $dt->currency ?></option>
+                            <?php } }?>
+
+                            <?php foreach ($currency as $dt) {
+                                if (($dt->currency != "USD") && ($dt->currency != "EUR")) {?>
+                            <option value="<?= $dt->currency ?>"><?= $dt->currency ?></option>
+                            <?php } }?>
+                        </select>
+                    </th>
                     <th>Top up</th>
                     <th>Wallet to wallet receive</th>
                     <th>Wallet to wallet send</th>
@@ -91,12 +104,12 @@
                 </tr>
                 <tr>
                     <td>Referral earning</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td id="tu"></td>
+                    <td id="wtwr"></td>
+                    <td id="wtws"></td>
+                    <td id="wtb"></td>
+                    <td>Soon!</td>
+                    <td>Soon!</td>
                 </tr>
             </table>
         </div>

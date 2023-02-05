@@ -10,19 +10,79 @@ class Link extends CI_Controller
 
     public function lern_reward()
     {
+        $url = URLAPI . "/v1/trackless/currency/getAllCurrency";
+        $currency   = apitrackless($url)->message;
+
         $data = array(
             "title"     => NAMETITLE . " - Lern Get Reward",
             "content"   => "auth/landingpage/lern_reward",
             "extra"     => "auth/landingpage/js/js_index",
+            "currency"     => $currency,
         );
 
         $this->load->view('tamplate/wrapper', $data);
     }
 
+    public function get_reff($curr)
+    {
+		$mfee = apitrackless(URLAPI . "/v1/admin/fee/getFee?currency=" . $curr);
+
+		$mdata = array();
+		if (@$mfee->code == 200) {
+			$mdata = array(
+				"topup_circuit_fxd" => number_format($mfee->message->topup_circuit_fxd, 2, ".", ","),
+				"topup_circuit_pct" => number_format($mfee->message->topup_circuit_pct * 100, 2, ".", ","),
+				"topup_outside_fxd" => number_format($mfee->message->topup_outside_fxd, 2, ".", ","),
+				"topup_outside_pct" => number_format($mfee->message->topup_outside_pct * 100, 2, ".", ","),
+				"wallet_sender_fxd" => number_format($mfee->message->wallet_sender_fxd, 2, ".", ","),
+				"wallet_sender_pct" => number_format($mfee->message->wallet_sender_pct * 100, 2, ".", ","),
+				"wallet_receiver_fxd" => number_format($mfee->message->wallet_receiver_fxd, 2, ".", ","),
+				"wallet_receiver_pct" => number_format($mfee->message->wallet_receiver_pct * 100, 2, ".", ","),
+				"walletbank_circuit_fxd" => number_format($mfee->message->walletbank_circuit_fxd, 2, ".", ","),
+				"walletbank_circuit_pct" => number_format($mfee->message->walletbank_circuit_pct * 100, 2, ".", ","),
+				"walletbank_outside_fxd" => number_format($mfee->message->walletbank_outside_fxd, 2, ".", ","),
+				"walletbank_outside_pct" => number_format($mfee->message->walletbank_outside_pct * 100, 2, ".", ","),
+				"referral_send_fxd" => number_format($mfee->message->referral_send_fxd, 2, ".", ","),
+				"referral_send_pct" => number_format($mfee->message->referral_send_pct * 100, 2, ".", ","),
+				"referral_receive_fxd" => number_format($mfee->message->referral_receive_fxd, 2, ".", ","),
+				"referral_receive_pct" => number_format($mfee->message->referral_receive_pct * 100, 2, ".", ","),
+				"referral_topup_fxd" => number_format($mfee->message->referral_topup_fxd, 2, ".", ","),
+				"referral_topup_pct" => number_format($mfee->message->referral_topup_pct * 100, 2, ".", ","),
+				"referral_bank_fxd" => number_format($mfee->message->referral_bank_fxd, 2, ".", ","),
+				"referral_bank_pct" => number_format($mfee->message->referral_bank_pct * 100, 2, ".", ","),
+			);
+		} else {
+			$mdata = array(
+				"topup_circuit_fxd" => number_format(0, 2, ".", ","),
+				"topup_circuit_pct" => number_format(0 * 100, 2, ".", ","),
+				"topup_outside_fxd" => number_format(0, 2, ".", ","),
+				"topup_outside_pct" => number_format(0 * 100, 2, ".", ","),
+				"wallet_sender_fxd" => number_format(0, 2, ".", ","),
+				"wallet_sender_pct" => number_format(0 * 100, 2, ".", ","),
+				"wallet_receiver_fxd" => number_format(0, 2, ".", ","),
+				"wallet_receiver_pct" => number_format(0 * 100, 2, ".", ","),
+				"walletbank_circuit_fxd" => number_format(0, 2, ".", ","),
+				"walletbank_circuit_pct" => number_format(0 * 100, 2, ".", ","),
+				"walletbank_outside_fxd" => number_format(0, 2, ".", ","),
+				"walletbank_outside_pct" => number_format(0 * 100, 2, ".", ","),
+				"referral_send_fxd" => number_format(0, 2, ".", ","),
+				"referral_send_pct" => number_format(0 * 100, 2, ".", ","),
+				"referral_receive_fxd" => number_format(0, 2, ".", ","),
+				"referral_receive_pct" => number_format(0 * 100, 2, ".", ","),
+				"referral_topup_fxd" => number_format(0, 2, ".", ","),
+				"referral_topup_pct" => number_format(0 * 100, 2, ".", ","),
+				"referral_bank_fxd" => number_format(0, 2, ".", ","),
+				"referral_bank_pct" => number_format(0 * 100, 2, ".", ","),
+			);
+		}
+        
+		echo json_encode($mdata);
+    }
+
     public function translate()
     {
         $data = array(
-            "title"     => NAMETITLE . " - Work with us",
+            "title"     => NAMETITLE . " - Translate",
             "content"   => "auth/landingpage/translate",
             // "extra"     => "auth/landingpage/js/js_index",
         );
@@ -30,28 +90,28 @@ class Link extends CI_Controller
         $this->load->view('tamplate/wrapper', $data);
     }
 
-    public function utilities()
+    public function guide()
     {
-        $utilities = base64_decode($_GET['utilities']);
-
+        $guide = base64_decode($_GET['guide']);
         $data = array(
-            "title"     => NAMETITLE . " - Work with us",
-            "content"   => "auth/landingpage/utilities",
-            "utilities"   => $utilities,
-            // "extra"     => "auth/landingpage/js/js_index",
+            "title"     => NAMETITLE,
+            "content"   => "auth/landingpage/guide",
+            "guide"   => $guide,
+            "extra"     => "auth/landingpage/js/js_index",
         );
 
         $this->load->view('tamplate/wrapper', $data);
     }
 
-    public function service()
+    public function service($url)
     {
-        $service = base64_decode($_GET['service']);
+        $service = base64_decode($url);
+
         $data = array(
-            "title"     => NAMETITLE . " - Work with us",
+            "title"     => NAMETITLE,
             "content"   => "auth/landingpage/service",
             "service"   => $service,
-            "extra"     => "auth/landingpage/js/js_index",
+            // "extra"     => "auth/landingpage/js/js_index",
         );
 
         $this->load->view('tamplate/wrapper', $data);
@@ -190,55 +250,6 @@ class Link extends CI_Controller
 
         $this->load->view('tamplate/wrapper', $data);
     }
-
-    public function mailproses()
-    {
-        // $this->form_validation->set_rules('email', 'Email', 'trim|required');
-
-        // if ($this->form_validation->run() == FALSE) {
-        //     $this->session->set_flashdata('failed', validation_errors());
-        //     redirect(base_url('#contactus'));
-        //     return;
-        // }
-
-        // $input        = $this->input;
-        // $email   = $this->security->xss_clean($input->post("email"));
-
-        // $result = $this->send_email($email);
-        // if ($result) {
-        //     $this->session->set_flashdata("success", "Message successfully sent!");
-        //     redirect(base_url('#contactus'));
-        //     return;
-        // } else {
-        //     $this->session->set_flashdata("failed", 'Message failed to send!');
-        //     redirect(base_url('#contactus'));
-        //     return;
-        // }
-
-        $this->form_validation->set_rules('ucode', 'Ucode', 'trim|required');
-        $this->form_validation->set_rules('email', 'Email', 'trim|required');
-        $this->form_validation->set_rules('message', 'Message', 'trim|required');
-
-        if ($this->form_validation->run() == FALSE) {
-            $this->session->set_flashdata('failed', validation_errors());
-            redirect(base_url("#contactus"));
-            return;
-        }
-
-        $input        = $this->input;
-        $ucode   = $this->security->xss_clean($input->post("ucode"));
-        $email   = $this->security->xss_clean($input->post("email"));
-        $message   = $this->security->xss_clean($input->post("message"));
-
-        $result = send_email($email, $message, $this->phpmailer_lib->load());
-        if ($result) {
-            $this->session->set_flashdata("success", "Message successfully sent!");
-            redirect(base_url("#contactus"));
-        } else {
-            $this->session->set_flashdata("failed", 'Message failed to send!');
-            redirect(base_url("#contactus"));
-        }
-    }
     
     public function send_message()
     {
@@ -252,6 +263,15 @@ class Link extends CI_Controller
         
         $input        = $this->input;
         $email   = $this->security->xss_clean($input->post("email"));
+        
+        $url = URLAPI . "/v1/auth/getmember_byemail?email=" . $email;
+        $result   = apitrackless($url);
+
+        if (@$result->code != 200) {
+            $this->session->set_flashdata('failed', $result->message);
+            redirect(base_url('#contactus'));
+            return;
+        }
 
         $data = array(
             "title"     => NAMETITLE . " - Send Message",
@@ -262,39 +282,54 @@ class Link extends CI_Controller
 
         $this->load->view('tamplate/wrapper', $data);
     }
-    
-    public function check_ucode()
-    {
-        $ucode = $_GET['ucode'];
-        $url = URLAPI . "/v1/auth/getmember_byucode?ucode=" . $ucode;
-        $result   = apitrackless($url);
 
-        $mdata = array();
-        if (@$result->code == 200) {
-            $mdata = array(
-                "type" => 'show',
-                "url" => $url,
-            );
-        } else {
-            $mdata = array(
-                "type" => 'hide',
-                "url" => $url
-            );
+    public function mailproses()
+    {
+        $this->form_validation->set_rules('email', 'Email', 'trim|required');
+        $this->form_validation->set_rules('message', 'Message', 'trim|required');
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('failed', validation_errors());
+            redirect(base_url("#contactus"));
+            return;
         }
 
-        echo json_encode($mdata);
+        $input        = $this->input;
+        $email   = $this->security->xss_clean($input->post("email"));
+        $message   = $this->security->xss_clean($input->post("message"));
+
+        $result = send_email($email, $message, $this->phpmailer_lib->load());
+        if ($result) {
+            $this->session->set_flashdata("success", "Message successfully sent!");
+            redirect(base_url("#contactus"));
+        } else {
+            $this->session->set_flashdata("failed", 'Message failed to send!');
+            redirect(base_url("#contactus"));
+        }
     }
 
     public function about()
     {
         $data = array(
-            "title"     => NAMETITLE . " - About Piggybank",
+            "title"     => NAMETITLE . " - About",
             "content"   => "auth/landingpage/aboutus",
             "extra"     => "auth/landingpage/js/js_index",
         );
 
         $this->load->view('tamplate/wrapper', $data);
     }
+
+    public function crypto()
+    {
+        $data = array(
+            "title"     => NAMETITLE,
+            "content"   => "auth/landingpage/crypto",
+            "extra"     => "auth/landingpage/js/js_index",
+        );
+
+        $this->load->view('tamplate/wrapper', $data);
+    }
+
     public function soon()
     {
         $data = array(
