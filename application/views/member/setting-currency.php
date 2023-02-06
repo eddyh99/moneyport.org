@@ -4,7 +4,7 @@
             <div class="app-container py-5">
                 <div class="row d-flex justify-content-center">
                     <div class="col-12 text-center mb-3">
-                        <img src="<?= base_url(); ?>assets/img/logo-app-2.png" alt="" class="app-logo">
+                        <img src="<?= base_url(); ?>assets/img/logo.png" alt="" class="app-logo">
                     </div>
                     <div class="col-10 text-center mb-3">
                         <span class="info-currency-bimg w-50">You can convert, custody and send in 50 currencies.

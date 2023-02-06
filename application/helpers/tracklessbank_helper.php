@@ -43,12 +43,12 @@ function max_sendtowallet($balance,$currency){
     $mfee = apitrackless(URLAPI . "/v1/admin/fee/getFee?currency=" . $currency);
     $mcost = apitrackless(URLAPI . "/v1/admin/cost/getCost?currency=" . $currency);
     
-    $feefxd = $mfee->message->wallet_sender_fxd;
-    $feepct = $mfee->message->wallet_sender_pct;
-    $refpct = $mfee->message->referral_send_pct;
-    $reffxd = $mfee->message->referral_send_fxd;
-    $costfxd = $mcost->message->wallet_sender_fxd;
-    $costpct = $mcost->message->wallet_sender_pct;
+    $feefxd = @$mfee->message->wallet_sender_fxd;
+    $feepct = @$mfee->message->wallet_sender_pct;
+    $refpct = @$mfee->message->referral_send_pct;
+    $reffxd = @$mfee->message->referral_send_fxd;
+    $costfxd = @$mcost->message->wallet_sender_fxd;
+    $costpct = @$mcost->message->wallet_sender_pct;
 
     $fee  = ($balance*$feepct)+$feefxd;
     $ref  = ($balance*$refpct)+$reffxd;

@@ -12057,6 +12057,7 @@ section {
 }
 
 .input-piggy-style input,
+.input-piggy-style select,
 .input-piggy-style input:focus,
 .input-piggy-style input:hover {
   background: #FFFFFF !important;
