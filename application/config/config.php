@@ -537,5 +537,5 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
-$config['google_key'] = '6LdMV_8jAAAAAKch1SV4XJrYRVpStLQ7FhisZO5D';
-$config['google_secret'] = '6LdMV_8jAAAAAEoC7PILVLb-ZrnYFf-g4rtOPFzu';
+$config['google_key'] = '6Leq0FIkAAAAAGwPw6VUGfuUQJSDwJ3p1hSEib_N';
+$config['google_secret'] = '6Leq0FIkAAAAAH2PR53Di377A4D6kHWw_T2lbcF5';
