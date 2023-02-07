@@ -58,7 +58,7 @@ class Bank extends CI_Controller
         $bankcost = apitrackless(URLAPI . "/v1/admin/cost/getCost?currency=" . $_SESSION['currency']);
         $bankfee = apitrackless(URLAPI . "/v1/admin/fee/getFee?currency=" . $_SESSION['currency']);
 
-        $fee = (balance($_SESSION['user_id'], $_SESSION["currency"]) * $bankcost->message->walletbank_circuit_pct) + (balance($_SESSION['user_id'], $_SESSION["currency"]) * $bankfee->message->walletbank_circuit_pct) + $bankcost->message->walletbank_circuit_fxd + $bankfee->message->walletbank_circuit_fxd;
+        $fee = (balance($_SESSION['user_id'], $_SESSION["currency"]) * @$bankcost->message->walletbank_circuit_pct) + (balance($_SESSION['user_id'], $_SESSION["currency"]) * @$bankfee->message->walletbank_circuit_pct) + @$bankcost->message->walletbank_circuit_fxd + @$bankfee->message->walletbank_circuit_fxd;
 
         if ((balance($_SESSION['user_id'], $_SESSION["currency"])*100) <= 0) {
             $fee = 0;
@@ -115,7 +115,7 @@ class Bank extends CI_Controller
         $bankcost = apitrackless(URLAPI . "/v1/admin/cost/getCost?currency=" . $_SESSION['currency']);
         $bankfee = apitrackless(URLAPI . "/v1/admin/fee/getFee?currency=" . $_SESSION['currency']);
 
-        $fee = (balance($_SESSION['user_id'], $_SESSION["currency"]) * $bankcost->message->walletbank_outside_pct) + (balance($_SESSION['user_id'], $_SESSION["currency"]) * $bankfee->message->walletbank_outside_pct) + $bankcost->message->walletbank_outside_fxd + $bankfee->message->walletbank_outside_fxd;
+        $fee = (balance($_SESSION['user_id'], $_SESSION["currency"]) * @$bankcost->message->walletbank_outside_pct) + (balance($_SESSION['user_id'], $_SESSION["currency"]) * @$bankfee->message->walletbank_outside_pct) + @$bankcost->message->walletbank_outside_fxd + @$bankfee->message->walletbank_outside_fxd;
 
         if ((balance($_SESSION['user_id'], $_SESSION["currency"])*100) <= 0) {
             $fee = 0;

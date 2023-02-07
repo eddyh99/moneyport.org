@@ -19,7 +19,7 @@
 
 <?php if ($type == "local") { ?>
 <div class="d-flex flex-row align-items-center my-3">
-    <select name="accountType" class="form-control me-2" id="accountType">
+    <select name="accountType" class="form-select me-2" id="accountType">
         <option value="">--Account Type--</option>
         <option value="saving">Saving</option>
         <option value="checking">Checking</option>

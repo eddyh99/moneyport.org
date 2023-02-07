@@ -17,7 +17,7 @@ class Swap extends CI_Controller
             "userid" => $_SESSION["user_id"]
         );
         $url = URLAPI . "/v1/member/currency/getActiveCurrency";
-        $body["currency"]   = apitrackless($url, json_encode($mdata))->message;
+        $body["currency"]   = @apitrackless($url, json_encode($mdata))->message;
 
         $data['title'] = NAMETITLE . " - Swap";
         $footer['extra'] = "member/swap/js/js_swap";

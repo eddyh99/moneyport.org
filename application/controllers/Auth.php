@@ -18,6 +18,16 @@ class Auth extends CI_Controller
 		$this->load->view('tamplate/footer', $data);
 	}
 
+	public function page404()
+	{
+		$data['title'] = NAMETITLE . " - 404 Page Not Found";
+		$data['extra'] = "auth/landingpage/js/js_index";
+
+		$this->load->view('tamplate/header', $data);
+		$this->load->view('auth/404');
+		$this->load->view('tamplate/footer', $data);
+	}
+
 	public function login()
 	{
 		$this->session->unset_userdata('referral');
@@ -77,7 +87,7 @@ class Auth extends CI_Controller
 		$status = json_decode($output, true);
 
 		if (!$status['success']) {
-			$this->session->set_flashdata('flashError', 'Sorry Google Recaptcha Unsuccessful!!');
+			$this->session->set_flashdata('failed', 'Sorry Google Recaptcha Unsuccessful!!');
 			redirect(base_url() . "auth/signup");
 		}
 
@@ -127,7 +137,7 @@ class Auth extends CI_Controller
 			$urlqr = base_url() . 'wallet/send?' . base64_encode('cur=' . @$_SESSION["currency"] . '&ucode=' . $result->message->ucode);
 			sendmail($email, $subject, $message, $this->phpmailer_lib->load());
 			$this->qrcodeuser($result->message->ucode);
-			$this->qrcodereceive($urlqr, $result->message->ucode);
+			// $this->qrcodereceive($urlqr, $result->message->ucode);
 
 			$this->session->unset_userdata('referral');
 			$this->session->set_flashdata('success', "<p style='color:black'>You have successfully register</p>");
