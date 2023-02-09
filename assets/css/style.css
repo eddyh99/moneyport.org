@@ -40,7 +40,7 @@ h6 {
 # Sections
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding-bottom: 60px;
   overflow: hidden;
 }
 
@@ -4821,7 +4821,7 @@ section {
   .reward span.shareit {
     font-weight: 500;
     font-size: 16px;
-    line-height: 180%;
+    line-height: 120%;
     color: #000000;
   }
 
@@ -7123,7 +7123,7 @@ section {
   .reward span.shareit {
     font-weight: 500;
     font-size: 16px;
-    line-height: 180%;
+    line-height: 120%;
     color: #000000;
   }
 
@@ -9353,7 +9353,7 @@ section {
   .reward span.shareit {
     font-weight: 500;
     font-size: 18px;
-    line-height: 180%;
+    line-height: 120%;
     color: #000000;
   }
 
@@ -11888,7 +11888,7 @@ section {
 
   .reward h2 {
     font-weight: 700;
-    font-size: 68px;
+    font-size: 45px;
     line-height: 110%;
 
     color: #000000;
@@ -11899,8 +11899,8 @@ section {
   .reward p,
   .reward span.shareit {
     font-weight: 500;
-    font-size: 24px;
-    line-height: 180%;
+    font-size: 20px;
+    line-height: 120%;
     color: #000000;
   }
 
@@ -12317,7 +12317,7 @@ section {
 }
 
 .carousel-item-bot img {
-  height: 75px;
+  height: 50px;
   margin: auto 0;
 }
 

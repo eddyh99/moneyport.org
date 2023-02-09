@@ -467,7 +467,7 @@
     <section id="" class="about">
         <div class="container p-r">
             <div class="row gx-0 mb-5">
-                <div class="col-lg-8 mb-5 ps-lg-5">
+                <div class="col-lg-6 ps-lg-5">
                     <div class="content-freedy">
                         <h2 class="f-lexend">Instant payments between all TracklessProject users of all over the world
                         </h2>
@@ -554,7 +554,7 @@
         </div>
     </section><!-- Section -->
 
-    <section id="guide" class="about">
+    <section id="guide" class="about pt-3">
         <div class="container p-r border-guide">
             <div class="row gx-0">
                 <div class="col-12">
