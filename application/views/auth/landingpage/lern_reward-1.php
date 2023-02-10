@@ -98,7 +98,7 @@
                     <th>Top up</th>
                     <th>Wallet to wallet receive</th>
                     <th>Wallet to wallet send</th>
-                    <th>Wallet to bank</th>
+                    <th>Withdraw</th>
                     <th>Buy crypto</th>
                     <th>Sell crypto</th>
                 </tr>

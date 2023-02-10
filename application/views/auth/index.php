@@ -39,9 +39,9 @@
                 </p>
                 <div class="d-flex flex-wrap">
                     <div class="powered-top mb-3 me-5">
-                        <span>Powered By</span>
+                        <span>Empowered By</span>
                         <a href="https://tracklessproject.com/">
-                            <img src="<?= base_url() ?>assets/img/tracklessproject.png" alt="">
+                            <img src="<?= base_url() ?>assets/img/tracklessprojects.png" alt="">
                         </a>
                     </div>
                 </div>
@@ -467,7 +467,7 @@
     <section id="" class="about">
         <div class="container p-r">
             <div class="row gx-0 mb-5">
-                <div class="col-lg-8 mb-5 ps-lg-5">
+                <div class="col-lg-6 ps-lg-5">
                     <div class="content-freedy">
                         <h2 class="f-lexend">Instant payments between all TracklessProject users of all over the world
                         </h2>
@@ -506,7 +506,8 @@
                                 <li><b translate="no"> Trade off </b> platform</li>
                                 <li>Shared <b translate="no"> order book </b></li>
                                 <li>Distributed and decentralized</li>
-                                <li>Buy crypto from your FIAT balance of your PiggyBank wallet</li>
+                                <li>Buy crypto from your FIAT balance of your <b translate="no"> MoneyPort </b> wallet
+                                </li>
                                 <li>Withdraw your earning by bank transfer in more than
                                     50 currencies to any bank account even not under your name</li>
                             </ul>
@@ -554,7 +555,7 @@
         </div>
     </section><!-- Section -->
 
-    <section id="guide" class="about">
+    <section id="guide" class="about pt-3">
         <div class="container p-r border-guide">
             <div class="row gx-0">
                 <div class="col-12">
@@ -1101,7 +1102,7 @@
                         <div class="powered-top mb-3 me-5">
                             <span class="fw-bold">Empowered by</span>
                             <a href="https://tracklessproject.com/">
-                                <img src="<?= base_url() ?>assets/img/tracklessproject.png" alt="">
+                                <img src="<?= base_url() ?>assets/img/tracklessprojects.png" alt="">
                             </a>
                         </div>
                     </div>
@@ -1121,10 +1122,20 @@
                     </a>
                 </div> -->
             <div class="col-12 pe-2 footer-links text-center">
-                <h4 class="f-lexend">
+                <div class="list text-center w-100 mb-5">
+                    <a href="<?= base_url() ?>link/privacy_policy"
+                        class="mx-5 d-inline-block text-decoration-underline">
+                        Privacy policy
+                    </a>
+                    <a href="<?= base_url() ?>link/lern_transparency"
+                        class="mx-5 d-inline-block text-decoration-underline">
+                        Price lists
+                    </a>
+                </div>
+                <p class="f-lexend m-0">
                     Money Port (TH) is a service subject to partnership with licenses PBS
                     On line LLC
-                </h4>
+                </p>
                 <!-- <p class="copyright py-3 m-0">Money Port (TH) is a service subject to partnership with licenses PBS
                         On line LLC</p> -->
             </div>

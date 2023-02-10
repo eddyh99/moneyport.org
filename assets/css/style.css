@@ -14,7 +14,7 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  color: #444444;
+  color: #000000;
 }
 
 a {
@@ -40,7 +40,7 @@ h6 {
 # Sections
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding-bottom: 60px;
   overflow: hidden;
 }
 
@@ -3171,6 +3171,16 @@ section {
     color: #ffffff;
   }
 
+  .footer-links p {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 23px;
+
+    text-align: center;
+
+    color: #FFFFFF;
+  }
+
   .book-footer {
     position: absolute;
     bottom: 50px;
@@ -4821,7 +4831,7 @@ section {
   .reward span.shareit {
     font-weight: 500;
     font-size: 16px;
-    line-height: 180%;
+    line-height: 120%;
     color: #000000;
   }
 
@@ -5487,6 +5497,16 @@ section {
     font-size: 12px;
     line-height: 110%;
     color: #ffffff;
+  }
+
+  .footer-links p {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 23px;
+
+    text-align: center;
+
+    color: #FFFFFF;
   }
 
   .book-footer {
@@ -7123,7 +7143,7 @@ section {
   .reward span.shareit {
     font-weight: 500;
     font-size: 16px;
-    line-height: 180%;
+    line-height: 120%;
     color: #000000;
   }
 
@@ -7721,6 +7741,16 @@ section {
     font-size: 18px;
     line-height: 110%;
     color: #ffffff;
+  }
+
+  .footer-links p {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+
+    text-align: center;
+
+    color: #FFFFFF;
   }
 
   .book-footer {
@@ -9353,7 +9383,7 @@ section {
   .reward span.shareit {
     font-weight: 500;
     font-size: 18px;
-    line-height: 180%;
+    line-height: 120%;
     color: #000000;
   }
 
@@ -10258,6 +10288,16 @@ section {
     font-size: 18px;
     line-height: 110%;
     color: #ffffff;
+  }
+
+  .footer-links p {
+    font-weight: 500;
+    font-size: 19.3856px;
+    line-height: 23px;
+
+    text-align: center;
+
+    color: #FFFFFF;
   }
 
   .book-footer {
@@ -11888,7 +11928,7 @@ section {
 
   .reward h2 {
     font-weight: 700;
-    font-size: 68px;
+    font-size: 45px;
     line-height: 110%;
 
     color: #000000;
@@ -11899,8 +11939,8 @@ section {
   .reward p,
   .reward span.shareit {
     font-weight: 500;
-    font-size: 24px;
-    line-height: 180%;
+    font-size: 20px;
+    line-height: 120%;
     color: #000000;
   }
 
@@ -12317,7 +12357,7 @@ section {
 }
 
 .carousel-item-bot img {
-  height: 75px;
+  height: 50px;
   margin: auto 0;
 }
 
