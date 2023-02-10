@@ -14,7 +14,7 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  color: #444444;
+  color: #000000;
 }
 
 a {
@@ -3171,6 +3171,16 @@ section {
     color: #ffffff;
   }
 
+  .footer-links p {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 23px;
+
+    text-align: center;
+
+    color: #FFFFFF;
+  }
+
   .book-footer {
     position: absolute;
     bottom: 50px;
@@ -5489,6 +5499,16 @@ section {
     color: #ffffff;
   }
 
+  .footer-links p {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 23px;
+
+    text-align: center;
+
+    color: #FFFFFF;
+  }
+
   .book-footer {
     position: absolute;
     bottom: 50px;
@@ -7721,6 +7741,16 @@ section {
     font-size: 18px;
     line-height: 110%;
     color: #ffffff;
+  }
+
+  .footer-links p {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+
+    text-align: center;
+
+    color: #FFFFFF;
   }
 
   .book-footer {
@@ -10258,6 +10288,16 @@ section {
     font-size: 18px;
     line-height: 110%;
     color: #ffffff;
+  }
+
+  .footer-links p {
+    font-weight: 500;
+    font-size: 19.3856px;
+    line-height: 23px;
+
+    text-align: center;
+
+    color: #FFFFFF;
   }
 
   .book-footer {

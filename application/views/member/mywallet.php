@@ -44,7 +44,7 @@
                                         stroke="" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
 
-                                <span>Wallet to bank</span>
+                                <span>Withdraw</span>
                             </a>
                             <a href="<?= base_url() ?>swap"
                                 class="d-flex flex-column justify-content-center align-items-center py-2 my-3 menus-blue">

@@ -5,7 +5,7 @@
                 <ol>
                     <li>Login into your wallet</li>
                     <li>Choose the currency that you want to send</li>
-                    <li>Click the button ‘’WALLET TO BANK’’</li>
+                    <li>Click the button ‘’WITHDRAW’’</li>
                     <li>Enter the receiver bank details and the Causal that you prefere</li>
                     <li>Click confirm</li>
                     <li>Double check that all the entered data are correct and click ok</li>
