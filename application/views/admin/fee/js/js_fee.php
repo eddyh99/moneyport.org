@@ -31,13 +31,15 @@ function readfee() {
             $("#referral_bank_fxd").val(data.referral_bank_fxd)
             $("#referral_bank_pct").val(data.referral_bank_pct)
 
-            if ((readcurrency != "USD") ||
-                (readcurrency != "EUR") ||
-                (readcurrency != "AUD") ||
-                (readcurrency != "NZD") ||
-                (readcurrency != "CAD") ||
-                (readcurrency != "HUF") ||
-                (readcurrency != "SGD") ||
+            if ((readcurrency != "USD") &&
+                (readcurrency != "EUR") &&
+                (readcurrency != "AUD") &&
+                (readcurrency != "NZD") &&
+                (readcurrency != "CAD") &&
+                (readcurrency != "HUF") &&
+                (readcurrency != "SGD") &&
+                (readcurrency != "GBP") &&
+                (readcurrency != "RON") &&
                 (readcurrency != "TRY")) {
                 $("#walletbank_outside_fxd_div").hide()
                 $("#walletbank_outside_pct_div").hide()
@@ -51,6 +53,7 @@ function readfee() {
                 (readcurrency == "CAD") ||
                 (readcurrency == "HUF") ||
                 (readcurrency == "SGD") ||
+                (readcurrency == "RON") ||
                 (readcurrency == "TRY")) {
                 $("#walletbank_outside_fxd_div").hide()
                 $("#walletbank_outside_pct_div").hide()
@@ -60,14 +63,14 @@ function readfee() {
                 $("#topup_circuit_pct_div").show()
             }
             if ((readcurrency == "USD") ||
-                (readcurrency == "EUR") ||
-                (readcurrency == "GBP")) {
+                (readcurrency == "GBP") ||
+                (readcurrency == "EUR")) {
                 $("#walletbank_outside_fxd_div").show()
                 $("#walletbank_outside_pct_div").show()
-                $("#topup_outside_fxd_div").show()
-                $("#topup_outside_pct_div").show()
                 $("#topup_circuit_fxd_div").show()
                 $("#topup_circuit_pct_div").show()
+                $("#topup_outside_fxd_div").show()
+                $("#topup_outside_pct_div").show()
             }
         },
         error: function(response) {
