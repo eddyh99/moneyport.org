@@ -80,11 +80,12 @@
                             technology has come to completion after more than 5 years of research and development.
                         </p>
                     </div>
-                    <div class="col-6 d-none d-lg-grid">
+                    <div class="col-4 mx-auto d-none d-lg-grid">
                         <img src="<?= base_url() ?>assets/img/img-14.png" alt="" class="img-fluid">
                     </div>
-                    <div class="col-12 mt-5 text-start">
-                        <h2 class="f-lexend fw-bold">This new technology was born as an evolution of the blockchain and
+                    <div class="col-12 text-start">
+                        <h2 class="f-lexend fw-bold mb-3">This new technology was born as an evolution of the blockchain
+                            and
                             is the solution for:</h2>
                         <ol>
                             <li>The problem of scalability, the first major problem that afflicts the old blockchain
@@ -152,9 +153,9 @@
                 </div>
             </div>
             <div class="col-12 col-md-8 text-start">
-                <h2 class="fw-bold mb-3 f-lexend text-dark">The <b translate="no"> MoneyPort </b> main mission is to get
-                    out from the elite
-                    global control</h2>
+                <h2 class="fw-bold mb-3 f-lexend text-dark">
+                    The main mission of <b translate="no"> MoneyPort </b> is to get out from the elite global control
+                </h2>
                 <p>
                     <b translate="no"> MoneyPort </b> wants to give back to the individuals the privacy that
                     nowadays is continuously violated by multinationals, organizations that register and sell our data,
