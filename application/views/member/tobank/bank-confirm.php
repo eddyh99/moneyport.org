@@ -5,7 +5,7 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-12">
                         <div class="text-start">
-                            <span class="me-auto f-monserat title-top-navbar">Transfer Withdraw</span>
+                            <span class="me-auto f-monserat title-top-navbar">Transfer Wallet to Bank</span>
                         </div>
                     </div>
                     <div class="col-12 infobank-list-app my-4">

@@ -60,7 +60,7 @@
             <div class="row">
                 <div class="col-12 text-center bg-layout-singup py-5">
                     <h2 class="f-lexend m-0">
-                        Get your <b translate="no"> MoneyPort </b> account instantly
+                        Open your <b translate="no"> MoneyPort </b> account instantly
                     </h2>
                     <div class="text-center">
                         <a href="<?= base_url(); ?>auth/signup"
