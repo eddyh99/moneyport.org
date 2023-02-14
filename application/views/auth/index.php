@@ -31,7 +31,7 @@
             <div class="col-12 col-lg-8 d-flex flex-column justify-content-center slider-freedy text-start">
                 <h1 class="f-lexend fw-bold">TRANSVERSAL INSTITUTION TO THE BANKING SYSTEM</h1>
                 <p class="f-lexend my-3">
-                    Get out from the global elite's control. <br>
+                    Get out from the elite global control. <br>
                     Stay with us and take back your freedom and your anonymity. <br>
                     <b translate="no"> MoneyPort </b> is the only system that protects your privacy, and does not allow
                     any institutions to
@@ -533,7 +533,7 @@
                         <div class="col-12 p-3 text-center">
                             <h2>Get Reward<br>
                                 with our Affiliate Campaign</h2>
-                            <p>
+                            <p class="col-lg-10 mx-auto">
                                 <b translate="no"> MoneyPort </b> assigns a personal referral link (with a referral
                                 code) to every account; you
                                 just need to share it and let your friend register on the platform using your referral
@@ -1097,16 +1097,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12">
-                    <div class="d-flex flex-wrap">
-                        <div class="powered-top mb-3 me-5">
-                            <span class="fw-bold">Empowered by</span>
-                            <a href="https://tracklessproject.com/">
-                                <img src="<?= base_url() ?>assets/img/tracklessprojects.png" alt="">
-                            </a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section><!-- Section -->
@@ -1116,13 +1106,13 @@
 <footer id="contact" class="footer p-0 p-r">
     <div class="container py-5">
         <div class="row gy-4">
-            <!-- <div class="col-lg-3 col-12 pe-2 footer-links d-flex align-items-center justify-content-center">
-                    <a href="<?= base_url() ?>" class="text-text-decoration-none">
-                        <img src="<?= base_url() ?>assets/img/logo-rtext.png" alt="" class="logo">
-                    </a>
-                </div> -->
-            <div class="col-12 pe-2 footer-links text-center">
-                <div class="list text-center w-100 mb-5">
+            <div class="col-lg-3 col-12 pe-2 footer-links d-flex align-items-center justify-content-center">
+                <a href="<?= base_url() ?>" class="text-text-decoration-none">
+                    <img src="<?= base_url() ?>assets/img/logo-rtext-white.png" alt="" class="img-fluid">
+                </a>
+            </div>
+            <div class="col-lg-6 col-12 pe-2 footer-links text-center me-auto">
+                <div class="list text-center w-100 mb-3">
                     <a href="<?= base_url() ?>link/privacy_policy"
                         class="mx-5 d-inline-block text-decoration-underline">
                         Privacy policy
@@ -1132,9 +1122,15 @@
                         Price lists
                     </a>
                 </div>
+                <div class="d-flex flex-row flex-wrap align-items-center justify-content-center w-100 mb-3">
+                    <span class="powered me-3 f-koulen fw-semibold">Empowered by</span>
+                    <a href="https://tracklessproject.com/">
+                        <img src="<?= base_url() ?>assets/img/tracklessprojects.png" alt="" class="trackless">
+                    </a>
+                </div>
                 <p class="f-lexend m-0">
-                    Money Port (TH) is a service subject to partnership with licenses PBS
-                    On line LLC
+                    <b translate="no"> Money Port </b> (TH) is a service subject to partnership with licensee PBS On
+                    line LLC
                 </p>
                 <!-- <p class="copyright py-3 m-0">Money Port (TH) is a service subject to partnership with licenses PBS
                         On line LLC</p> -->
