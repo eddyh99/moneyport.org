@@ -2837,7 +2837,7 @@ section {
     font-size: 12px;
     line-height: 180%;
 
-    color: rgba(6, 6, 6, 0.8);
+    color: #060606;
   }
 
   .slider-freedy p span {
@@ -5165,7 +5165,7 @@ section {
     font-size: 16px;
     line-height: 180%;
 
-    color: rgba(6, 6, 6, 0.8);
+    color: #060606;
   }
 
   .slider-freedy p span {
@@ -7410,7 +7410,7 @@ section {
     font-size: 20px;
     line-height: 180%;
 
-    color: rgba(6, 6, 6, 0.8);
+    color: #060606;
   }
 
   .slider-freedy p span {
@@ -9941,7 +9941,7 @@ section {
     font-size: 20px;
     line-height: 180%;
 
-    color: rgba(6, 6, 6, 0.8);
+    color: #060606;
   }
 
   .slider-freedy p span {
@@ -12419,4 +12419,19 @@ section {
 
 .freedy-card.mport {
   border-color: #CF4B00 !important;
+}
+
+.footer-links a .logo {
+  height: 75px;
+}
+
+.footer-links a .trackless {
+  height: 65px;
+}
+
+.footer-links span.powered {
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 45px;
+  color: #000000;
 }

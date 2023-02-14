@@ -18,8 +18,9 @@
                 <div class="row">
                     <div class="col-12 col-md-6 mb-5 text-start m-auto">
                         <h2 class="title-top-header f-poppins fw-bold">
-                            Trade on our integrated <b translate="no"> trade-off </b> platform using the shared order
-                            book
+                            Trade on our integrated <b translate="no"> trade-off </b> platform using the shared <b
+                                translate="no"> order
+                                book </b>
                         </h2>
                         <div class="my-3">
                             <p>

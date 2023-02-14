@@ -43,7 +43,7 @@
                         </h2>
                     </div>
                     <div class="col-12 col-md-8 mb-5 text-start m-auto">
-                        <h2 class="f-poppins subtitle-top-header">We Care About it !</h2>
+                        <h2 class="f-poppins subtitle-top-header">We Care About you !</h2>
                         <div class="my-3">
                             <p>
                                 <b translate="no"> MoneyPort </b> is part of the TracklessBank circuit and can operate
@@ -77,8 +77,8 @@
                         </h2>
                     </div>
                     <div class="col-12 col-md-8 mb-5 text-start m-auto">
-                        <h2 class="f-poppins subtitle-top-header">Make simple funds
-                            <br>collecting
+                        <h2 class="f-poppins subtitle-top-header">Make simple the
+                            <br> collecting of money
                         </h2>
                         <div class="my-3">
                             <p>
