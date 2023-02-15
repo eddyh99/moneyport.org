@@ -10,7 +10,8 @@
                         </a>
                     </div>
                     <div class="col-12 d-grid gap-2 my-auto">
-                        <p class="text-center f-roboto">To activate your <b translate="no">PiggyBank</b> account click
+                        <p class="text-center f-roboto">To activate your <b translate="no"> <?= NAMETITLE ?> </b>
+                            account click
                             the link receive in
                             your registration email
                             <br><br>
