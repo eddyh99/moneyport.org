@@ -2690,6 +2690,14 @@ section {
   z-index: -2;
 }
 
+@media (max-width: 810px) {
+
+  .header .logo img {
+    max-height: 50px;
+  }
+
+}
+
 @media (max-width: 575px) {
 
   .box-list-carousel .content-carousel span {

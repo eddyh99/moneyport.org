@@ -73,7 +73,7 @@
         </div>
     </section>
     <!-- ======= Section ======= -->
-    <section id="" class="about bg-picture-2">
+    <section id="" class="about bg-picture-2 pb-0 pb-lg-5">
         <div class="container p-r">
             <div class="row gx-0">
                 <div class="col-6 d-none d-lg-grid m-auto">
@@ -119,7 +119,7 @@
     <section id="services" class="about">
         <div class="container p-r">
             <div class="row gx-0">
-                <div class="col-12 mb-5">
+                <div class="col-12 mb-lg-5">
                     <div class="content-freedy p-r text-center">
                         <h2 class="f-lexend">From now and forever, freedom<br>
                             with <b translate="no"> MoneyPort </b></h2>
@@ -128,7 +128,7 @@
                 <div class="col-12 text-center">
                     <div id="carousel1" class="carousel slide d-none d-lg-grid">
                         <div class="row">
-                            <div class="carousel-inner p-5">
+                            <div class="carousel-inner p-5 pt-0">
                                 <div class="carousel-item active">
                                     <div class="row">
                                         <div class="col-12 col-lg-6 p-3">
@@ -288,7 +288,7 @@
 
                     <div id="carousel12" class="carousel slide d-lg-none">
                         <div class="row">
-                            <div class="carousel-inner p-5">
+                            <div class="carousel-inner p-5 pt-0">
                                 <div class="carousel-item active">
                                     <div class="row">
                                         <div class="col-12 col-lg-6 p-3">
