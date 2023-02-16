@@ -241,12 +241,135 @@
             <?php } ?>
 
             <?php if ($guide == 4) { ?>
-            <div class="col-12 my-5">
+            <div class="col-12 text-center">
+                <h3>Coming soon!</h3>
+            </div>
+
+            <div class="col-12">
                 <div class="logo-text text-center">
-                    <span class="f-lexend text-blue-freedy">How to trade crypto on <b translate="no"> MoneyPort </b>
-                        <b translate="no"> ‘’Trade-Off Platform’’ </b></span>
-                    <h1>Coming soon!</h1>
+                    <h2 class="title-top-header fw-bold">
+                        How to trade crypto on <b translate="no"> MoneyPort </b> <br>
+                        ‘’<b translate="no">Trade-Off </b> Platform’’
+                    </h2>
                 </div>
+            </div>
+            <div class="col-12 mb-5 mt-3">
+                <div class="col-12 text-center mb-5">
+                    <h3 class="fw-bold text-blue-freedy">How to topup crypto wallet</h3>
+
+                    <p class="mt-3">
+                        In order to top up your <b translate="no"> MoneyPort </b> crypto wallet follow the procedure
+                        below (make sure to have
+                        balances into your FIAT wallet, in case you don’t have top it up first in your favorite FIAT
+                        currencies):
+                    </p>
+
+                </div>
+                <div class="d-flex flex-row justify-content-center flex-wrap">
+                    <div class="in-crypto">
+                        <span>Step 1</span>
+                        <div class="box-crypto">
+                            <p class="mb-3">Log in into your <b translate="no"> MoneyPort </b> wallet and select crypto
+                            </p>
+                            <img class="my-auto img-fluid" src="<?= base_url() ?>assets/img/crypto-1.png" alt="">
+                        </div>
+                    </div>
+                    <div class="in-crypto">
+                        <span>Step 2</span>
+                        <div class="box-crypto">
+                            <p class="mb-3">Click top up button</p>
+                            <img class="my-auto img-fluid" src="<?= base_url() ?>assets/img/crypto-2.png" alt="">
+                        </div>
+                    </div>
+                    <div class="in-crypto">
+                        <span>Step 3</span>
+                        <div class="box-crypto">
+                            <p class="mb-3">Select the FIAT currency that you want to convert in USDX, enter the amount
+                                and click convert</p>
+                        </div>
+                    </div>
+                    <div class="in-crypto">
+                        <span>Step 4</span>
+                        <div class="box-crypto">
+                            <p class="mb-3">After clicking convert make sure that all data are correct and then click on
+                                the button confirm</p>
+                        </div>
+                    </div>
+                    <div class="in-crypto">
+                        <span>Step 5</span>
+                        <div class="box-crypto">
+                            <p class="mb-3">Congratulations!
+                                Now you can start to buy and sell crypto </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 text-center mt-5">
+                    <h3 class="fw-bold text-blue-freedy">How to buy and sell crypto by placing limit order</h3>
+
+                    <p class="mt-3">
+                        A buy limit order will be executed only at the limit price or a lower price; and a sell limit
+                        order will be executed only at the limit price or a higher one.
+                        <br>
+                        The price is guaranteed, but the filling of the order is not. Limit orders will be executed only
+                        if the price meets the order qualifications.
+                    </p>
+
+                    <div class="box-p-crypto">
+                        <p>To start trading, enter the price you want to trade at, once you've entered the amount, you
+                            can choose to enter the amount of cryptocurrency you want to buy/sell  or the USDX amount
+                            you want to spend or receive.</p>
+                    </div>
+
+                    <h3 class="fw-bold text-blue-freedy">How to withdraw your earning</h3>
+
+                    <p class="mt-3">
+                        In order to withdraw your your funds follow the procedure below :
+                    </p>
+
+                </div>
+
+                <div class="d-flex flex-row justify-content-center flex-wrap">
+                    <div class="in-crypto">
+                        <span>Step 1</span>
+                        <div class="box-crypto">
+                            <p class="mb-3">From your wallet, in crypto section, click the button withdraw</p>
+                            <img class="my-auto img-fluid" src="<?= base_url() ?>assets/img/crypto-3.png" alt="">
+                        </div>
+                    </div>
+                    <div class="in-crypto">
+                        <span>Step 2</span>
+                        <div class="box-crypto">
+                            <p class="mb-3">Enter the USDX amount that you want to convert, choose your favorite FIAT
+                                currency and click withdraw </p>
+                        </div>
+                    </div>
+                    <div class="in-crypto">
+                        <span>Step 3</span>
+                        <div class="box-crypto">
+                            <p class="mb-3">After clicking withdraw make sure that all data are correct and then click
+                                on confirm </p>
+                        </div>
+                    </div>
+                    <div class="in-crypto">
+                        <span>Step 4</span>
+                        <div class="box-crypto">
+                            <p class="mb-3">Congratulations! Now your balance is available on your FIAT wallet, in the
+                                chosen currency </p>
+                        </div>
+                    </div>
+                    <div class="in-crypto">
+                        <span>Step 5</span>
+                        <div class="box-crypto">
+                            <p class="mb-3">Now you can transfer your funds to any bank account, even not under your
+                                name, in more than 50 currencies </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 text-center">
+                <h3>Coming soon!</h3>
             </div>
             <?php } ?>
 

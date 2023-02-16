@@ -12443,3 +12443,56 @@ section {
   line-height: 45px;
   color: #000000;
 }
+
+.in-crypto {
+  padding: 1rem;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+}
+
+.in-crypto span {
+  font-weight: 800;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+
+  color: #000000;
+}
+
+.in-crypto .box-crypto {
+  background: #FFE1E1;
+
+  border: 1px solid #9E00FF;
+  border-radius: 10px;
+
+  padding: 1rem;
+
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
+.in-crypto .box-crypto p {
+  font-weight: 700;
+  line-height: 23px;
+  text-align: center;
+
+  color: #000000;
+}
+
+.box-p-crypto {
+  background: rgba(245, 137, 144, 0.26);
+  border: 1px solid #9E00FF;
+
+  padding: 1rem;
+  margin: 2rem 0;
+  display: inline-block;
+}
+
+.box-p-crypto p {
+  margin: 0;
+  font-weight: 700;
+}

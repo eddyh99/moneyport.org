@@ -471,8 +471,9 @@
                     <div class="content-freedy">
                         <h2 class="f-lexend">Instant payments between all TracklessProject users of all over the world
                         </h2>
-                        <div class="my-3">
-                            <p><b translate="no"> Moneyport </b>, being part of TracklessProject ecosystem, will be able
+                        <div class="my-3 ">
+                            <p class="f-lexend"><b translate="no"> Moneyport </b>, being part of TracklessProject
+                                ecosystem, will be able
                                 to instantly send and
                                 receive FIAT currencies to all the wallets of the platforms of the ecosystem formed by
                                 TracklessBank, TracklessCrypto, TracklessMoney, TracklessChat, sharing  with them the
@@ -531,16 +532,16 @@
                 <div class="col-12 my-5 d-flex justify-content-center">
                     <div class="reward p-3 p-md-5">
                         <div class="col-12 p-3 text-center">
-                            <h2>Get Reward<br>
+                            <h2 class="f-lexend">Get Reward<br>
                                 with our Affiliate Campaign</h2>
-                            <p class="col-lg-10 mx-auto">
+                            <p class="col-lg-10 mx-auto f-lexend">
                                 <b translate="no"> MoneyPort </b> assigns a personal referral link (with a referral
                                 code) to every account; you
                                 just need to share it and let your friend register on the platform using your referral
                                 link/code. You will be rewarded for every single FIAT transaction and every crypto
                                 buy&sell carried out by who signed up using your personal referral link.
                             </p>
-                            <span class="shareit d-block mb-4">
+                            <span class="shareit d-block mb-4 f-lexend">
                                 Earn while fighting the system, <br>
                                 by simply sharing your referral link.<br>
                                 <br>
