@@ -50,7 +50,7 @@
                                 by using several bank
                                 licenses under different jurisdictions and provides offshore escrow accounts. In
                                 addition
-                                <b translate="no"> MoneyPort </b> is not obliged to perform the Know You Customer (KYC)
+                                <b translate="no"> MoneyPort </b> is not obliged to perform the Know Your Customer (KYC)
                                 procedure as clients'
                                 wallets are <b translate="no"> non-custodial wallets. </b><br>
                                 <b translate="no"> MoneyPort </b> does not carry out Anti-money laundering (AML)

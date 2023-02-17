@@ -12,7 +12,7 @@
                     <ul>
                         <li>Send funds : write the ‘’unique code’’ of the receiver wallet than enter the amount and
                             confirm</li>
-                        <li>Receive funds : share you Unique Code or let scan your QR code to receive funds into your
+                        <li>Receive funds : share your Unique Code or let scan your QR code to receive funds into your
                             wallet</li>
                         <li>Request funds : enter the amount that you want to receive and confirm, a QR code and a link
                             will be generated, let the payer scan the QR code or copy/share the link to him, in order to
