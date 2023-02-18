@@ -13,7 +13,6 @@
     <input class="form-control me-2" type="text" name="swiftCode" placeholder="Swift Code">
 </div>
 
-
 <input type="hidden" name="abartn" value="">
 <input type="hidden" name="accountType" value="">
 <?php } ?>
