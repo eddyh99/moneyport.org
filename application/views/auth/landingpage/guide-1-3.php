@@ -5,7 +5,7 @@
                 <ol>
                     <li>Login into your wallet</li>
                     <li>Access to the currency that you want to convert</li>
-                    <li>Press the button ‘’SWAP’’</li>
+                    <li>Press the button <b class="text-uppercase"> ‘’swap’’ </b></li>
                     <li>Enter the amount</li>
                     <li>Choose the currency that you want to convert to and you will see immediatly the quotation</li>
                     <li>Click confirm and you will have immediate availability of the chosen currency</li>
