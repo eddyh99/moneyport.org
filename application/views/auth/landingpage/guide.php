@@ -246,9 +246,7 @@
                         <h3 class="fw-bold text-blue-freedy">How to topup crypto wallet</h3>
 
                         <p class="mt-3">
-                            In order to top up your <b translate="no"> MoneyPort </b> crypto wallet follow the procedure
-                            below (make sure to have
-                            balances into your FIAT wallet, in case you don’t have balances into your FIAT wallet, in case you don’t have any fiat balance top up your wallet first in your favorite FIAT currency):
+                            In order to top up your <b translate="no"> MoneyPort </b> crypto wallet follow the procedure below (make sure to have balances into your FIAT wallet, in case you don’t have any fiat balance top up your wallet first in your favorite FIAT currency):
                         </p>
 
                     </div>
