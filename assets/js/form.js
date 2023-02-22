@@ -137,10 +137,6 @@ var input2 = document.querySelector('#uqcode'); // get the input element
 input2.addEventListener('input', resizeInput); // bind the "resizeInput" callback on "input" event
 resizeInput.call(input2); // immediately call the function
 
-var input3 = document.querySelector('#refcode'); // get the input element
-input2.addEventListener('input', resizeInput); // bind the "resizeInput" callback on "input" event
-resizeInput.call(input3); // immediately call the function
-
 function resizeInput() {
     this.style.width = this.value.length + 1 + "ch";
 }
