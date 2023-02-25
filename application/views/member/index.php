@@ -28,7 +28,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <img src="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>.png" alt="QR" width="50" height="50" class="ms-auto mt-3">
+                                <a href="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>Thumbnail.png" download class="ms-auto mt-3">
+                                    <img src="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>.png" alt="QR" width="50" height="50">
+                                </a>
                             </div>
                             <div class="w-100 text-center">
                                 <div class="d-inline-block btn-head-crypto">
