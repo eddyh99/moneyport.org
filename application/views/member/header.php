@@ -24,7 +24,9 @@
                         </div>
                     </div>
                 </div>
-                <img src="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>.png" alt="QR" width="50" height="50" class="ms-auto mt-3">
+                <a href="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>Thumbnail.png" download class="ms-auto mt-3">
+                    <img src="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>.png" alt="QR" width="50" height="50">
+                </a>
             </div>
         </div>
         <div class="col-12 px-4 py-3">

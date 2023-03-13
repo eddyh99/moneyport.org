@@ -260,6 +260,12 @@ class Auth extends CI_Controller
 			if (@getimagesize($srcref) == FALSE) {
 				$this->qrcoderef($refurl, $result->message->ucode);
 			}
+
+			$srcrefwlogo = base_url() . 'qr/ref/' . $result->message->ucode . 'wlogo.png';
+			if (@getimagesize($srcrefwlogo) == FALSE) {
+				$this->ciqrcode->addLogo($result->message->ucode, '/qr/ref/', '/assets/img/logo.png');
+			}
+
 			// if (@getimagesize($srcr) == FALSE) {
 			// 	$urlqr = base_url() . 'wallet/send?' . base64_encode('ucode=' . $_SESSION["ucode"]);
 			// 	$this->qrcodereceive($urlqr, $result->message->ucode);
