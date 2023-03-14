@@ -473,15 +473,16 @@
                     </div>
                 </div>
             <?php } ?>
-
+            
+            <!-- Start Find Me -->
             <?php if ($guide == 7) { ?>
-                <div class="col-12 text-center">
+                <!-- <div class="col-12 text-center">
                     <h3>Coming soon!</h3>
-                </div>
+                </div> -->
                 <div class="col-12 my-5">
                     <div class="logo-text text-center">
-                        <img src="<?= base_url() ?>assets/img/c2-7.png" alt="">
-                        <span class="f-lexend text-blue-freedy">Find me</span>
+                        <img src="<?= base_url() ?>assets/img/c2-9.png" alt="">
+                        <span class="f-poppins text-blue-freedy fw-bolder">Find me</span>
                     </div>
                 </div>
                 <div class="col-12 mb-5">
@@ -496,27 +497,22 @@
                                 </b> for daily payments.
                             </p>
 
-                            <p>
-                                Do you want to request FIND ME service for your business?<br>
-                                Send an email to contact@MoneyPort.org with the
-                                subject FIND ME.<br>
-                                The email must contain the following data:
-                            </p>
+                            <h5 class="text-blue-freedy fw-bolder f-poppins">
+                                Do you want to request FIND ME service for your business? 
+                            </h5>
 
-                            <div class="col-12 d-flex flex-column justify-content-center">
-                                <div class="content-freedy line text-start d-flex flex-row">
-                                    <ul class="ps-0 w-50">
-                                        <li class="ali">Name of the business</li>
-                                        <li class="ali">Product category</li>
-                                        <li class="ali">Google map link</li>
-                                    </ul>
-                                    <ul class="ps-0 w-50">
-                                        <li class="ali">Website link</li>
-                                        <li class="ali">Own unique code </li>
-                                        <li class="ali">Attachment of the company logo in .PNG format</li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <p class="input-uniqe-code">test</p>
+                            <a href="<?= base_url(); ?>">
+                                <button type="button" class="btn-unique-code d-block btn my-3">
+                                    <div class="circle-btn-unique-code flex justify-content-center">
+                                        <i class="ri-arrow-right-line fs-4"></i>
+                                    </div>
+                                    <div class="pt-2 fw-semibold text-next">
+                                        Next
+                                    </div>
+                                </button>
+                            </a>
+
                         </div>
 
                         <div class="col-4 d-none d-md-grid mx-auto">
@@ -524,10 +520,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 my-5 text-center">
+                <!-- <div class="col-12 my-5 text-center">
                     <h3>Coming soon!</h3>
-                </div>
+                </div> -->
             <?php } ?>
+            <!-- End Find Me -->
 
             <?php if ($guide == 8) { ?>
                 <div class="col-12 text-center">

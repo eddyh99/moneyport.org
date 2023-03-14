@@ -470,7 +470,7 @@
                 <div class="col-12 my-5 d-flex justify-content-center">
                     <div class="become p-3 p-md-5">
                         <div class="col-12 p-3 text-center">
-                            <h2 class="f-lexend">Become Our Partner</h2>
+                            <h2 class="f-lexend text-become">Become Our Partner</h2>
                             <p class="col-lg-8 mx-auto f-lexend">
                                 Become an affiliate partner of ours and create your point or open a corner in your shop to make top-ups and withdrawals to all <span translate="no">TracklessBank </span> <span translate="no"> TracklessCrypto </span> and <span translate="no"> TracklessMoney </span> users, from all over the world.
                             </p>
