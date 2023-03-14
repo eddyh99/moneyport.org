@@ -28,7 +28,8 @@
                         if (
                             ($currency == "USD") ||
                             ($currency == "EUR") ||
-                            ($currency == "GBP")
+                            ($currency == "GBP") ||
+                            ($currency == "RON")
                         ) { ?>
                         <div class="mb-3" id="topup_circuit_fxd">
                             <label class="form-label">Topup Circuit (Fixed)</label>
