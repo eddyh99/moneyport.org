@@ -78,56 +78,174 @@ section {
 # Breadcrumbs
 --------------------------------------------------------------*/
 
+.menus-list-app span {
+  font-size: 12px !important;
+}
 
-.input-uniqe-code {
+.currencies-card {
+  width: 100%;
+  height: auto;
+}
+
+.currencies-card div {
+  width: 100%;
+  height: auto;
+  margin-top: 4px;
+}
+
+
+.circle-upload-img {
+  background-color: #a0a0a0;
+  width: 100px;
+  height: 100px;
+  border-radius: 99999px;
+}
+
+.drop-container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  padding: 20px;
+  border-radius: 10px;
+  /* border: 2px dashed #555; */
+  background-color: #d9d9d9;
+  color: #444;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out, border 0.2s ease-in-out;
+}
+.drop-container:hover .drop-title {
+  color: #222;
+}
+
+.drop-title {
+  color: #444;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  transition: color 0.2s ease-in-out;
+}
+
+.drop-container input[type="file"] {
+  width: 350px;
+  max-width: 100%;
+  color: #444;
+  padding: 5px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #555;
+}
+
+.drop-container input[type="file"]::file-selector-button {
+  margin-right: 20px;
+  border: none;
+  background: #084cdf;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.drop-container input[type="file"]::file-selector-button:hover {
+  background: #0d45a5;
+}
+
+
+.text-findme {
+  font-size: 14px !important;
+}
+
+.country-select {
+  background-color: #d9d9d9 !important;
+  width: 100%;
+  height: 60px;
+  font-weight: bold;
+  color: #5B5B5B !important;
+  border: 0 none !important;
+  border-radius: 10px !important;
+  padding: 6px 20px !important;
+  box-shadow: inset 6px 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.country-select:focus {
+  box-shadow: inset 6px 6px 12px rgba(0, 0, 0, 0.25);
+  outline: 2px #bcbcbc solid;
+}
+
+.input-unique-code {
   display: block ;
-  color: blue;
-  width:200px ;
+  width:100% ;
   height: 60px ;
   border: 0px transparent ;
   border-radius: 50px;
-  background-color: #eb0000 ;
+  background-color:#ECECEC;
   border: 2px transparent solid;
   padding-right: 10px;
+  font-size: 16px;
+  /* text-align: center; */
+  /* padding-left: 25px; */
+}
+
+.input-unique-code::placeholder {
+  color: gray;
+  /* padding-left: 15px; */
+  transition: all 0.5s;
   font-size: 16px;
   text-align: center;
 }
 
-.input-uniqe-code::placeholder {
-  color: gray;
-  /* padding-left: 20px; */
-  transition: all 0.5s;
-  font-size: 12px;
-  text-align: center;
-}
-
-.input-uniqe-code:focus {
+.input-unique-code:focus {
   /* padding-left: 25px; */
-  outline: 2px #0078f0 solid;
+  outline: 2px #f88923 solid;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
   transition: all 0.3s;
   text-align: center;
 }
 
 .btn-unique-code {
-  width: 120px;
+  width: 130px;
   height: 50px;
-  background-color: #0078f0;
+  font-size: 14px;
+  background: linear-gradient(90deg, #9E00FF 0%, #FF00D6 121.48%);
+  box-shadow: 0px 15px 50px rgba(222, 95, 143, 0.12);
   border-radius: 99999px;
   margin: auto;
+  color: white;
 }
 
 .btn-unique-code:hover {
-  background-color: #0359af;
+  background-color: #FF00D6;
+  color: whitesmoke;
 }
 
 .circle-btn-unique-code {
+  display: inline-block;
   width: 50%;
   height: 100%;
   margin: auto;
   background-color: white;
   border-radius: 9999px;
 }
+
+.ri-arrow-right-line {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FF00D6;
+}
+
+.text-how-regis {
+  color: #FF5C01;
+}
+
 
 .breadcrumbs {
   padding: 15px 0;
@@ -156,13 +274,31 @@ section {
   background-color: white;
 }
 
+.become .btn-contactus .circle-btn-email img {
+  padding: 4px;
+}
+
 .become .btn-contactus .ctu {
   font-size: 14px;
 }
 
-.become .btn-contactus .circle-btn-email img {
-  padding: 4px;
+.bg-thank {
+  height: 100vh;
+  overflow-y: scroll !important;
+  background-color: #FFF1E3;
 }
+
+.thank-findme h1 {
+  font-size: 28px !important;
+  color: #FF5C01;
+}
+
+.thank-findme p {
+  font-size: 16px !important;
+  color: black;
+}
+
+
 
 
 @media (max-width: 992px) {
@@ -586,6 +722,18 @@ section {
   .hero {
     background-attachment: fixed;
   }
+
+  .input-unique-code::placeholder {
+    font-size: 16px;
+  }
+
+  
+  .btn-unique-code {
+    width: 140px;
+    height: 50px;
+    font-size: 16px;
+  }
+
 }
 
 @media (max-width: 991px) {
@@ -2513,6 +2661,10 @@ section {
   font-family: "Lexend", sans-serif !important;
 }
 
+.f-alegreya {
+  font-family: "Alegreya SC", sans-serif !important;
+}
+
 .f-bevietnam {
   font-family: "Be Vietnam Pro", sans-serif !important;
 }
@@ -2528,6 +2680,11 @@ section {
 .f-publicsans {
   font-family: "Public Sans", sans-serif !important;
 }
+
+.f-rubik {
+  font-family: "Rubik", sans-serif !important;
+}
+
 
 .g-b {
   color: #4285f4;
@@ -3203,9 +3360,13 @@ section {
     transition: 0.5s;
     color: #fff;
 
-    background: linear-gradient(180deg, #3430fa 0%, #1893ed 100%);
-    box-shadow: 0px 4px 25px #3430fa;
+    background: linear-gradient(90deg, #9E00FF 0%, #FF00D6 121.48%);
+    box-shadow: 0px 4px 35px #744949;
     border-radius: 44px;
+  }
+
+  .btn-footer-signin:hover {
+    color: white;
   }
 
   .mt-10r {
@@ -3662,7 +3823,7 @@ section {
   }
 
   .menus-list-app a.menus-blue {
-    border: 1px solid #c6c6c6;
+    border: 1px solid #F88923;
     border-radius: 20px;
     color: #000000;
 
@@ -4831,30 +4992,23 @@ section {
   /* Member Receive Attention */
   .receive-attention,
   .receive-attention:hover {
-    border: 3px solid #9e00ff;
+    border: 3px solid #CF4B00;
     background-color: transparent;
+    font-size: 12px;
+    border-radius: 8px !important;
   }
+
 
   .receive-attention span.title {
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 22px;
     color: #000000;
   }
 
-  .receive-attention span.middle {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 22px;
+  .receive-attention p.desc {
     color: #000000;
   }
 
-  .receive-attention span.bottom {
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 22px;
-    text-decoration-line: underline;
-    color: #ff5c01;
+  .receive-attention p span.will-manage {
+    color: #FF5C01;
   }
 
   .attention-modal {
@@ -5093,6 +5247,13 @@ section {
 }
 
 @media (min-width: 375px) {
+
+  .menus-list-app span {
+    font-size: 14px !important;
+  }
+  
+
+
   .box-list-carousel .content-carousel span {
     font-size: 18px;
   }
@@ -5147,6 +5308,11 @@ section {
 }
 
 @media (min-width: 576px) {
+
+  .menus-list-app span {
+    font-size: 18px !important;
+  }
+  
   .box-list-carousel .icon img {
     display: grid;
   }
@@ -5567,9 +5733,14 @@ section {
     transition: 0.5s;
     color: #fff;
 
-    background: linear-gradient(180deg, #3430fa 0%, #1893ed 100%);
-    box-shadow: 0px 4px 25px #3430fa;
+    background: linear-gradient(90deg, #9E00FF 0%, #FF00D6 121.48%);
+    box-shadow: 0px 4px 35px #744949;
     border-radius: 44px;
+  }
+
+  
+  .btn-footer-signin:hover {
+    color: white;
   }
 
   .mt-10r {
@@ -6010,7 +6181,7 @@ section {
   }
 
   .menus-list-app a.menus-blue {
-    border: 1px solid #c6c6c6;
+    border: 1px solid #F88923;
     border-radius: 20px;
     color: #000000;
 
@@ -7179,22 +7350,24 @@ section {
   /* Member Receive Attention */
   .receive-attention,
   .receive-attention:hover {
-    border: 3px solid #9e00ff;
+    border: 3px solid #CF4B00;
     background-color: transparent;
+    font-size: 16px;
+    border-radius: 8px !important;
   }
 
   .receive-attention span.title {
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 22px;
+    color: #000000;
+    font-size: 16px;
+  }
+
+  .receive-attention p.desc {
     color: #000000;
   }
 
-  .receive-attention span.middle {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 22px;
-    color: #000000;
+  .receive-attention p span.will-manage {
+    color: #FF5C01;
+    font-size: 16px;
   }
 
   .receive-attention span.bottom {
@@ -7431,6 +7604,21 @@ section {
 }
 
 @media (min-width: 768px) {
+
+  .currencies-card div {
+    width: 45%;
+  }
+  
+  .thank-findme h1 {
+    font-size: 55px !important;
+    color: #FF5C01;
+  }
+
+  .thank-findme p {
+    font-size: 25px !important;
+    color: black;
+  }
+
   .become .btn-contactus .circle-btn-email {
     width: 50%;
     height: 50%;
@@ -7865,9 +8053,14 @@ section {
     transition: 0.5s;
     color: #fff;
 
-    background: linear-gradient(180deg, #3430fa 0%, #1893ed 100%);
-    box-shadow: 0px 4px 25px #3430fa;
+    background: linear-gradient(90deg, #9E00FF 0%, #FF00D6 121.48%);
+    box-shadow: 0px 4px 35px #744949;
     border-radius: 44px;
+  }
+
+  
+  .btn-footer-signin:hover {
+    color: white;
   }
 
   .mt-10r {
@@ -8302,7 +8495,7 @@ section {
   }
 
   .menus-list-app a.menus-blue {
-    border: 1px solid #c6c6c6;
+    border: 1px solid #F88923;
     border-radius: 20px;
     color: #000000;
 
@@ -9473,15 +9666,15 @@ section {
   /* Member Receive Attention */
   .receive-attention,
   .receive-attention:hover {
-    border: 3px solid #9e00ff;
+    border: 3px solid #CF4B00;
     background-color: transparent;
+    font-size: 16px;
+    border-radius: 8px !important;
   }
 
   .receive-attention span.title {
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 22px;
     color: #000000;
+    font-size: 16px;
   }
 
   .receive-attention span.middle {
@@ -10451,9 +10644,14 @@ section {
     transition: 0.5s;
     color: #fff;
 
-    background: linear-gradient(180deg, #3430fa 0%, #1893ed 100%);
-    box-shadow: 0px 4px 25px #3430fa;
+    background: linear-gradient(90deg, #9E00FF 0%, #FF00D6 121.48%);
+    box-shadow: 0px 4px 35px #744949;
     border-radius: 44px;
+  }
+  
+  
+  .btn-footer-signin:hover {
+    color: white;
   }
 
   .mt-10r {
@@ -10903,7 +11101,7 @@ section {
   }
 
   .menus-list-app a.menus-blue {
-    border: 1px solid #c6c6c6;
+    border: 1px solid #F88923;
     border-radius: 20px;
     color: #000000;
 
@@ -12069,22 +12267,20 @@ section {
   /* Member Receive Attention */
   .receive-attention,
   .receive-attention:hover {
-    border: 3px solid #9e00ff;
+    border: 3px solid #CF4B00;
     background-color: transparent;
+    font-size: 18px;
+    border-radius: 8px !important;
   }
 
   .receive-attention span.title {
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 22px;
+    font-size: 18px;
     color: #000000;
   }
 
-  .receive-attention span.middle {
-    font-weight: 400;
+  .receive-attention p span.will-manage {
+    color: #FF5C01;
     font-size: 18px;
-    line-height: 22px;
-    color: #000000;
   }
 
   .receive-attention span.bottom {

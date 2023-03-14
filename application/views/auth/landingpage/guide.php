@@ -487,7 +487,7 @@
                 </div>
                 <div class="col-12 mb-5">
                     <div class="row">
-                        <div class="col-12 col-md-6">
+                        <div class="col-12 col-lg-6">
                             <p>
                                 With <b translate="no"> MoneyPort </b> you can increase the visibility of your business by
                                 including it in the
@@ -497,25 +497,51 @@
                                 </b> for daily payments.
                             </p>
 
-                            <h5 class="text-blue-freedy fw-bolder f-poppins">
+                            <h5 class="text-blue-freedy fw-bolder f-poppins mt-5">
                                 Do you want to request FIND ME service for your business? 
                             </h5>
 
-                            <p class="input-uniqe-code">test</p>
-                            <a href="<?= base_url(); ?>">
-                                <button type="button" class="btn-unique-code d-block btn my-3">
-                                    <div class="circle-btn-unique-code flex justify-content-center">
-                                        <i class="ri-arrow-right-line fs-4"></i>
+                            <form id="form-input-unique-code" class="w-100 my-3">
+                                <div class="row d-flex flex-column flex-md-row justify-content-center align-items-center justify-content-lg-start">
+                                    <div class="col-12 col-md-9 col-lg-7 col-xl-5">
+                                        <input type="text" class="input-unique-code" placeholder="Enter your Unique Code">
                                     </div>
-                                    <div class="pt-2 fw-semibold text-next">
-                                        Next
+                                    <div class="col-12 col-md-3 col-lg-2">
+                                        <a href="<?= base_url(); ?>link/findme?findme=<?= base64_encode('1')?>">
+                                            <button type="button" class="btn-unique-code d-flex justify-content-center align-items-center btn my-3">
+                                                <span class="mx-3">
+                                                    Next
+                                                </span>
+                                                <div class="circle-btn-unique-code flex justify-content-center">
+                                                    <i class="ri-arrow-right-line fs-4"></i>
+                                                </div>
+                                            </button>
+                                        </a>
                                     </div>
-                                </button>
-                            </a>
+                                </div>
+                            </form>
+
+                            <h5 class="text-how-regis fw-bolder f-poppins">
+                                How to register to FIND ME service : 
+                            </h5>
+
+                            <p class="mt-5">
+                                Enter your unique code in order to validate your account, then click next and fill out all the fields that you find on the next pages, make sure to have ready an image of your business logo of and prepare the google maps link your business locations.
+                            </p>
+
+                            <p>
+                                If you encounter problems while applying, contact our support service :
+                            </p>
+
+                            <p class="fw-bold">
+                                <u>
+                                    contact@moneyport.io
+                                </u>
+                            </p>
 
                         </div>
 
-                        <div class="col-4 d-none d-md-grid mx-auto">
+                        <div class="col-4 d-none d-lg-grid mx-auto">
                             <img src="<?= base_url() ?>assets/img/img-23.png" alt="" class="img-fluid">
                         </div>
                     </div>
