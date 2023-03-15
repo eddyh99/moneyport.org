@@ -75,6 +75,132 @@ section {
 }
 
 /*--------------------------------------------------------------
+# Member Card
+--------------------------------------------------------------*/
+
+.card-topup-success {
+  height: 100vh;
+  overflow-y: scroll !important;
+}
+
+.text-topup-card h1 {
+  font-size: 32px;
+}
+
+
+.text-topup-card p {
+  font-size: 16px;
+}
+
+
+.btn-card-confirm{
+  padding: 1rem 3rem;
+  transition: 0.5s;
+  color: #fff;
+  
+  background: linear-gradient(90deg, #9e00ff 0%, #ff00d6 121.48%);
+  /* box-shadow: 3.23094px 10.7698px 21.5396px rgba(128, 69, 27, 0.45); */
+  border-radius: 26.386px;
+}
+
+.btn-card-confirm:hover{
+  color: #fff;
+  
+}
+
+.wrap-border-topup {
+  background: linear-gradient(#fff, #fff) padding-box,
+  linear-gradient(to right, #CF4B00, #F88923, #FF5C01) border-box;
+  border-radius: 10px;
+  border: 3px solid transparent;
+
+}
+
+.form-topup-card {
+  background: linear-gradient(#fff, #fff) padding-box,
+  linear-gradient(to right, #CF4B00, #F88923, #FF5C01) border-box;
+  border-radius: 6px;
+  border: 3px solid transparent;
+  
+}
+
+.form-topup-card label,
+.form-topup-card input {
+  border: 0;
+  box-shadow: 0;
+  padding: 0.5rem 2rem;
+  background: #ffffff;
+  border-radius: 20px;
+  margin-bottom: 0;
+}
+
+.form-topup-card label,
+.form-topup-card input::placeholder, 
+.form-topup-card input[type="text"] {
+  font-size: 30px;
+}
+
+.form-topup-card input:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.card-topup {
+  height: 80px;
+  background: linear-gradient(#FFECEC, #FFECEC) padding-box,
+  linear-gradient(to right, #CF4B00, #F88923, #FF5C01) border-box;
+  border-radius: 12px;
+  border: 3px solid transparent;
+}
+
+.card-topup:hover{
+  color: #CF4B00;
+}
+
+.card-balance div:nth-child(1) {
+  font-size: 14px;
+}
+
+.card-balance div:nth-child(2) {
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+
+.card-number div:nth-child(1) {
+  font-size: 14px;
+}
+
+.card-number div:nth-child(2) {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.card-expire-date div:nth-child(1) {
+  font-size: 14px;
+}
+
+.card-expire-date div:nth-child(2) {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.card-cvv div:nth-child(1) {
+  font-size: 14px;
+}
+
+.card-cvv div:nth-child(2) {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+--------------------------------------------------------------*/
+
+
+
+
+/*--------------------------------------------------------------
 # Breadcrumbs
 --------------------------------------------------------------*/
 
@@ -719,6 +845,54 @@ section {
 }
 
 @media (min-width: 1024px) {
+
+  
+  .text-topup-card h1 {
+    font-size: 35px;
+  }
+
+
+  .text-topup-card p {
+    font-size: 18px;
+  }
+  
+  .card-balance div:nth-child(1) {
+    font-size: 18px;
+  }
+
+  .card-balance div:nth-child(2) {
+    font-size: 28px;
+    font-weight: bolder;
+  }
+
+
+  .card-number div:nth-child(1) {
+    font-size: 18px;
+  }
+
+  .card-number div:nth-child(2) {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .card-expire-date div:nth-child(1) {
+    font-size: 18px;
+  }
+
+  .card-expire-date div:nth-child(2) {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .card-cvv div:nth-child(1) {
+    font-size: 18px;
+  }
+
+  .card-cvv div:nth-child(2) {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
   .hero {
     background-attachment: fixed;
   }
@@ -5247,6 +5421,11 @@ section {
 }
 
 @media (min-width: 375px) {
+
+  
+  .btn-head-crypto .crypto {
+    font-size: 15px !important;
+  }
 
   .menus-list-app span {
     font-size: 14px !important;
@@ -12638,7 +12817,7 @@ section {
 
 .btn-head-crypto .crypto {
   font-weight: 600;
-  font-size: 15px;
+  font-size: 12px;
   line-height: 113%;
 
   display: inline-block;

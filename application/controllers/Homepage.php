@@ -153,4 +153,47 @@ class Homepage extends CI_Controller
         );
         echo json_encode($response);
     }
+
+    public function card($card=null)
+    {   
+
+        // $mdata = array(
+        //     "userid" => $_SESSION["user_id"]
+        // );
+        // $url = URLAPI . "/v1/member/currency/getActiveCurrency";
+        // echo $_SESSION['currency'];
+        // print_r($_SESSION);
+        // die;
+        // $card = base64_decode($_GET['card']);
+        // $body = $_GET('body');
+        
+        $data['title'] = NAMETITLE . " - Homepage";
+        $data['card'] = $card;
+        $footer["extra"] = "member/js/js_index";
+        
+        $this->load->view('tamplate/header', $data);
+        $this->load->view('member/card/card', $data);
+        $this->load->view('tamplate/navbar-bottom-back', $data);
+        $this->load->view('tamplate/footer', $footer);
+    }
+
+    
+    // public function cardtopup()
+    // {   
+
+    //     $mdata = array(
+    //         "userid" => $_SESSION["user_id"]
+    //     );
+    //     $url = URLAPI . "/v1/member/currency/getActiveCurrency";
+    //     $data['title'] = NAMETITLE . " - Homepage";
+
+    //     $footer["extra"] = "member/js/js_index";
+
+    //     $this->load->view('tamplate/header', $data);
+    //     $this->load->view('member/card/card-topup');
+    //     $this->load->view('tamplate/navbar-bottom-back', $data);
+    //     $this->load->view('tamplate/footer', $footer);
+    // }
+
+
 }

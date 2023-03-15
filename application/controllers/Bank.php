@@ -1910,8 +1910,6 @@ class Bank extends CI_Controller
         }
 
         $result = apitrackless(URLAPI . "/v1/member/wallet/bankTransfer", json_encode($mdata));
-        print_r($result);
-        die;
         if (@$result->code != 200) {
             if (@$result->code == 5055) {
                 $this->session->set_flashdata("failed", $result->message);
