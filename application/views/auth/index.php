@@ -1164,8 +1164,7 @@
                     </a>
                 </div>
                 <p class="f-lexend m-0">
-                    <b translate="no"> Money Port </b> (TH) is a service subject to partnership with licensee PBS On
-                    line LLC
+                    <b translate="no"> Money Port </b> (TH)
                 </p>
                 <!-- <p class="copyright py-3 m-0">Money Port (TH) is a service subject to partnership with licenses PBS
                         On line LLC</p> -->

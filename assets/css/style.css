@@ -78,6 +78,68 @@ section {
 # Member Card
 --------------------------------------------------------------*/
 
+
+.btn-card-confirm-nocard{
+  padding: 1rem 3rem;
+  transition: 0.5s;
+  color: #fff;
+  background: linear-gradient(89.72deg, #CF4B00 0%, #F88923 30.98%, #FF5C01 70.75%);
+  border-radius: 26.386px;
+}
+
+.btn-card-confirm-nocard:hover{
+  color: #fff;
+  
+}
+
+.nohp-select option[value="test"]{
+  background-image:url(../img/poland.png) !important; 
+}
+
+.nohp-select {
+  background-color: white !important;
+  width: 100%;
+  height: 60px;
+  font-weight: 600;
+  color: #121212 !important;
+  border: 0 none !important;
+  border-radius: 16px !important;
+  padding: 6px 20px !important;
+  box-shadow: inset -2px -2px 4px rgba(0, 0, 0, 0.25), inset 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.nohp-select.nohp-input{
+  color: #949494;
+  font-weight: 400 !important;
+}
+
+
+.card-req-activation input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.nohp-select:focus {
+  box-shadow: inset -2px -2px 4px rgba(0, 0, 0, 0.25), inset 2px 2px 4px rgba(0, 0, 0, 0.25);
+  outline: 2px #bcbcbc solid;
+}
+
+
+.card-req-activation h3, 
+.card-req-activation h4 {
+  font-size: 16px !important;
+}
+
+.card-req-card {
+  background-color: #FAFAFA;
+  /* padding: 20px; */
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.text-req-card{
+  font-size: 20px;
+  font-weight: 600;
+}
+
 .card-topup-success {
   height: 100vh;
   overflow-y: scroll !important;
@@ -93,13 +155,18 @@ section {
 }
 
 
+.text-topup-card ul {
+  font-size: 16px;
+}
+
+
+
 .btn-card-confirm{
   padding: 1rem 3rem;
   transition: 0.5s;
   color: #fff;
   
   background: linear-gradient(90deg, #9e00ff 0%, #ff00d6 121.48%);
-  /* box-shadow: 3.23094px 10.7698px 21.5396px rgba(128, 69, 27, 0.45); */
   border-radius: 26.386px;
 }
 
@@ -141,6 +208,37 @@ section {
 }
 
 .form-topup-card input:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+
+
+.form-req-card {
+  background: linear-gradient(#fff, #fff) padding-box,
+  linear-gradient(to right, #CF4B00, #F88923, #FF5C01) border-box;
+  border-radius: 6px;
+  border: 3px solid transparent;
+  
+}
+
+.form-req-card input {
+  border: 0;
+  box-shadow: 0;
+  padding: 0.5rem 2rem;
+  background: #ffffff;
+  border-radius: 20px;
+  margin-bottom: 0;
+}
+
+.form-req-card input::placeholder, 
+.form-req-card input[type="text"] {
+  font-size: 20px;
+  color: black;
+}
+
+.form-req-card input:focus {
   border-color: inherit;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -854,6 +952,10 @@ section {
 
   .text-topup-card p {
     font-size: 18px;
+  }
+
+  .text-topup-card ul {
+    font-size: 20px;
   }
   
   .card-balance div:nth-child(1) {
@@ -2857,6 +2959,10 @@ section {
 
 .f-rubik {
   font-family: "Rubik", sans-serif !important;
+}
+
+.f-ubuntu {
+  font-family: "Ubuntu", sans-serif !important;
 }
 
 

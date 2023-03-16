@@ -57,7 +57,7 @@
                                 </a>
                             </div>
                             <div class="col-12 col-md-6 text-center mx-auto">
-                                <a href="<?= base_url() ?>homepage/card" class="d-flex align-items-center justify-content-center p-2 my-2 ">
+                                <a href="<?= base_url() ?>homepage/requestcard" class="d-flex align-items-center justify-content-center p-2 my-2 ">
                                     <img class="" src="<?= base_url()?>assets/img/cardhome.png" alt="">
                                     <span class="ms-5">Card</span>
                                 </a>

@@ -111,7 +111,7 @@
 
           <!-- Start Other Category  -->
           <div class="col-md-12 my-5">
-          <div class="d-flex align-items-center mb-1">
+            <div class="d-flex align-items-center mb-1">
               <h5 class="fw-bold text-black text-start text-findme me-3">*Other category</h5>
               <span class="mb-2">
                 <i class="ri-question-line "></i>
