@@ -77,7 +77,13 @@ section {
 /*--------------------------------------------------------------
 # Member Card
 --------------------------------------------------------------*/
+.qrcode-download {
+  display: none !important;
+}
 
+.copy-share-referral {
+  font-size: 12px;
+}
 
 .btn-card-confirm-nocard{
   padding: 1rem 3rem;
@@ -141,8 +147,7 @@ section {
 }
 
 .card-topup-success {
-  height: 100vh;
-  overflow-y: scroll !important;
+  height: auto;
 }
 
 .text-topup-card h1 {
@@ -204,7 +209,7 @@ section {
 .form-topup-card label,
 .form-topup-card input::placeholder, 
 .form-topup-card input[type="text"] {
-  font-size: 30px;
+  font-size: 24px;
 }
 
 .form-topup-card input:focus {
@@ -5527,6 +5532,17 @@ section {
 }
 
 @media (min-width: 375px) {
+
+  .form-topup-card label,
+  .form-topup-card input::placeholder, 
+  .form-topup-card input[type="text"] {
+    font-size: 24px;
+  }
+
+
+  .qrcode-download {
+    display: flex !important;
+  }
 
   
   .btn-head-crypto .crypto {

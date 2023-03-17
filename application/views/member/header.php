@@ -24,8 +24,11 @@
                         </div>
                     </div>
                 </div>
-                <a href="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>Thumbnail.png" download class="ms-auto mt-3">
-                    <img src="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>.png" alt="QR" class="img-fluid" width="50" height="50">
+                <a href="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>Thumbnail.png" download class="qrcode-download ms-auto mt-3 d-flex flex-column align-items-center">
+                    <img class="img-fluid" src="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>.png" alt="QR" width="50" height="50">
+                    <div class="">
+                        <i class="ri-download-line"></i>
+                    </div>
                 </a>
             </div>
         </div>

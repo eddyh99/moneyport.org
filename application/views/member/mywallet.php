@@ -107,21 +107,6 @@
                                     </div>
                                 </a>
                             </div>
-                            <!-- <div class="col-12">
-                                <a href="<?= base_url() ?>soon"
-                                    class="d-flex flex-column justify-content-center align-items-center py-2 my-3 menus-blue">
-                                    <svg width="62" height="63" viewBox="0 0 62 63" fill=""
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M7.75 20C7.75 18.1144 7.75 17.1716 8.33579 16.5858C8.92157 16 9.86438 16 11.75 16H50.25C52.1356 16 53.0784 16 53.6642 16.5858C54.25 17.1716 54.25 18.1144 54.25 20V43C54.25 44.8856 54.25 45.8284 53.6642 46.4142C53.0784 47 52.1356 47 50.25 47H11.75C9.86438 47 8.92157 47 8.33579 46.4142C7.75 45.8284 7.75 44.8856 7.75 43V20Z"
-                                            fill="" fill-opacity="0.24" />
-                                        <ellipse cx="15.4998" cy="39.25" rx="2.58333" ry="2.58333" fill="" />
-                                        <rect x="7.75" y="23.75" width="46.5" height="5.16667" fill="" />
-                                    </svg>
-
-                                    <span class="my-1">Wallet to card</span>
-                                </a>
-                            </div> -->
                             <div class="col-12">
                                 <a href="<?= base_url() ?>search"
                                     class="d-flex flex-column justify-content-center align-items-center py-2 my-3 menus-blue">

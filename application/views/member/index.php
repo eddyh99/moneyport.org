@@ -2,13 +2,15 @@
 <div class="d-flex justify-content-center">
     <div class="col-12 col-lg-8 col-xl-6">
         <div class="container" style="margin-bottom: 8rem;">
-            <div class="app-container py-5"
+            <div class="app-container py-5">
+            
                 <div class="row" style="margin-top: 5rem;">
                     <div class="col-12 d-flex justify-content-center">
                         <div class="col-12 box-code-freedy px-4 py-3">
+
                             <div class="d-flex flex-row">
                                 <div class="d-flex flex-column">
-                                    <div class="copy-uqcode mt-3 mb-2 d-flex flex-row align-items-center">
+                                    <div class="copy-uqcode mt-3 mb-2 me-4 d-flex flex-row align-items-center">
                                         <span class="me-2">UNIQUE CODE : </span>
                                         <input class="me-2" type="text" name="" id="uqcode" value="<?= $_SESSION["ucode"] ?>" readonly>
                                         <a class="btn btn-copy me-2" id="btnuq">
@@ -18,7 +20,7 @@
                                         </a>
                                     </div>
                                     <div class="d-flex flex-column">
-                                        <span class="">Copy & share your referral link to earn money</span>
+                                        <span class="copy-share-referral">Copy & share your referral link to earn money</span>
                                         <div class="copy-refcode d-flex flex-row justify-content-start mb-4">
                                             <input class="me-2" type="text" name="" id="refcode" value="<?= base_url() ?>auth/signup?ref=<?= $_SESSION["referral"] ?>" readonly style="min-width: 35ch;">
                                             <a class="btn btn-copy me-2" id="btnref">
@@ -29,8 +31,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>Thumbnail.png" download class="ms-auto mt-3">
+                                <a href="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>Thumbnail.png" download class="qrcode-download ms-auto mt-3 d-flex flex-column align-items-center">
                                     <img class="img-fluid" src="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>.png" alt="QR" width="50" height="50">
+                                    <div class="">
+                                        <i class="ri-download-line"></i>
+                                    </div>
                                 </a>
                             </div>
                             <div class="w-100 text-center">
@@ -38,10 +43,12 @@
                                     <a class="crypto px-4 py-2 active" href="<?= base_url() ?>homepage/">FIAT</a>
                                     <a class="crypto px-4 py-2" href="<?= base_url() ?>homepage/crypto">CRYPTO</a>
                                 </div>
-                            </div
+                            </div>
                         </div>
                     </div>
-                </div>   
+                </div> 
+                
+            
 
                 <div class="row d-flex justify-content-center">
                     <div class="col-12 mx-auto my-4">

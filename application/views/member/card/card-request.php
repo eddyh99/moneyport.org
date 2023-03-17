@@ -19,7 +19,7 @@
                             <span>12 March 2023</span>
                         </div>
                         <div class="text-start d-flex justify-content-center mt-5 mb-4">
-                            <a href="<?= base_url(); ?>homepage"
+                            <a href="<?= base_url(); ?>homepage/card"
                                 class="btn-card-confirm-nocard  d-inline-flex align-items-center justify-content-center align-self-center">
                                 <span class="f-lexend">Confirm</span>
                             </a>
@@ -60,8 +60,11 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>Thumbnail.png" download class="ms-auto mt-3">
+                                    <a href="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>Thumbnail.png" download class="qrcode-download ms-auto mt-3 d-flex flex-column align-items-center">
                                         <img class="img-fluid" src="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>.png" alt="QR" width="50" height="50">
+                                        <div class="">
+                                            <i class="ri-download-line"></i>
+                                        </div>
                                     </a>
                                 </div>
                             </div>
@@ -70,9 +73,9 @@
                     <!-- <?php echo $basecard . '/topup'?> -->
 
                     <?php if($requestcard == ''){?>
-                        <div class="row my-5">
-                            <div class="text-topup-card">
-                                <h1 class="text-blue-freedy fw-bolder f-poppins text-center">
+                        <div class="row my-5 ">
+                            <div class="text-topup-card ">
+                                <h1 class="text-blue-freedy fw-bolder f-poppins text-center ">
                                     Request Card
                                 </h1>
                                 <ul class="text-start fw-semibold f-lexend col-10 mx-auto mt-4">

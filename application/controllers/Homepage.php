@@ -7,7 +7,7 @@ class Homepage extends CI_Controller
     {
         parent::__construct();
         if (empty($this->session->userdata('user_id'))) {
-            redirect(base_url('auth/login'));
+            redirect(base_url());
         }
     }
 
@@ -220,22 +220,6 @@ class Homepage extends CI_Controller
 
     }
     
-    // public function cardtopup()
-    // {   
-
-    //     $mdata = array(
-    //         "userid" => $_SESSION["user_id"]
-    //     );
-    //     $url = URLAPI . "/v1/member/currency/getActiveCurrency";
-    //     $data['title'] = NAMETITLE . " - Homepage";
-
-    //     $footer["extra"] = "member/js/js_index";
-
-    //     $this->load->view('tamplate/header', $data);
-    //     $this->load->view('member/card/card-topup');
-    //     $this->load->view('tamplate/navbar-bottom-back', $data);
-    //     $this->load->view('tamplate/footer', $footer);
-    // }
 
 
 }
