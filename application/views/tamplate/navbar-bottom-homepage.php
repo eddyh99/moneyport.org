@@ -6,7 +6,7 @@
             </div>
         </a>
 
-        <a href="<?= base_url() ?>soon" class="d-flex align-items-center border-0 mx-2">
+        <a href="<?= base_url() ?>soon" class="d-none icon-soon align-items-center border-0 mx-2">
             <div class="icon-menus d-flex align-items-center home-svg py-0">
                 <svg width="34" height="29" viewBox="0 0 34 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="0.787598" width="32.5366" height="29" rx="2" fill="#F9BB81"/>

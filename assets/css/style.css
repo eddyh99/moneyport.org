@@ -98,9 +98,7 @@ section {
   
 }
 
-.nohp-select option[value="test"]{
-  background-image:url(../img/poland.png) !important; 
-}
+
 
 .nohp-select {
   background-color: white !important;
@@ -110,17 +108,29 @@ section {
   color: #121212 !important;
   border: 0 none !important;
   border-radius: 16px !important;
-  padding: 6px 20px !important;
   box-shadow: inset -2px -2px 4px rgba(0, 0, 0, 0.25), inset 2px 2px 4px rgba(0, 0, 0, 0.25);
 }
 
-.nohp-select.nohp-input{
+.nohp-select.inputPass{
   color: #949494;
   font-weight: 400 !important;
+  padding: 6px 20px !important;
 }
 
 
-.card-req-activation input[type=number]::-webkit-inner-spin-button {
+.nohp-select.input-nohp{
+  color: #949494;
+  font-weight: 400 !important;
+  width: 100%;
+}
+
+
+.nohp-select.input-nohp:focus{
+  padding-left: 50px !important;
+}
+
+
+.card-req-activation input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
@@ -262,17 +272,17 @@ section {
 }
 
 .card-balance div:nth-child(1) {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .card-balance div:nth-child(2) {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bolder;
 }
 
 
 .card-number div:nth-child(1) {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .card-number div:nth-child(2) {
@@ -281,7 +291,7 @@ section {
 }
 
 .card-expire-date div:nth-child(1) {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .card-expire-date div:nth-child(2) {
@@ -290,7 +300,7 @@ section {
 }
 
 .card-cvv div:nth-child(1) {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .card-cvv div:nth-child(2) {
@@ -5532,6 +5542,10 @@ section {
 }
 
 @media (min-width: 375px) {
+
+  .icon-soon {
+    display: flex !important;
+  }
 
   .form-topup-card label,
   .form-topup-card input::placeholder, 
