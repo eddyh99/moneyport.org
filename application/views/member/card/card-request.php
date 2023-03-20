@@ -149,16 +149,6 @@
                                     </h3>
                                 </div>
                                 <div class="row my-4 mx-auto d-flex justify-content-center">
-                                    <!-- <div class="col-4 col-md-2">        
-                                        <select class="custom-select nohp-select">
-                                            <option selected>
-                                                +62
-                                            </option>
-                                            <option>+ 63</option>
-                                            <option>+ 11</option>
-                                            <option>+ 9</option>
-                                        </select>
-                                    </div> -->
                                     <div class="col-12 col-md-10 mx-auto">
                                         <input id="telephone" class="nohp-select input-nohp" type="tel">
                                     </div>
