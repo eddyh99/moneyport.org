@@ -23,7 +23,39 @@
 <div class="navbar-app fixed-bottom d-flex justify-content-center">
     <div class="col-12 col-lg-8 col-xl-6 box-navbar-freedy d-flex justify-content-center align-items-center top">
         <!-- Start Back -->
-        <a href="<?= base_url() ?>" class="d-flex align-items-center me-auto">
+        <a href="
+        
+            <?php if($requestcard == 'requestcard' ) {?>
+                <?= base_url() ?>homepage
+            <?php }?>
+
+            <?php if($requestcard == 'virtual' ) {?>
+                <?= base_url() ?>homepage/requestcard?requestcard=<?= base64_encode('requestcard')?>
+            <?php }?>
+
+            <?php if($requestcard == 'activenow' ) {?>
+                <?= base_url() ?>homepage/requestcard?requestcard=<?= base64_encode('virtual')?>
+            <?php }?>
+
+            <?php if($requestcard == 'detailcard' ) {?>
+                <?= base_url() ?>homepage/requestcard?requestcard=<?= base64_encode('activenow')?>
+            <?php }?>
+
+            <?php if($card == 'card' ) {?>
+                <?= base_url() ?>homepage
+            <?php }?>
+
+            <?php if($card == 'topup' ) {?>
+                <?= base_url() ?>homepage/card?card=<?= base64_encode('card')?>
+            <?php }?>
+
+            <?php if($card == 'confirm' ) {?>
+                <?= base_url() ?>homepage/card?card=<?= base64_encode('topup')?>
+            <?php }?>
+
+
+
+        " class="d-flex align-items-center me-auto">
             <div class="icon-menus d-flex align-items-center home-svg">
                 <svg width="35" height="34" viewBox="0 0 35 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M18.5 2L3.5 17L18.5 32" stroke="url(#paint0_linear_916_4049)" stroke-width="4" stroke-linecap="round"/>

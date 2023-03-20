@@ -2976,10 +2976,6 @@ section {
   font-family: "Rubik", sans-serif !important;
 }
 
-.f-ubuntu {
-  font-family: "Ubuntu", sans-serif !important;
-}
-
 
 .g-b {
   color: #4285f4;
@@ -7919,6 +7915,10 @@ section {
 }
 
 @media (min-width: 768px) {
+
+  .become-piggy {
+    background-color: red !important;
+  }
 
   .currencies-card div {
     width: 45%;

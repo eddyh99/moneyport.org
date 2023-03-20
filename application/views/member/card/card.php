@@ -22,7 +22,7 @@
                             <span>New balance</span>
                         </div>
                         <div class="text-start d-flex justify-content-center mt-5 mb-4">
-                            <a href="<?= base_url(); ?>homepage/card/success"
+                            <a href="<?= base_url(); ?>homepage/card?card=<?= base64_encode('success')?>"
                                 class="btn-card-confirm d-inline-flex align-items-center justify-content-center align-self-center">
                                 <span class="f-lexend">Confirm</span>
                             </a>
@@ -41,7 +41,7 @@
                     <img src="<?= base_url()?>assets/img/check-success.png" alt="success">
                     <h1 class="text-center f-poppins text-blue-freedy my-5">YOUR CARD BALANCE WILL BE UPDATE WITHIN 2 WORKING DAYS</h1>
                     <div class="text-start d-flex justify-content-center mt-5 mb-4">
-                        <a href="<?= base_url(); ?>homepage"
+                        <a href="<?= base_url(); ?>homepage/card?card=<?= base64_encode('card')?>"
                             class="btn-card-confirm d-inline-flex align-items-center justify-content-center align-self-center">
                             <span class="f-lexend">Done</span>
                         </a>
@@ -92,7 +92,7 @@
                         </div>
                     </div>   
         
-                        <?php if($basecard ==  current_url()){?>
+                        <?php if($card == 'card'){?>
                         <div class="mt-5 f-poppins">
                             <div class="d-flex justify-content-between align-items-center card-balance my-1">
                                 <div>
@@ -142,7 +142,7 @@
                             <div style="height: 1px; width: 100%; background-color: #FF0F00" class="mt-4"></div>
                         </div>
                         <div class="row my-4">
-                            <a href="<?= base_url(); ?>homepage/card/topup" class="col-12 mx-auto card-topup d-flex align-items-center justify-content-center">
+                            <a href="<?= base_url(); ?>homepage/card?card=<?= base64_encode('topup')?>" class="col-12 mx-auto card-topup d-flex align-items-center justify-content-center">
                                 <span class="text-blue-freed fw-bold">
                                     Top Up Your Card
                                 </span>
@@ -152,25 +152,6 @@
                                     History
                                 </span>
                             </a>
-                        </div>
-                        <div class="navbar-app fixed-bottom d-flex justify-content-center">
-                            <div class="col-12 col-sm-8 col-xl-6 box-navbar-freedy d-flex justify-content-start align-items-center">
-                                <a href="<?= base_url() ?>receive" class="d-flex align-items-center border-0">
-                                    <div class="icon-menus d-flex align-items-center home-svg">
-                                        <svg width="41" height="35" viewBox="0 0 41 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <rect width="41" height="35" fill="url(#paint0_linear_30_4821)" />
-                                            <path d="M32.4584 17.5236H8.54175" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M20.5001 27.7338L8.54175 17.5245L20.5001 7.31531" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                            <defs>
-                                                <linearGradient id="paint0_linear_30_4821" x1="20.5" y1="0" x2="20.5" y2="35" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#9E00FF" />
-                                                    <stop offset="1" stop-color="#9E00FF" />
-                                                </linearGradient>
-                                            </defs>
-                                        </svg>
-                                    </div>
-                                </a>
-                            </div>
                         </div>
                         <?php }?>
 
@@ -209,7 +190,7 @@
                                     </div>
 
                                     <div class="text-start d-flex justify-content-center mt-5 mb-4">
-                                        <a href="<?= base_url(); ?>homepage/card/confirm"
+                                        <a href="<?= base_url(); ?>homepage/card?card=<?= base64_encode('confirm')?>"
                                             class="btn-card-confirm d-inline-flex align-items-center justify-content-center align-self-center">
                                             <span class="f-lexend">Confirm</span>
                                         </a>

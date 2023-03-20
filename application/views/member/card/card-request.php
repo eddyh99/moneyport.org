@@ -19,7 +19,7 @@
                             <span>12 March 2023</span>
                         </div>
                         <div class="text-start d-flex justify-content-center mt-5 mb-4">
-                            <a href="<?= base_url(); ?>homepage/card"
+                            <a href="<?= base_url(); ?>homepage/card?card=<?= base64_encode('card')?>"
                                 class="btn-card-confirm-nocard  d-inline-flex align-items-center justify-content-center align-self-center">
                                 <span class="f-lexend">Confirm</span>
                             </a>
@@ -71,7 +71,7 @@
                         </div>
                     </div>
 
-                    <?php if($requestcard ==  ''){?>
+                    <?php if($requestcard ==  'requestcard'){?>
                         <div class="row my-5 ">
                             <div class="text-topup-card ">
                                 <h1 class="text-blue-freedy fw-bolder f-poppins text-center ">
@@ -108,7 +108,7 @@
                                     </div>
         
                                     <div class="text-start d-flex justify-content-center mt-5 mb-4">
-                                        <a href="<?= base_url(); ?>homepage/requestcard/virtual"
+                                        <a href="<?= base_url(); ?>homepage/requestcard?requestcard=<?= base64_encode('virtual')?>"
                                             class="btn-card-confirm d-inline-flex align-items-center justify-content-center align-self-center">
                                             <span class="f-lexend">Next</span>
                                         </a>
@@ -125,7 +125,7 @@
                                     Card
                                 </h1>
                             </div>
-                            <a href="<?= base_url(); ?>homepage/requestcard/activenow" class="col-12 mx-auto card-topup d-flex align-items-center justify-content-center">
+                            <a href="<?= base_url(); ?>homepage/requestcard?requestcard=<?= base64_encode('activenow')?>" class="col-12 mx-auto card-topup d-flex align-items-center justify-content-center">
                                 <span class="text-blue-freed fw-bold text-center f-lexend fw-bold">
                                 Request Virtual Card
                                 </span>
@@ -167,7 +167,7 @@
                                     </div>
                                 </div>
                                 <div class="text-start d-flex justify-content-center mt-5 mb-4">
-                                    <a href="<?= base_url(); ?>homepage/requestcard/detailcard"
+                                    <a href="<?= base_url(); ?>homepage/requestcard?requestcard=<?= base64_encode('detailcard')?>"
                                         class="btn-card-confirm d-inline-flex align-items-center justify-content-center align-self-center">
                                         <span class="f-lexend">Active Now</span>
                                     </a>
