@@ -71,7 +71,7 @@
                         </div>
                     </div>
 
-                    <?php if($requestcard == ''){?>
+                    <?php if($requestcard ==  ''){?>
                         <div class="row my-5 ">
                             <div class="text-topup-card ">
                                 <h1 class="text-blue-freedy fw-bolder f-poppins text-center ">

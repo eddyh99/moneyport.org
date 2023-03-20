@@ -92,7 +92,7 @@
                         </div>
                     </div>   
         
-                        <?php if($basecard == ''){?>
+                        <?php if($basecard ==  current_url()){?>
                         <div class="mt-5 f-poppins">
                             <div class="d-flex justify-content-between align-items-center card-balance my-1">
                                 <div>
