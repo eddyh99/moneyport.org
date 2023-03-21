@@ -1,16 +1,14 @@
-
 <div class="d-flex justify-content-center">
     <div class="col-12 col-lg-8 col-xl-6">
         <div class="container" style="margin-bottom: 8rem;">
-            <div class="app-container py-5">
-            
+            <div class="app-container py-5 ">
+                <!-- Start Already Card -->
                 <div class="row" style="margin-top: 5rem;">
                     <div class="col-12 d-flex justify-content-center">
                         <div class="col-12 box-code-freedy px-4 py-3">
-
                             <div class="d-flex flex-row">
                                 <div class="d-flex flex-column">
-                                    <div class="copy-uqcode mt-3 mb-2 me-4 d-flex flex-row align-items-center">
+                                    <div class="copy-uqcode mt-3 mb-2 d-flex flex-row align-items-center">
                                         <span class="me-2">UNIQUE CODE : </span>
                                         <input class="me-2" type="text" name="" id="uqcode" value="<?= $_SESSION["ucode"] ?>" readonly>
                                         <a class="btn btn-copy me-2" id="btnuq">
@@ -20,7 +18,7 @@
                                         </a>
                                     </div>
                                     <div class="d-flex flex-column">
-                                        <span class="copy-share-referral">Copy & share your referral link to earn money</span>
+                                        <span class="">Copy & share your referral link to earn money</span>
                                         <div class="copy-refcode d-flex flex-row justify-content-start mb-4">
                                             <input class="me-2" type="text" name="" id="refcode" value="<?= base_url() ?>auth/signup?ref=<?= $_SESSION["referral"] ?>" readonly style="min-width: 35ch;">
                                             <a class="btn btn-copy me-2" id="btnref">
@@ -31,78 +29,40 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>Thumbnail.png" download class="qrcode-download ms-auto mt-3 d-flex flex-column align-items-center">
+                                <a href="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>Thumbnail.png" download class="ms-auto mt-3">
                                     <img class="img-fluid" src="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>.png" alt="QR" width="50" height="50">
-                                    <div class="">
-                                        <i class="ri-download-line"></i>
-                                    </div>
                                 </a>
                             </div>
-                            <div class="w-100 text-center">
-                                <div class="d-inline-block btn-head-crypto">
-                                    <a class="crypto px-4 py-2 active" href="<?= base_url() ?>homepage/">FIAT</a>
-                                    <a class="crypto px-4 py-2" href="<?= base_url() ?>homepage/crypto">CRYPTO</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
-                
-            
-
-                <div class="row d-flex justify-content-center">
-                    <div class="col-12 mx-auto my-4">
-                        <h1 class="text-blue-freedy fw-bold f-poppins text-center">Dashboard</h1>
-                    </div>
-
-                    <div class="col-12 menus-list-app mb-2">
-                        <div class="row f-alegreya currencies-card mx-auto">
-                            <div class="col-12 col-md-6 text-center mx-auto">
-                                <a href="<?= base_url() ?>homepage/setting_currency" class="d-flex align-items-center justify-content-center p-2 my-2">
-                                    <img src="<?= base_url()?>assets/img/select-currencies.png" alt="">
-                                    <span class="ms-2">Select Currencies</span>
-                                </a>
-                            </div>
-                            <div class="col-12 col-md-6 text-center mx-auto">
-                                <a href="<?= base_url() ?>homepage/requestcard" class="d-flex align-items-center justify-content-center p-2 my-2 ">
-                                    <img class="" src="<?= base_url()?>assets/img/cardhome.png" alt="">
-                                    <span class="ms-5">Card</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 curencies-list-app">
-                        <div class="col-12">
-                            <?php foreach ($currency as $dt) {
-                                if ($dt->status == 'active') {
-                                    if (($dt->currency == "USD") || ($dt->currency == "EUR")) {
-                            ?>
-                                        <a href="<?= base_url() ?>homepage/wallet?cur=<?= $dt->currency ?>" class="d-flex flex-row justify-content-center align-items-center curencies-list py-4 px-3 my-2">
-                                            <span class="me-auto"><?= $dt->currency ?></span>
-                                            <span><?= $dt->symbol; ?>
-                                                <?= substr(number_format($dt->balance, 4), 0, -2) ?></span>
-                                        </a>
-                            <?php }
-                                }
-                            }
-                            ?>
-                            <?php foreach ($currency as $dt) {
-                                if ($dt->status == 'active') {
-                                    if (($dt->currency != "USD") && ($dt->currency != "EUR")) {
-                            ?>
-                                        <a href="<?= base_url() ?>homepage/wallet?cur=<?= $dt->currency ?>" class="d-flex flex-row justify-content-center align-items-center curencies-list py-4 px-3 my-2">
-                                            <span class="me-auto"><?= $dt->currency ?></span>
-                                            <span><?= $dt->symbol; ?>
-                                                <?= substr(number_format($dt->balance, 4), 0, -2) ?></span>
-                                        </a>
-                            <?php }
-                                }
-                            }
-                            ?>
                         </div>
                     </div>
                 </div>
+
+                <?php if($card === 'topup'){?>
+                    <div>
+                        <h1 class="fs-1 bg-danger">INI HALAMAN TOPUP</h1>
+                    </div>
+                <?php }?>
+                
+                <div class="navbar-app fixed-bottom d-flex justify-content-center">
+                    <div class="col-12 col-sm-8 col-xl-6 box-navbar-freedy d-flex justify-content-start align-items-center">
+                        <a href="<?= base_url() ?>receive" class="d-flex align-items-center border-0">
+                            <div class="icon-menus d-flex align-items-center home-svg">
+                                <svg width="41" height="35" viewBox="0 0 41 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="41" height="35" fill="url(#paint0_linear_30_4821)" />
+                                    <path d="M32.4584 17.5236H8.54175" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M20.5001 27.7338L8.54175 17.5245L20.5001 7.31531" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    <defs>
+                                        <linearGradient id="paint0_linear_30_4821" x1="20.5" y1="0" x2="20.5" y2="35" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#9E00FF" />
+                                            <stop offset="1" stop-color="#9E00FF" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- End Already Card  -->
             </div>
         </div>
     </div>

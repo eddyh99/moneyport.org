@@ -3,11 +3,11 @@
     <div class="col-12 col-lg-8 col-xl-6 box-navbar-freedy d-flex flex-row justify-content-start align-items-center bottom">
         <a href="<?= base_url() ?>homepage" class="d-flex align-items-center border-0 ms-0 me-auto">
             <div class="icon-menus d-flex align-items-center home-svg py-0">
-                <img class="img-fluid" src="<?= base_url() ?>assets/img/logo-rtext.png" alt="">
+                <img src="<?= base_url() ?>assets/img/logo-rtext.png" alt="">
             </div>
         </a>
 
-        <a href="<?= base_url() ?>soon" class="d-none icon-soon align-items-center border-0 mx-2">
+        <a href="<?= base_url() ?>soon" class="d-flex align-items-center border-0 mx-2">
             <div class="icon-menus d-flex align-items-center home-svg py-0">
                 <svg width="34" height="29" viewBox="0 0 34 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="0.787598" width="32.5366" height="29" rx="2" fill="#F9BB81"/>
@@ -23,39 +23,7 @@
 <div class="navbar-app fixed-bottom d-flex justify-content-center">
     <div class="col-12 col-lg-8 col-xl-6 box-navbar-freedy d-flex justify-content-center align-items-center top">
         <!-- Start Back -->
-        <a href="
-        
-            <?php if($requestcard == 'requestcard' ) {?>
-                <?= base_url() ?>homepage
-            <?php }?>
-
-            <?php if($requestcard == 'virtual' ) {?>
-                <?= base_url() ?>homepage/requestcard?requestcard=<?= base64_encode('requestcard')?>
-            <?php }?>
-
-            <?php if($requestcard == 'activenow' ) {?>
-                <?= base_url() ?>homepage/requestcard?requestcard=<?= base64_encode('virtual')?>
-            <?php }?>
-
-            <?php if($requestcard == 'detailcard' ) {?>
-                <?= base_url() ?>homepage/requestcard?requestcard=<?= base64_encode('activenow')?>
-            <?php }?>
-
-            <?php if($card == 'card' ) {?>
-                <?= base_url() ?>homepage
-            <?php }?>
-
-            <?php if($card == 'topup' ) {?>
-                <?= base_url() ?>homepage/card?card=<?= base64_encode('card')?>
-            <?php }?>
-
-            <?php if($card == 'confirm' ) {?>
-                <?= base_url() ?>homepage/card?card=<?= base64_encode('topup')?>
-            <?php }?>
-
-
-
-        " class="d-flex align-items-center me-auto">
+        <a href="<?= base_url() ?>" class="d-flex align-items-center me-auto">
             <div class="icon-menus d-flex align-items-center home-svg">
                 <svg width="35" height="34" viewBox="0 0 35 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M18.5 2L3.5 17L18.5 32" stroke="url(#paint0_linear_916_4049)" stroke-width="4" stroke-linecap="round"/>
