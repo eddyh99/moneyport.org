@@ -26,6 +26,7 @@
                                     value="<?php echo $this->security->get_csrf_hash(); ?>">
                                 <input type="hidden" id="amountget" name="amountget">
                                 <input type="hidden" id="quoteid" name="quoteid">
+                                
                                 <div class="swap-form-icon d-flex flex-row align-items-center my-4">
                                     <label for=""><?= $_SESSION["symbol"] ?></label>
                                     <input type="text" class="form-control money-input text-end" name="amount"
@@ -62,6 +63,7 @@
                                     <input type="text" class="form-control money-input text-end" name="receive"
                                         id="receive" placeholder="0.00" readonly>
                                 </div>
+
                                 <div class="row">
                                     <div class="d-flex flex-row mt-4">
                                         <button class="btn btn-receive-bank px-3 py-2 mx-auto" type="submit"

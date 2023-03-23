@@ -7,7 +7,7 @@ class Search extends CI_Controller
     {
         parent::__construct();
         if (empty($this->session->userdata('user_id'))) {
-            redirect(base_url('auth/login'));
+            redirect(base_url());
         }
     }
 

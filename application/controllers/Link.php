@@ -351,4 +351,18 @@ class Link extends CI_Controller
 
         $this->load->view('tamplate/wrapper', $data);
     }
+
+    public function findme()
+    {
+        $findme = base64_decode($_GET['findme']);
+
+        $data = array(
+            "title"     => NAMETITLE ,
+            "content"   => "auth/landingpage/findme" ,
+            "findme"   => $findme,
+            "extra"     => "auth/landingpage/js/js_index",
+        );
+
+        $this->load->view('tamplate/wrapper', $data);
+    }
 }

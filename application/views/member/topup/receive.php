@@ -21,14 +21,19 @@
                             ) { ?>
                             <button type="button" class="receive-attention d-flex flex-column text-center col-12 p-3"
                                 data-bs-toggle="modal" data-bs-target="#attention">
-                                <span class="w-100 mb-2 fw-bold title">ATTENTION!</span>
-                                <span class="w-100 mb-2 middle">Before make any topup</span>
-                                <span class="w-100 bottom">read carefully how does it work</span>
+                                <span class="mb-2 fw-bold title text-center mx-auto">IMPORTANT</span>
+                                <p class="desc fw-normal">
+                                    To maximize the privacy level, all incoming and outgoing transfers 
+                                        <span class="will-manage">
+                                            will be managed by a payment and collection gateway.
+                                        </span>
+                                    The bank details, of each currency, will be the same for all users;  excluding the ‘’causal’’ which identify the receiving wallet.
+                                </p>
                             </button>
                             <?php } ?>
                         </div>
-                        <div class="col-12 recive-bank  d-flex align-items-center flex-column text-center">
-                            <?php
+                        <div class="col-12 recive-bank d-flex align-items-center flex-column flex-md-row text-center px-5 ">
+                        <?php
                             if (
                                 ($_SESSION["currency"] == "USD") ||
                                 ($_SESSION["currency"] == "EUR") ||
@@ -42,13 +47,14 @@
                                 ($_SESSION["currency"] == "RON")
                             ) { ?>
                             <?php
+                                
                                 if ($_SESSION["currency"] == "EUR") {?>
-                                    <a href="<?= base_url() ?>receive/localbank" class="col-8 py-3 my-2">National SEPA
+                                    <a href="<?= base_url() ?>receive/localbank" class="col-12 col-md-6 py-3 my-2 mx-1  text-white">National SEPA
                                         Circuit</a>
                                 <?php } elseif ($_SESSION["currency"] == "USD") { ?>
-                                    <a href="<?= base_url() ?>receive/localbank" class="col-8 py-3 my-2">USA bank circuit</a>
+                                    <a href="<?= base_url() ?>receive/localbank" class="col-12 col-md-6 py-3 my-2 mx-1 text-white">USA bank circuit</a>
                                 <?php }else{?>
-                                    <a href="<?= base_url() ?>receive/localbank" class="col-8 py-3 my-2">Local bank</a>
+                                    <a href="<?= base_url() ?>receive/localbank" class="col-12 col-md-6 py-3 my-2 mx-1 text-white">Local bank</a>
                                 <?php } 
 
                                 if (($_SESSION["currency"] == "USD") ||
@@ -56,14 +62,15 @@
                                     ($_SESSION["currency"] == "GBP")
                                 ) { 
                                     if ($_SESSION["currency"] == "EUR") {?>
-                                        <a href="<?= base_url() ?>receive/interbank" class="col-8 py-3 my-2">International
+                                        <a href="<?= base_url() ?>receive/interbank" class="col-12 col-md-6 py-3 my-2 mx-1 text-white">International
                                             BIC/Swift</a>
                                         <?php }else{?>
-                                            <a href="<?= base_url() ?>receive/interbank" class="col-8 py-3 my-2">International Swift</a>
+                                            <a href="<?= base_url() ?>receive/interbank" class="col-12 col-md-6 py-3 my-2 mx-1 text-white">International Swift</a>
                                         <?php }
                                     } 
                             } else{ ?>
-                                <div class="receive-note">
+                            <div class="row">
+                                <div class="receive-note col-12">
                                     <span class="fw-bold title">To top up this currency you have to covert from another
                                         currency
                                         in <b>SWAP</b>
@@ -79,16 +86,16 @@
                                     ($_SESSION["currency"] == "GBP")
                                 ) { 
                                     if ($_SESSION["currency"] == "EUR") {?>
-                                        <a href="<?= base_url() ?>receive/localbank" class="col-8 py-3 my-2">International BIC/Swift</a>
+                                        <a href="<?= base_url() ?>receive/localbank" class="col-12 py-3 my-2 mx-1 text-white">International BIC/Swift</a>
                                     <?php }else{?>
-                                        <a href="<?= base_url() ?>receive/interbank" class="col-8 py-3 my-2">International</a>
+                                        <a href="<?= base_url() ?>receive/interbank" class="col-12 py-3 my-2 mx-1 text-white">International</a>
                                     <?php } 
                                 } else{ ?>
-                                    <a href="<?= base_url() ?>receive/interbank?currency=USD" class="col-8 py-3 my-2">USD
+                                    <a href="<?= base_url() ?>receive/interbank?currency=USD" class="col-12 py-3 my-2 mx-1 text-white">USD
                                         International</a>
-                                    <a href="<?= base_url() ?>receive/interbank?currency=EUR" class="col-8 py-3 my-2">EUR
+                                    <a href="<?= base_url() ?>receive/interbank?currency=EUR" class="col-12 py-3 my-2 mx-1 text-white">EUR
                                         International</a>
-                                    <div class="receive-note">
+                                    <div class="receive-note col-12">
                                     <span>
                                         <b>ATTENTION:<br>
                                             UPON THE ARRIVAL OF THE BANK TRANSFER, THE SENT CURRENCY WILL BE CONVERTED INTO
@@ -96,6 +103,7 @@
                                             CHOSEN DESTINATION CURRENCY</b>
                                     </span>
                                 </div>
+                            </div>
                             <?php }} ?>
                         </div>
                     </div>
