@@ -332,6 +332,9 @@ section {
   margin-top: 4px;
 }
 
+.ri-question-line {
+  cursor: pointer !important;
+}
 
 .circle-upload-img {
   background-color: #a0a0a0;
@@ -340,60 +343,40 @@ section {
   border-radius: 99999px;
 }
 
-.drop-container {
-  width: 100%;
-  position: relative;
-  display: flex;
-  gap: 10px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-  padding: 20px;
-  border-radius: 10px;
-  /* border: 2px dashed #555; */
-  background-color: #d9d9d9;
-  color: #444;
-  cursor: pointer;
-  transition: background 0.2s ease-in-out, border 0.2s ease-in-out;
-}
-.drop-container:hover .drop-title {
-  color: #222;
-}
-
-.drop-title {
-  color: #444;
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
-  transition: color 0.2s ease-in-out;
-}
-
-.drop-container input[type="file"] {
-  width: 350px;
+#image-container{
+  padding: 10px ;
+  max-height: 200px;
   max-width: 100%;
-  color: #444;
-  padding: 5px;
-  background: #fff;
+  background-color:#eee;
+  border: 2px dashed #555;
   border-radius: 10px;
-  border: 1px solid #555;
 }
 
-.drop-container input[type="file"]::file-selector-button {
+
+#image-container {
+  border-radius: 10px;
+}
+
+.input-logo-business {
+  border: 1px solid #e5e5e5;
+}
+
+
+.input-logo-business input[type=file]::file-selector-button {
+    background-color: #fff;
+  color: #000;
+  border: 0px;
+  border-right: 1px solid #e5e5e5;
+  padding: 10px 15px;
   margin-right: 20px;
-  border: none;
-  background: #084cdf;
-  padding: 10px 20px;
-  border-radius: 10px;
-  color: #fff;
-  cursor: pointer;
-  transition: background 0.2s ease-in-out;
+  transition: .5s;
 }
 
-.drop-container input[type="file"]::file-selector-button:hover {
-  background: #0d45a5;
+.input-logo-business input[type=file]::file-selector-button:hover {
+  background-color: #eee;
+  border: 0px;
+  border-right: 1px solid #e5e5e5;
 }
-
 
 .text-findme {
   font-size: 14px !important;
@@ -414,6 +397,7 @@ section {
 .country-select:focus {
   box-shadow: inset 6px 6px 12px rgba(0, 0, 0, 0.25);
   outline: 2px #bcbcbc solid;
+  background-color: #d9d9d9 !important;
 }
 
 .input-unique-code {
@@ -426,8 +410,7 @@ section {
   border: 2px transparent solid;
   padding-right: 10px;
   font-size: 16px;
-  /* text-align: center; */
-  /* padding-left: 25px; */
+  text-align: center;
 }
 
 .input-unique-code::placeholder {
@@ -3650,7 +3633,7 @@ section {
     padding: 1.5rem 4rem;
     transition: 0.5s;
     color: #fff;
-
+    border: 0px solid transparent;
     background: linear-gradient(90deg, #9E00FF 0%, #FF00D6 121.48%);
     box-shadow: 0px 4px 35px #744949;
     border-radius: 44px;
@@ -6043,7 +6026,7 @@ section {
     padding: 1.5rem 4rem;
     transition: 0.5s;
     color: #fff;
-
+    border: 0px solid transparent;
     background: linear-gradient(90deg, #9E00FF 0%, #FF00D6 121.48%);
     box-shadow: 0px 4px 35px #744949;
     border-radius: 44px;
@@ -8367,7 +8350,7 @@ section {
     padding: 1.5rem 4rem;
     transition: 0.5s;
     color: #fff;
-
+    border: 0px solid transparent;
     background: linear-gradient(90deg, #9E00FF 0%, #FF00D6 121.48%);
     box-shadow: 0px 4px 35px #744949;
     border-radius: 44px;
@@ -10958,7 +10941,7 @@ section {
     padding: 1.5rem 4rem;
     transition: 0.5s;
     color: #fff;
-
+    border: 0px solid transparent;
     background: linear-gradient(90deg, #9E00FF 0%, #FF00D6 121.48%);
     box-shadow: 0px 4px 35px #744949;
     border-radius: 44px;
