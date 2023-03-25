@@ -162,13 +162,8 @@ class Homepage extends CI_Controller
         $data['card'] = base64_decode($_GET['card']) ;
         $data['requestcard'] = base64_decode(@$_GET['requestcard']) ;
         $footer["extra"] = "member/js/js_index";
-        // $data['requestcard'] = $requestcard;
-        
-
 
         // PERLU VALUE UNTUK VALIDASI, UNTUK KONDISI BELUM FIKS MASIH PERLU DIPERBAIKI
-
-
         // IF ALREADY CARD 
         if($_SESSION['user_id'] == !isset($_GET[base_url() . 'homepage/card' ]) )
         {
@@ -188,13 +183,9 @@ class Homepage extends CI_Controller
         $data['basecard'] = base_url() . 'homepage/requestcard';
         $data['requestcard'] = base64_decode($_GET['requestcard']) ;
         $data['card'] = base64_decode(@$_GET['card']) ;
-        // $data['card'] = $card;
         $footer["extra"] = "member/js/js_index";
         
-
-
         // PERLU VALUE UNTUK VALIDASI, UNTUK KONDISI BELUM FIKS MASIH PERLU DIPERBAIKI
-
         // IF REQUEST CARD
         if($_SESSION['user_id'] == !isset($_GET[base_url() . 'homepage/requestcard']) )
         {

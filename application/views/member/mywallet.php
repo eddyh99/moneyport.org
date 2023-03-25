@@ -2,7 +2,7 @@
     <div class="col-12 col-lg-8 col-xl-6">
         <div class="container" style="margin-bottom: 30rem;">
             <div class="app-container py-5 ">
-                <?php $this->load->view("member/header"); ?>
+                <?php $this->load->view("tamplate/banner-nofiat"); ?>
 
                 <div class="d-flex flex-column mx-auto justify-content-center w-100 mb-4">
                     <!-- <div style="height: 1px; width: 100%; background-color: #FF0F00" class="my-4"></div> -->

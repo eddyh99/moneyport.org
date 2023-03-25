@@ -476,9 +476,6 @@
             
             <!-- Start Find Me -->
             <?php if ($guide == 7) { ?>
-                <!-- <div class="col-12 text-center">
-                    <h3>Coming soon!</h3>
-                </div> -->
                 <div class="col-12 my-5">
                     <div class="logo-text text-center">
                         <img src="<?= base_url() ?>assets/img/c2-9.png" alt="">
@@ -501,22 +498,27 @@
                                 Do you want to request FIND ME service for your business? 
                             </h5>
 
-                            <form id="form-input-unique-code" class="w-100 my-3">
+                            <form id="form-input-unique-code" action="<?=base_url()?>link/getref" method="post" class="w-100 my-3">
+                                <input 
+                                    type="hidden" 
+                                    id="token"
+                                    name="<?php echo $this->security->get_csrf_token_name(); ?>"
+                                    value="<?php echo $this->security->get_csrf_hash(); ?>" 
+                                    class="input-unique-code"    
+                                >   
                                 <div class="row d-flex flex-column flex-md-row justify-content-center align-items-center justify-content-lg-start">
                                     <div class="col-12 col-md-9 col-lg-7 col-xl-5">
-                                        <input type="text" class="input-unique-code" placeholder="Enter your Unique Code">
+                                        <input type="text" name="ucode" maxlength="8" class="input-unique-code" placeholder="Enter your Unique Code">
                                     </div>
                                     <div class="col-12 col-md-3 col-lg-2">
-                                        <a href="<?= base_url(); ?>link/findme?findme=<?= base64_encode('1')?>">
-                                            <button type="button" class="btn-unique-code d-flex justify-content-center align-items-center btn my-3">
-                                                <span class="mx-3">
-                                                    Next
-                                                </span>
-                                                <div class="circle-btn-unique-code flex justify-content-center">
-                                                    <i class="ri-arrow-right-line fs-4"></i>
-                                                </div>
-                                            </button>
-                                        </a>
+                                        <button type="submit" class="btn-unique-code d-flex justify-content-center align-items-center btn my-3">
+                                            <span class="mx-3">
+                                                Next
+                                            </span>
+                                            <div class="circle-btn-unique-code flex justify-content-center">
+                                                <i class="ri-arrow-right-line fs-4"></i>
+                                            </div>
+                                        </button>
                                     </div>
                                 </div>
                             </form>
@@ -581,3 +583,24 @@
         </div>
     </div>
 </section><!-- End Hero -->
+
+<!-- Notifikasi -->
+<?php if (@isset($_SESSION["success"])) { ?>
+<div class="alert alert-success alert-dismissible" id="success-alert" style="display: grid; position: fixed; top: 10px; z-index: 99999; padding: 1rem;
+left: 0;
+right: 0;
+max-width: 300px;
+margin: 0 auto;">
+    <?= $_SESSION["success"]; ?>
+</div>
+<?php } ?>
+
+<?php if (@isset($_SESSION["failed"])) { ?>
+<div class="alert alert-danger alert-dismissible" id="danger-alert" style="display: grid; position: fixed; top: 10px; z-index: 99999; padding: 1rem;
+left: 0;
+right: 0;
+max-width: 300px;
+margin: 0 auto;">
+    <?= $_SESSION["failed"]; ?>
+</div>
+<?php } ?>

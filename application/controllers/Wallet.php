@@ -247,7 +247,8 @@ class Wallet extends CI_Controller
             redirect("wallet/request");
             return;
         }
-        $linkqr = base_url() . 'wallet/send?' . base64_encode('cur=' . $_SESSION["currency"] . '&ucode=' . $_SESSION["ucode"] . '&amount=' . $amount);
+
+        $linkqr = base_url() . 'auth/requestbank/' . base64_encode($_SESSION["currency"]) . '/' . base64_encode($_SESSION["ucode"]) . '/' . base64_encode($amount);
 
         $codename = substr(sha1(time()), 0, 8);
         $nameqr = $_SESSION["ucode"] . '-' . $codename;

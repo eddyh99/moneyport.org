@@ -2,7 +2,7 @@
     <div class="col-12 col-lg-8 col-xl-6">
         <div class="container" style="margin-bottom: 8rem;">
             <div class="app-container py-5">
-                <?php $this->load->view("member/header"); ?>
+                <?php $this->load->view("tamplate/banner-nofiat"); ?>
                 <div class="row d-flex justify-content-center">
                     <div class="col-12">
                         <div class="col-12 receive-note d-flex justify-content-center text-start my-4">
@@ -108,37 +108,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Modal attantion -->
-<div class="modal fade" id="attention" tabindex="-1" aria-labelledby="attention" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content attention-modal p-2">
-            <div class="modal-header border-0">
-                <h1 class="modal-title fw-bold">How to topup</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <ul>
-                    <li>
-                        In order to topup your own wallet or receive money through bank transfer, <br>
-                        copy or share the bank details written in ''add/receive funds'' in National or International and
-                        as a <b>Causal</b> is <b>Mandatory</b> copy as example bellow :<br>
-                        <img src="<?= base_url() ?>assets/img/attantion-1.png" alt="">
-                    </li>
-
-                    <li>
-                        To increase and improve the privacy level, receiving and sending money<br>
-                        will be handled by TracklessMoney payment gateway<br>
-                        The receiving banking data of each currency will be the same for all users, <b
-                            class="text-lowercase">THE ONLY DATA THAT
-                            WILL CHANGE WILL BE THE</b> "CAUSAL" <b class="text-lowercase">WHICH WILL IDENTIFY THE
-                            RECEIVER USER</b>
-                    </li>
-                </ul>
             </div>
         </div>
     </div>
