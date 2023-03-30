@@ -156,47 +156,122 @@ class Homepage extends CI_Controller
 
     public function card()
     {   
-        
-        $data['title'] = NAMETITLE . " - Homepage";
-        $data['basecard'] = base_url() . 'homepage/card';
-        $data['card'] = base64_decode($_GET['card']) ;
-        $data['requestcard'] = base64_decode(@$_GET['requestcard']) ;
-        $footer["extra"] = "member/js/js_index";
+        $_SESSION["currency"]   = 'EUR';
+        $_SESSION["symbol"]     = '&euro;';
+        $result = apitrackless(URLAPI . "/v1/member/card/check_card?userid=" . $_SESSION["user_id"]);
+        if ($result->message->card=="unavailable"){
+            // tampilkan untuk pendaftaran card baru
+            
+            $mfee = apitrackless(URLAPI . "/v1/admin/fee/getFee?currency=EUR");
+            $mcost = apitrackless(URLAPI . "/v1/admin/cost/getCost?currency=EUR");
+            $_SESSION["currency"]="EUR";
+            
+            $card_fee = @$mfee->message->card_fxd;
+            $card_cost = @$mcost->message->card_fxd;
 
-        // PERLU VALUE UNTUK VALIDASI, UNTUK KONDISI BELUM FIKS MASIH PERLU DIPERBAIKI
-        // IF ALREADY CARD 
-        if($_SESSION['user_id'] == !isset($_GET[base_url() . 'homepage/card' ]) )
-        {
+            $data=array(
+                "title"         => NAMETITLE . " - Card",
+                "basecard"      => 'homepage/requestcard',
+                "price"         => money_format('%.2n',$card_fee+$card_cost),
+                "requestcard"   => base64_decode("cmVxdWVzdGNhcmQ="),
+                "extra"         => "member/js/js_index"
+            );
+
+            $this->load->view('tamplate/header', $data);
+            $this->load->view('member/card/card-request', $data);
+            $this->load->view('tamplate/navbar-bottom-back', $data);
+            $this->load->view('tamplate/footer', $footer);
+
+        }else{
+            // history dan topup
+            $data=array(
+                "title"         => NAMETITLE . " - Card",
+                "basecard"      => 'homepage/card',
+                "requestcard"   => base64_decode(@$_GET['requestcard']),
+                "extra"         => "member/js/js_index"
+            );
+            
             $this->load->view('tamplate/header', $data);
             $this->load->view('member/card/card', $data);
             $this->load->view('tamplate/navbar-bottom-back', $data);
             $this->load->view('tamplate/footer', $footer);
+
         }
-
-
+        
     }
 
     public function requestcard()
     {   
+        $mfee = apitrackless(URLAPI . "/v1/admin/fee/getFee?currency=EUR");
+        $mcost = apitrackless(URLAPI . "/v1/admin/cost/getCost?currency=EUR");
+
+        $card_fee = @$mfee->message->card_fxd;
+        $card_cost = @$mcost->message->card_fxd;
+        $fee = money_format('%.2n',$card_fee+$card_cost);
         
-        $data['title'] = NAMETITLE . " - Homepage";
-        $data['basecard'] = base_url() . 'homepage/requestcard';
-        $data['requestcard'] = base64_decode($_GET['requestcard']) ;
-        $data['card'] = base64_decode(@$_GET['card']) ;
-        $footer["extra"] = "member/js/js_index";
-        
-        // PERLU VALUE UNTUK VALIDASI, UNTUK KONDISI BELUM FIKS MASIH PERLU DIPERBAIKI
-        // IF REQUEST CARD
-        if($_SESSION['user_id'] == !isset($_GET[base_url() . 'homepage/requestcard']) )
-        {
+        $balance=balance($_SESSION["user_id"],'EUR');
+        if ($balance<=$fee){
+            $this->session->set_flashdata("failed","Insufficient EUR balance");
+            redirect ("homepage/card?requestcard=cmVxdWVzdGNhcmQ=");
+        }else{
+            $data=array(
+                "title"         => NAMETITLE . " - Card",
+                "basecard"      => 'homepage/requestcard',
+                "price"         => money_format('%.2n',$card_fee+$card_cost),
+                "card"          => base64_decode($_GET['card']),
+                "requestcard"   => base64_decode(@$_GET['requestcard']),
+                "extra"         => "member/card/js/js_index"
+            );
+
             $this->load->view('tamplate/header', $data);
             $this->load->view('member/card/card-request', $data);
             $this->load->view('tamplate/navbar-bottom-back', $data);
             $this->load->view('tamplate/footer', $footer);
         }
-
     }
     
+    public function activecard(){
+        $this->form_validation->set_rules('telp', 'Phone number', 'trim|required');
+        $this->form_validation->set_rules('passwd', '3d secure password', 'trim|required');
+        $this->form_validation->set_rules('confpasswd', 'Confirm 3d secure password', 'trim|required|matches[passwd]');
+        
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata("failed",validation_errors());
+            redirect ("homepage/card?requestcard=YWN0aXZlbm93");
+        }
+        $input      = $this->input;
+        $telp       = $this->security->xss_clean($input->post("telp"));
+        $passwd     = $this->security->xss_clean($input->post("passwd"));
+        
+        $mdata  = array(
+            "userid"    => $_SESSION["user_id"],
+            "ucode"     => $_SESSION["ucode"],
+            "currency"  => 'EUR',
+            "phone"     => $telp,
+            "3dpass"    => $passwd
+        );
+        
+        $result = apitrackless(URLAPI . "/v1/member/card/activate_card", json_encode($mdata));
+        print_r($result);
+        die;
+        if (@$result->code != "200") {
+            $this->session->set_flashdata('failed', $result->message);
+            redirect ("homepage/card?requestcard=YWN0aXZlbm93");
+            return;
+        }    
+        
+        $data=array(
+            "title"         => NAMETITLE . " - Card",
+            "basecard"      => 'homepage/requestcard',
+            "price"         => money_format('%.2n',$card_fee+$card_cost),
+            "card"          => base64_decode($_GET['card']),
+            "requestcard"   => 'detailcard',
+            "extra"         => "member/card/js/js_index"
+        );
 
-
+        $this->load->view('tamplate/header', $data);
+        $this->load->view('member/card/card-request', $data);
+        $this->load->view('tamplate/navbar-bottom-back', $data);
+        $this->load->view('tamplate/footer', $footer);        
+    }
 }
