@@ -263,7 +263,7 @@ class Auth extends CI_Controller
 
 			$srcrefwlogo = base_url() . 'qr/ref/' . $result->message->ucode . 'wlogo.png';
 			if (@getimagesize($srcrefwlogo) == FALSE) {
-				$this->ciqrcode->addLogo($result->message->ucode, '/qr/ref/', '/assets/img/logo.png');
+				$this->ciqrcode->addLogo($result->message->ucode, '/qr/ref/', '/assets/img/logoQR.png');
 			}
 
 			// if (@getimagesize($srcr) == FALSE) {
