@@ -8,18 +8,18 @@
                     <div class="mt-5 wrap-border-topup p-3 p-md-4 col-12 col-md-10 mx-auto">
                         <div class="d-flex justify-content-between px-0 px-md-5 py-4 text-blue-freedy fw-bold">
                             <span>Card number</span>
-                            <span>xxxxxxxxx</span>
+                            <span><?=$detailcard->cardnumber?></span>
                         </div>
                         <div class="d-flex justify-content-between px-0 px-md-5 py-4 text-blue-freedy fw-bold">
                             <span>CVV</span>
-                            <span>xxxxxxxxxxx</span>
+                            <span><?=$detailcard->cvv?></span>
                         </div>
                         <div class="d-flex justify-content-between px-0 px-md-5 py-4 text-blue-freedy fw-bold">
                             <span>Expire date</span>
-                            <span>12 March 2023</span>
+                            <span><?=$exp?></span>
                         </div>
                         <div class="text-start d-flex justify-content-center mt-5 mb-4">
-                            <a href="<?= base_url(); ?>homepage/card?card=<?= base64_encode('card')?>"
+                            <a href="<?= base_url(); ?>homepage/card"
                                 class="btn-card-confirm-nocard  d-inline-flex align-items-center justify-content-center align-self-center">
                                 <span class="f-lexend">Confirm</span>
                             </a>
