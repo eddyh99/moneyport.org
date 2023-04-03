@@ -183,11 +183,27 @@ class Homepage extends CI_Controller
             $this->load->view('tamplate/footer', $footer);
 
         }else{
+            $card_id     = $result->message->card_id;
+            $account_id  = $result->message->account_id;
+
+            $cardbalance = apitrackless(URLAPI . "/v1/member/card/getcardbalance?card_id=" . $card_id . "&account_id=" . $account_id);
+            $exp    = explode("T",$cardbalance->exp_date)[0];
+            $exp    = date("d M Y",strtotime($exp));
+            $card   = apitrackless(URLAPI . "/v1/member/card/decodeCard?card_id=" . $card_id);
+            
+            $mcard = (object)array(
+                    "cardnumber"    => $card->cardnumber,
+                    "cardbalance"   => $cardbalance->cardbalance,
+                    "cvv"           => $card->cvv
+                );
+                
             // history dan topup
             $data=array(
                 "title"         => NAMETITLE . " - Card",
                 "basecard"      => 'homepage/card',
-                "requestcard"   => base64_decode(@$_GET['requestcard']),
+                "detailcard"    => $mcard,
+                "exp"           => $exp,
+                "card"          => 'card',
                 "extra"         => "member/js/js_index"
             );
             
@@ -207,7 +223,7 @@ class Homepage extends CI_Controller
 
         $card_fee = @$mfee->message->card_fxd;
         $card_cost = @$mcost->message->card_fxd;
-        $fee = money_format('%.2n',$card_fee+$card_cost);
+        $fee = number_format($card_fee+$card_cost,2);
         
         $balance=balance($_SESSION["user_id"],'EUR');
         if ($balance<=$fee){
@@ -217,8 +233,7 @@ class Homepage extends CI_Controller
             $data=array(
                 "title"         => NAMETITLE . " - Card",
                 "basecard"      => 'homepage/requestcard',
-                "price"         => money_format('%.2n',$card_fee+$card_cost),
-                "card"          => base64_decode($_GET['card']),
+                "price"         => $fee,
                 "requestcard"   => base64_decode(@$_GET['requestcard']),
                 "extra"         => "member/card/js/js_index"
             );
@@ -242,7 +257,7 @@ class Homepage extends CI_Controller
         $input      = $this->input;
         $telp       = $this->security->xss_clean($input->post("telp"));
         $passwd     = $this->security->xss_clean($input->post("passwd"));
-        
+
         $mdata  = array(
             "userid"    => $_SESSION["user_id"],
             "ucode"     => $_SESSION["ucode"],
@@ -252,20 +267,25 @@ class Homepage extends CI_Controller
         );
         
         $result = apitrackless(URLAPI . "/v1/member/card/activate_card", json_encode($mdata));
-        print_r($result);
-        die;
         if (@$result->code != "200") {
             $this->session->set_flashdata('failed', $result->message);
             redirect ("homepage/card?requestcard=YWN0aXZlbm93");
             return;
-        }    
+        }
         
+        //$card_id='be3838a4-72ff-49a7-8f03-82f84a54d73d';
+        //$exp_date="2026-03-31T23:59:59Z";
+        
+        $exp    = explode("T",$result->exp_date)[0];
+        $exp    = date("d M Y",strtotime($exp));
+        $card   = apitrackless(URLAPI . "/v1/member/card/decodeCard?card_id=" . $result->card_id);
+
         $data=array(
             "title"         => NAMETITLE . " - Card",
             "basecard"      => 'homepage/requestcard',
-            "price"         => money_format('%.2n',$card_fee+$card_cost),
-            "card"          => base64_decode($_GET['card']),
             "requestcard"   => 'detailcard',
+            "detailcard"    => $card,
+            "exp"           => $exp,
             "extra"         => "member/card/js/js_index"
         );
 
@@ -273,5 +293,141 @@ class Homepage extends CI_Controller
         $this->load->view('member/card/card-request', $data);
         $this->load->view('tamplate/navbar-bottom-back', $data);
         $this->load->view('tamplate/footer', $footer);        
+    }
+    
+    public function topupcard(){
+        $bankcost = apitrackless(URLAPI . "/v1/admin/cost/getCost?currency=" . $_SESSION['currency']);
+        $bankfee = apitrackless(URLAPI . "/v1/admin/fee/getFee?currency=" . $_SESSION['currency']);
+
+        $fee = (balance($_SESSION['user_id'], $_SESSION["currency"]) *
+            @$bankcost->message->walletbank_circuit_pct) +
+            (balance($_SESSION['user_id'], $_SESSION["currency"]) *
+                @$bankfee->message->walletbank_circuit_pct) +
+            (balance($_SESSION['user_id'], $_SESSION["currency"]) *
+                @$bankfee->message->referral_bank_pct) +
+            @$bankcost->message->walletbank_circuit_fxd +
+            @$bankfee->message->walletbank_circuit_fxd +
+            @$bankfee->message->referral_bank_fxd;
+
+        if ((balance($_SESSION['user_id'], $_SESSION["currency"]) * 100) <= 0) {
+            $fee = 0;
+        }
+
+        if ((balance($_SESSION['user_id'], $_SESSION["currency"]) * 100) < ($fee * 100)) {
+            $fee = balance($_SESSION['user_id'], $_SESSION["currency"]);
+        }
+        
+        // history dan topup
+        $data=array(
+            "title"         => NAMETITLE . " - Topup Card",
+            "basecard"      => 'homepage/card',
+            "card"          => 'topup',
+            "fee"           => $fee,
+            "extra"         => "member/js/js_index"
+        );
+        
+        $this->load->view('tamplate/header', $data);
+        $this->load->view('member/card/card', $data);
+        $this->load->view('tamplate/navbar-bottom-back', $data);
+        $this->load->view('tamplate/footer', $footer);
+    }
+    
+    public function topupconfirm(){
+        $_SESSION["currency"]="EUR";
+        $amount = $this->security->xss_clean($this->input->post("amount"));
+
+        $a = $this->input->post("amount");
+        $b = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $a);
+        $_POST["amount"] = $b;
+
+        $input    = $this->input;
+        $this->form_validation->set_rules('amount', 'Amount', 'trim|required|greater_than[0]');
+        $this->form_validation->set_rules('confirmamount', 'Confirm Amount', 'trim|required|greater_than[0]|matches[amount]');
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata("failed", validation_errors());
+            redirect("homepage/topupcard");
+        }
+        
+        $mdata = array(
+            "userid"            => $_SESSION["user_id"],
+            "currency"          => "EUR",
+            "amount"            => $this->security->xss_clean($input->post("amount")),
+            "transfer_type"     => 'circuit',
+        );        
+        
+        $result = apitrackless(URLAPI . "/v1/member/wallet/bankSummary", json_encode($mdata));
+
+        if (@$result->code != 200) {
+            $this->session->set_flashdata("failed", $result->message);
+            redirect(base_url() . "homepage/topupcard");
+        }
+
+        $transfer_type  = $this->security->xss_clean($input->post("transfer_type"));
+        $temp["fee"]               = $result->message->fee;
+        $temp["deduct"]            = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $result->message->deduct);
+        $temp["amount"]            = $this->security->xss_clean($input->post("amount"));
+        
+        $data=array(
+            "title"         => NAMETITLE . " - Topup Card",
+            "basecard"      => 'homepage/card',
+            "card"          => 'confirm',
+            "detail"        => $temp,
+        );
+        
+        $this->load->view('tamplate/header', $data);
+        $this->load->view('member/card/card', $data);
+        $this->load->view('tamplate/navbar-bottom-back', $data);
+        $this->load->view('tamplate/footer', $footer);
+
+    }
+    
+    public function topupproses(){
+        $input    = $this->input;
+        $this->form_validation->set_rules('amount', 'Amount', 'trim|required|greater_than[0]');
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata("failed", validation_errors());
+            redirect("homepage/topupcard");
+        }
+        
+        $mdata = array(
+            "userid"            => $_SESSION["user_id"],
+            "currency"          => "EUR",
+            "amount"            => $this->security->xss_clean($input->post("amount")),
+            "transfer_type"     => 'circuit',
+        );        
+
+        $result = apitrackless(URLAPI . "/v1/member/card/topupprocess", json_encode($mdata));
+        if (@$result->code != 200) {
+            $this->session->set_flashdata("failed", $result->message);
+            redirect(base_url() . "homepage/topupcard");
+        }
+        
+        $data=array(
+            "title"         => NAMETITLE . " - Topup Card",
+            "basecard"      => 'homepage/card',
+            "card"          => 'success',
+        );
+        
+        $this->load->view('tamplate/header', $data);
+        $this->load->view('member/card/card', $data);
+        $this->load->view('tamplate/navbar-bottom-back', $data);
+        $this->load->view('tamplate/footer', $footer);
+    }
+    
+    public function historycard(){
+        $data=array(
+            "title"         => NAMETITLE . " - History Card",
+            "basecard"      => 'homepage/card',
+            "card"          => 'success',
+        );
+        
+        $this->load->view('tamplate/header', $data);
+        $this->load->view('member/card/card-history', $data);
+        $this->load->view('tamplate/navbar-bottom-back', $data);
+        $this->load->view('tamplate/footer', $footer);
+    }
+    
+    public function detailhistory(){
+        
     }
 }
