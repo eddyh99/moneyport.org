@@ -159,7 +159,7 @@ class Homepage extends CI_Controller
         $_SESSION["currency"]   = 'EUR';
         $_SESSION["symbol"]     = '&euro;';
         $result = apitrackless(URLAPI . "/v1/member/card/check_card?userid=" . $_SESSION["user_id"]);
-        if ($result->message->card=="unavailable"){
+        if ($result->message->card == !"unavailable"){
             // tampilkan untuk pendaftaran card baru
             
             $mfee = apitrackless(URLAPI . "/v1/admin/fee/getFee?currency=EUR");
@@ -172,24 +172,29 @@ class Homepage extends CI_Controller
             $data=array(
                 "title"         => NAMETITLE . " - Card",
                 "basecard"      => 'homepage/requestcard',
-                "price"         => money_format('%.2n',$card_fee+$card_cost),
+                "price"         => number_format((float)$card_fee+$card_cost, 2, '.', ''),
                 "requestcard"   => base64_decode("cmVxdWVzdGNhcmQ="),
+                "card"          => base64_decode(@$_GET['card']),
                 "extra"         => "member/js/js_index"
             );
 
             $this->load->view('tamplate/header', $data);
             $this->load->view('member/card/card-request', $data);
             $this->load->view('tamplate/navbar-bottom-back', $data);
-            $this->load->view('tamplate/footer', $footer);
+            $this->load->view('tamplate/footer', $data);
 
         }else{
             $card_id     = $result->message->card_id;
             $account_id  = $result->message->account_id;
 
+            // $card_id='be3838a4-72ff-49a7-8f03-82f84a54d73d';
+            // $exp_date="2026-03-31T23:59:59Z";
+            // $exp    = explode("T",$exp_date)[0];
+
             $cardbalance = apitrackless(URLAPI . "/v1/member/card/getcardbalance?card_id=" . $card_id . "&account_id=" . $account_id);
             $exp    = explode("T",$cardbalance->exp_date)[0];
             $exp    = date("d M Y",strtotime($exp));
-            $card   = apitrackless(URLAPI . "/v1/member/card/decodeCard?card_id=" . $card_id);
+            $card   = apitrackless(URLAPI . "/v1/member/card/decodeCard?card_id=" . $cardbalance->card_id);
             
             $mcard = (object)array(
                     "cardnumber"    => $card->cardnumber,
@@ -204,13 +209,14 @@ class Homepage extends CI_Controller
                 "detailcard"    => $mcard,
                 "exp"           => $exp,
                 "card"          => 'card',
+                "requestcard"   => base64_decode(@$_GET['requestcard']),
                 "extra"         => "member/js/js_index"
             );
             
             $this->load->view('tamplate/header', $data);
             $this->load->view('member/card/card', $data);
             $this->load->view('tamplate/navbar-bottom-back', $data);
-            $this->load->view('tamplate/footer', $footer);
+            $this->load->view('tamplate/footer', $data);
 
         }
         
@@ -235,13 +241,14 @@ class Homepage extends CI_Controller
                 "basecard"      => 'homepage/requestcard',
                 "price"         => $fee,
                 "requestcard"   => base64_decode(@$_GET['requestcard']),
+                "card"          => base64_decode(@$_GET['card']),
                 "extra"         => "member/card/js/js_index"
             );
 
             $this->load->view('tamplate/header', $data);
             $this->load->view('member/card/card-request', $data);
             $this->load->view('tamplate/navbar-bottom-back', $data);
-            $this->load->view('tamplate/footer', $footer);
+            $this->load->view('tamplate/footer', $data);
         }
     }
     
@@ -273,17 +280,19 @@ class Homepage extends CI_Controller
             return;
         }
         
-        //$card_id='be3838a4-72ff-49a7-8f03-82f84a54d73d';
-        //$exp_date="2026-03-31T23:59:59Z";
+        // $card_id='be3838a4-72ff-49a7-8f03-82f84a54d73d';
+        // $exp_date="2026-03-31T23:59:59Z";
         
         $exp    = explode("T",$result->exp_date)[0];
-        $exp    = date("d M Y",strtotime($exp));
+        $exp    = date("d M Y",strtotime($result->exp_date));
         $card   = apitrackless(URLAPI . "/v1/member/card/decodeCard?card_id=" . $result->card_id);
+        // $card   = apitrackless(URLAPI . "/v1/member/card/decodeCard?card_id=" . $card_id);
 
         $data=array(
             "title"         => NAMETITLE . " - Card",
             "basecard"      => 'homepage/requestcard',
             "requestcard"   => 'detailcard',
+            "card"          => base64_decode(@$_GET['card']),
             "detailcard"    => $card,
             "exp"           => $exp,
             "extra"         => "member/card/js/js_index"
@@ -292,7 +301,7 @@ class Homepage extends CI_Controller
         $this->load->view('tamplate/header', $data);
         $this->load->view('member/card/card-request', $data);
         $this->load->view('tamplate/navbar-bottom-back', $data);
-        $this->load->view('tamplate/footer', $footer);        
+        $this->load->view('tamplate/footer', $data);        
     }
     
     public function topupcard(){
@@ -322,6 +331,7 @@ class Homepage extends CI_Controller
             "title"         => NAMETITLE . " - Topup Card",
             "basecard"      => 'homepage/card',
             "card"          => 'topup',
+            "requestcard"   => base64_decode(@$_GET['requestcard']),
             "fee"           => $fee,
             "extra"         => "member/js/js_index"
         );
@@ -329,7 +339,7 @@ class Homepage extends CI_Controller
         $this->load->view('tamplate/header', $data);
         $this->load->view('member/card/card', $data);
         $this->load->view('tamplate/navbar-bottom-back', $data);
-        $this->load->view('tamplate/footer', $footer);
+        $this->load->view('tamplate/footer', $data);
     }
     
     public function topupconfirm(){
@@ -371,13 +381,14 @@ class Homepage extends CI_Controller
             "title"         => NAMETITLE . " - Topup Card",
             "basecard"      => 'homepage/card',
             "card"          => 'confirm',
+            "requestcard"   => base64_decode(@$_GET['requestcard']),
             "detail"        => $temp,
         );
         
         $this->load->view('tamplate/header', $data);
         $this->load->view('member/card/card', $data);
         $this->load->view('tamplate/navbar-bottom-back', $data);
-        $this->load->view('tamplate/footer', $footer);
+        $this->load->view('tamplate/footer', $data);
 
     }
     
@@ -411,7 +422,7 @@ class Homepage extends CI_Controller
         $this->load->view('tamplate/header', $data);
         $this->load->view('member/card/card', $data);
         $this->load->view('tamplate/navbar-bottom-back', $data);
-        $this->load->view('tamplate/footer', $footer);
+        $this->load->view('tamplate/footer', $data);
     }
     
     public function historycard(){
@@ -422,9 +433,9 @@ class Homepage extends CI_Controller
         );
         
         $this->load->view('tamplate/header', $data);
-        $this->load->view('member/card/card-history', $data);
         $this->load->view('tamplate/navbar-bottom-back', $data);
-        $this->load->view('tamplate/footer', $footer);
+        $this->load->view('member/card/card-history', $data);
+        $this->load->view('tamplate/footer', $data );
     }
     
     public function detailhistory(){

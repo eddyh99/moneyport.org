@@ -1,4 +1,3 @@
-
 <?php if($requestcard == 'detailcard') {?>
     <div class="d-flex justify-content-center">
         <div class="col-12 col-lg-8 col-xl-6">
@@ -8,7 +7,7 @@
                     <div class="mt-5 wrap-border-topup p-3 p-md-4 col-12 col-md-10 mx-auto">
                         <div class="d-flex justify-content-between px-0 px-md-5 py-4 text-blue-freedy fw-bold">
                             <span>Card number</span>
-                            <span><?=$detailcard->cardnumber?></span>
+                            <span><?=$detailcard->cardnumber ?></span>
                         </div>
                         <div class="d-flex justify-content-between px-0 px-md-5 py-4 text-blue-freedy fw-bold">
                             <span>CVV</span>
@@ -38,6 +37,13 @@
                     <?php if($requestcard ==  'requestcard'){?>
                         <div class="row my-5 ">
                             <div class="text-topup-card ">
+                                <?php if (@isset($_SESSION["failed"])) { ?>
+                                    <div class="col-12 alert alert-danger alert-dismissible fade show" role="alert">
+                                        <span class="notif-login f-poppins"><?= $_SESSION["failed"] ?></span>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                            aria-label="Close"></button>
+                                    </div>
+                                <?php } ?>
                                 <h1 class="text-blue-freedy fw-bolder f-poppins text-center ">
                                     Request Card
                                 </h1>
@@ -104,6 +110,13 @@
                         <div class="row my-4 card-req-activation">
                             <form action="<?=base_url()?>homepage/activecard" method="POST">
                                 <input type="hidden" id="token" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
+                                <?php if (@isset($_SESSION["failed"])) { ?>
+                                    <div class="col-12 alert alert-danger alert-dismissible fade show" role="alert">
+                                        <span class="notif-login f-poppins"><?= $_SESSION["failed"] ?></span>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                            aria-label="Close"></button>
+                                    </div>
+                                <?php } ?>
                                 <div class=" row d-flex mt-5 mx-0 mx-md-2">
                                     <h3 class="col-12 col-md-10 mx-auto text-start f-ubuntu">
                                         THE MOBILE NUMBER YOU WILL ENTER WILL BE USED JUST FOR OTP NUMBER AUTHENTICATION
@@ -111,7 +124,7 @@
                                 </div>
                                 <div class="row my-4 mx-auto d-flex justify-content-center">
                                     <div class="col-12 col-md-10 mx-auto">
-                                        <input name="telp" id="telephone" class="nohp-select input-nohp" type="tel" required>
+                                        <input name="telp" id="telephone" autocomplate="false" class="nohp-select input-nohp" type="tel" required>
                                     </div>
                                 </div>
                                 <div class="row d-flex  mx-0 mx-md-2">

@@ -1,4 +1,3 @@
-<!-- Start Already Card -->
 <?php if($card == 'confirm') {?>
     <div class="d-flex justify-content-center">
         <div class="col-12 col-lg-8 col-xl-6">
@@ -23,7 +22,7 @@
                             </div>
                             <div class="d-flex justify-content-between px-0 px-md-5 py-4 text-blue-freedy fw-bold">
                                 <span>New balance</span>
-                                <span><?=$_SESSION["symbol"]?> <?php echo number_format(balance($_SESSION['user_id'], $_SESSION["currency"]) - $deduct, 2)?></span>
+                                <span><?=$_SESSION["symbol"]?> <?php echo number_format(balance($_SESSION['user_id'], $_SESSION["currency"]) - $detail["deduct"], 2)?></span>
                             </div>
                             <div class="text-start d-flex justify-content-center mt-5 mb-4">
                                 <button type="submit"
@@ -68,8 +67,8 @@
                                     <span>Card balance</span>
                                 </div>
                                 <div class="text-blue-freedy d-flex align-items-center">
-                                    <span class="mx-3"><?php echo $_SESSION["symbol"]." ".number_format($detailcard->cardbalance,2);?></span>
-                                    <i class="ri-eye-line"></i>
+                                    <input id="text-secret" type="password" class="text-blue-freedy text-end mx-3 fw-semibold" value="<?php echo $_SESSION["symbol"]." ".number_format($detailcard->cardbalance,2);?>" readonly>
+                                    <i id="eye-toggle" class="ri-eye-line"></i>
                                 </div>
                             </div>
 
@@ -78,10 +77,11 @@
                                     <span>Card number</span>
                                 </div>
                                 <div class="">
-                                    <span class="mx-3"><?=$detailcard->cardnumber?></span>
-                                    <span>
+                                    <input type="text" id="cardnumcopy" class="text-end mx-3" value="<?=$detailcard->cardnumber?>" readonly>
+                                    <span id="btncardnumcopy">
                                         <img src="<?= base_url()?>assets/img/copy.png" class="img-fluid" alt="copy">
                                     </span>
+
                                 </div>
                             </div>
 
@@ -99,8 +99,8 @@
                                     <span>CVV</span>
                                 </div>
                                 <div class="d-flex align-items-center">
-                                    <span class="mx-3"><?=$detailcard->cvv?></span>
-                                    <i class="ri-eye-line text-blue-freedy"></i>
+                                    <input id="text-secret2" type="password" class="text-end mx-3 fw-semibold" value="<?=$detailcard->cvv?>" readonly>
+                                    <i id="eye-toggle2" class="ri-eye-line text-blue-freedy"></i>
                                 </div>
                             </div>
 
@@ -116,7 +116,7 @@
                                     Top Up Your Card
                                 </span>
                             </a>
-                            <a href="<?= base_url(); ?>homepage/historycard" class="col-12 mx-auto card-topup d-flex align-items-center justify-content-center mt-4">
+                            <a href="<?= base_url(); ?>soon" class="col-12 mx-auto card-topup d-flex align-items-center justify-content-center mt-4">
                                 <span class="text-blue-freed fw-bold">
                                     History
                                 </span>
@@ -127,6 +127,13 @@
                         <?php if($card == 'topup'){?>
                         <div class="my-5 row">
                             <div class="col-12 text-topup-card">
+                                <?php if (@isset($_SESSION["failed"])) { ?>
+                                    <div class="col-12 alert alert-danger alert-dismissible fade show" role="alert">
+                                        <span class="notif-login f-poppins"><?= $_SESSION["failed"] ?></span>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                            aria-label="Close"></button>
+                                    </div>
+                                <?php } ?>
                                 <h1 class="text-blue-freedy fw-bolder f-poppins text-center">
                                     Top up Card
                                 </h1>
@@ -175,5 +182,3 @@
     </div>
 <?php } ?>
 <!-- End Already Card -->
-
-
