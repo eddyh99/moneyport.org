@@ -24,8 +24,8 @@
     <div class="col-12 col-lg-8 col-xl-6 box-navbar-freedy d-flex justify-content-center align-items-center top">
         <!-- Start Back -->
         <a href="
-        
-            <?php if($requestcard == 'requestcard' ) {?>
+
+        <?php if($requestcard == 'requestcard' ) {?>
                 <?= base_url() ?>homepage
             <?php }?>
 
@@ -41,7 +41,7 @@
                 <?= base_url() ?>homepage/requestcard?requestcard=<?= base64_encode('activenow')?>
             <?php }?>
 
-            <?php if($card == 'card' ) {?>
+            <?php if($card == 'card') {?>
                 <?= base_url() ?>homepage
             <?php }?>
 
@@ -52,9 +52,7 @@
             <?php if($card == 'confirm' ) {?>
                 <?= base_url() ?>homepage/card?card=<?= base64_encode('topup')?>
             <?php }?>
-
-
-
+            
         " class="d-flex align-items-center me-auto">
             <div class="icon-menus d-flex align-items-center home-svg">
                 <svg width="35" height="34" viewBox="0 0 35 34" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -72,7 +70,7 @@
         <!-- End back -->
         
         <!-- Start logout -->
-        <a href="<?= base_url() ?>auth/logout" class="d-flex align-items-center">
+        <a href="<?= base_url() ?>" class="d-flex align-items-center">
             <span>Log out</span>
             <div class="icon-menus d-flex align-items-center home-svg">
                 <svg width="35" height="26" viewBox="0 0 35 26" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -5,7 +5,6 @@
                 <?php $this->load->view("tamplate/banner-nofiat"); ?>
 
                 <div class="d-flex flex-column mx-auto justify-content-center w-100 mb-4">
-                    <!-- <div style="height: 1px; width: 100%; background-color: #FF0F00" class="my-4"></div> -->
                     <a href="<?= base_url() ?>homepage">
                         <svg width="" height="67" viewBox="0 0 273 67" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="0.5" y="0.5" width="271.562" height="65.033" rx="7.5" stroke="url(#paint0_linear_789_3470)" />

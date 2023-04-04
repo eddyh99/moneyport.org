@@ -19,7 +19,7 @@
 
 <div class="navbar-app fixed-bottom d-flex justify-content-center">
     <div class="col-12 col-lg-8 col-xl-6 box-navbar-freedy d-flex justify-content-center align-items-center top">
-        <a href="<?= base_url() ?>" class="d-flex align-items-center me-auto">
+        <a href="<?= base_url()?>homepage" class="d-flex align-items-center me-auto">
             <div class="icon-menus d-flex align-items-center home-svg">
                 <svg width="34" height="37" viewBox="0 0 34 37" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M21.7917 34.7666V23.5166C21.7917 22.9643 21.344 22.5166 20.7917 22.5166H12.375C11.8227 22.5166 11.375 22.9643 11.375 23.5166V34.7666" stroke="url(#paint0_linear_789_3464)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
