@@ -23,7 +23,7 @@
                         </ul>
                     </div>
                     <div class="col-12 d-grid gap-2">
-                        <a href="<?= base_url() ?>auth/login" class="btn btn-login f-roboto">Back</a>
+                        <a href="<?= base_url() ?>" class="btn btn-login f-roboto">Back</a>
                     </div>
                 </form>
             </div>

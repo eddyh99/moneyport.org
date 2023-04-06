@@ -18,7 +18,7 @@
                                 <th>Description</th>
                                 <th>Cost</th>
                                 <th>Referral Commission</th>
-                                <th>Piggy Cost</th>
+                                <th><?= NAMETITLE; ?> Cost</th>
                                 <th>Income</th>
                                 <th>Date</th>
                             </tr>

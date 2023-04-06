@@ -159,7 +159,7 @@ class Homepage extends CI_Controller
         $_SESSION["currency"]   = 'EUR';
         $_SESSION["symbol"]     = '&euro;';
         $result = apitrackless(URLAPI . "/v1/member/card/check_card?userid=" . $_SESSION["user_id"]);
-        if ($result->message->card == !"unavailable"){
+        if ($result->message->card == "unavailable"){
             // tampilkan untuk pendaftaran card baru
             
             $mfee = apitrackless(URLAPI . "/v1/admin/fee/getFee?currency=EUR");
@@ -194,7 +194,7 @@ class Homepage extends CI_Controller
             $cardbalance = apitrackless(URLAPI . "/v1/member/card/getcardbalance?card_id=" . $card_id . "&account_id=" . $account_id);
             $exp    = explode("T",$cardbalance->exp_date)[0];
             $exp    = date("d M Y",strtotime($exp));
-            $card   = apitrackless(URLAPI . "/v1/member/card/decodeCard?card_id=" . $cardbalance->card_id);
+            $card   = apitrackless(URLAPI . "/v1/member/card/decodeCard?card_id=" . $card_id);
             
             $mcard = (object)array(
                     "cardnumber"    => $card->cardnumber,
@@ -270,7 +270,7 @@ class Homepage extends CI_Controller
             "ucode"     => $_SESSION["ucode"],
             "currency"  => 'EUR',
             "phone"     => $telp,
-            "3dpass"    => $passwd
+            "passwd"    => $passwd
         );
         
         $result = apitrackless(URLAPI . "/v1/member/card/activate_card", json_encode($mdata));
@@ -283,9 +283,9 @@ class Homepage extends CI_Controller
         // $card_id='be3838a4-72ff-49a7-8f03-82f84a54d73d';
         // $exp_date="2026-03-31T23:59:59Z";
         
-        $exp    = explode("T",$result->exp_date)[0];
-        $exp    = date("d M Y",strtotime($result->exp_date));
-        $card   = apitrackless(URLAPI . "/v1/member/card/decodeCard?card_id=" . $result->card_id);
+        $exp    = explode("T",$result->message->exp_date)[0];
+        $exp    = date("d M Y",strtotime($result->message->exp_date));
+        $card   = apitrackless(URLAPI . "/v1/member/card/decodeCard?card_id=" . $result->message->card_id);
         // $card   = apitrackless(URLAPI . "/v1/member/card/decodeCard?card_id=" . $card_id);
 
         $data=array(
