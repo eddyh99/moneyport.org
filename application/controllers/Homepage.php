@@ -175,6 +175,7 @@ class Homepage extends CI_Controller
                 "price"         => number_format((float)$card_fee+$card_cost, 2, '.', ''),
                 "requestcard"   => base64_decode("cmVxdWVzdGNhcmQ="),
                 "card"          => base64_decode(@$_GET['card']),
+                "requestcard_physical"      => base64_decode(@$_GET['requestcard_physical']),
                 "extra"         => "member/js/js_index"
             );
 
@@ -210,6 +211,7 @@ class Homepage extends CI_Controller
                 "exp"           => $exp,
                 "card"          => 'card',
                 "requestcard"   => base64_decode(@$_GET['requestcard']),
+                "requestcard_physical"      => base64_decode(@$_GET['requestcard_physical']),
                 "extra"         => "member/js/js_index"
             );
             
@@ -237,12 +239,13 @@ class Homepage extends CI_Controller
             redirect ("homepage/card?requestcard=cmVxdWVzdGNhcmQ=");
         }else{
             $data=array(
-                "title"         => NAMETITLE . " - Card",
-                "basecard"      => 'homepage/requestcard',
-                "price"         => $fee,
-                "requestcard"   => base64_decode(@$_GET['requestcard']),
-                "card"          => base64_decode(@$_GET['card']),
-                "extra"         => "member/card/js/js_index"
+                "title"                     => NAMETITLE . " - Card",
+                "basecard"                  => 'homepage/requestcard',
+                "price"                     => $fee,
+                "requestcard"               => base64_decode(@$_GET['requestcard']),
+                "card"                      => base64_decode(@$_GET['card']),
+                "requestcard_physical"      => base64_decode(@$_GET['requestcard_physical']),
+                "extra"                     => "member/card/js/js_index"
             );
 
             $this->load->view('tamplate/header', $data);
@@ -250,6 +253,23 @@ class Homepage extends CI_Controller
             $this->load->view('tamplate/navbar-bottom-back', $data);
             $this->load->view('tamplate/footer', $data);
         }
+    }
+
+    public function requestcard_physical()
+    {
+        $data=array(
+            "title"                 => NAMETITLE . " - Card",
+            "basecard"              => 'homepage/requestcard_physical',
+            "requestcard_physical"  => base64_decode($_GET['requestcard_physical']),
+            "card"                  => base64_decode(@$_GET['card']),
+            "requestcard"           => base64_decode(@$_GET['requestcard']),
+            "extra"                 => "member/card/js/js_index"
+        );
+
+        $this->load->view('tamplate/header', $data);
+        $this->load->view('member/card/card-request-physical', $data);
+        $this->load->view('tamplate/navbar-bottom-back', $data);
+        $this->load->view('tamplate/footer', $data);
     }
     
     public function activecard(){
@@ -293,6 +313,7 @@ class Homepage extends CI_Controller
             "basecard"      => 'homepage/requestcard',
             "requestcard"   => 'detailcard',
             "card"          => base64_decode(@$_GET['card']),
+            "requestcard_physical"      => base64_decode(@$_GET['requestcard_physical']),
             "detailcard"    => $card,
             "exp"           => $exp,
             "extra"         => "member/card/js/js_index"
@@ -332,6 +353,7 @@ class Homepage extends CI_Controller
             "basecard"      => 'homepage/card',
             "card"          => 'topup',
             "requestcard"   => base64_decode(@$_GET['requestcard']),
+            "requestcard_physical"      => base64_decode(@$_GET['requestcard_physical']),
             "fee"           => $fee,
             "extra"         => "member/js/js_index"
         );
@@ -382,6 +404,7 @@ class Homepage extends CI_Controller
             "basecard"      => 'homepage/card',
             "card"          => 'confirm',
             "requestcard"   => base64_decode(@$_GET['requestcard']),
+            "requestcard_physical"      => base64_decode(@$_GET['requestcard_physical']),
             "detail"        => $temp,
         );
         
