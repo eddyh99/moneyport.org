@@ -14,7 +14,7 @@ class Link extends CI_Controller
         $currency   = apitrackless($url)->message;
 
         $data = array(
-            "title"     => NAMETITLE . " - Lern Get Reward",
+            "title"     => NAMETITLE . " - Learn Get Reward",
             "content"   => "auth/landingpage/lern_reward",
             "extra"     => "auth/landingpage/js/js_index",
             "currency"     => $currency,

@@ -107,7 +107,7 @@
                                 </a>
                             </div>
                             <div class="col-12">
-                                <a href="<?= base_url() ?>search"
+                                <a href="<?= base_url() ?>history"
                                     class="d-flex flex-column justify-content-center align-items-center py-2 my-3 menus-blue">
                                     <svg width="28" height="29" viewBox="0 0 28 29" fill=""
                                         xmlns="http://www.w3.org/2000/svg">

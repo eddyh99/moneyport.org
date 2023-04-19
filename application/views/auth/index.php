@@ -1166,32 +1166,11 @@
                 <p class="f-lexend m-0">
                     <b translate="no"> Money Port </b> (TH)
                 </p>
-                <!-- <p class="copyright py-3 m-0">Money Port (TH) is a service subject to partnership with licenses PBS
-                        On line LLC</p> -->
             </div>
-            <!-- <div class="col-lg-3 col-12 pe-2 footer-links d-flex align-items-center">
-                    <div class="list text-center w-100">
-                        <a href="#" class="m-1 d-inline-block">
-                            <span class="icon"><i class="fab fa-instagram"></i></span>
-                        </a>
-                        <a href="#" class="m-1 d-inline-block">
-                            <span class="icon"><i class="fab fa-facebook-f"></i></span>
-                        </a>
-                        <a href="#" class="m-1 d-inline-block">
-                            <span class="icon"><i class="fab fa-twitter"></i></span>
-                        </a>
-                        <a href="#" class="m-1 d-inline-block">
-                            <span class="icon"><i class="fab fa-youtube"></i></span>
-                        </a>
-                    </div>
-                </div> -->
+
         </div>
     </div>
-    <!-- <div class="container pt-5 pb-4" style="z-index: 99; position: relative;">
-            <div class="credits f-lexend">
-                PiggyBank (USA) is a service subject to partnership with licenses PBS On line LLC
-            </div>
-        </div> -->
+
 </footer><!-- End Footer -->
 
 <a href="#top" class="back-to-top d-flex align-items-center justify-content-center"><i
