@@ -8,7 +8,6 @@ function readfee() {
     $.ajax({
         url: "<?= base_url() ?>admin/fee/getfee?currency=" + readcurrency,
         success: function(response) {
-            console.log(response);
             var data = JSON.parse(response);
             $("#topup_circuit_fxd").val(data.topup_circuit_fxd)
             $("#topup_circuit_pct").val(data.topup_circuit_pct)

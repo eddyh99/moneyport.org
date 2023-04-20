@@ -32,7 +32,7 @@
                                 </p>
                             </div>
                             <div class="row">
-                                <label>Account Holder  (min deposit : <?=@number_format($bank->minimum,2)?> <?php echo (isset($_GET["currency"])) ? $_GET["currency"] : $_SESSION["currency"] ?> )<</label>
+                                <label>Account Holder  (min deposit : <?=@number_format($bank->minimum,2)?> <?php echo (isset($_GET["currency"])) ? $_GET["currency"] : $_SESSION["currency"] ?> )</label>
                                 <div class="d-flex flex-row align-items-center mb-3">
                                     <input class="form-control me-2" type="text" name="" id="inter1" value="<?= @$bank->name_outside ?>" readonly>
                                     <a class="btn btn-copy" id="btninter1">

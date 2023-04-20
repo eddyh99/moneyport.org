@@ -18,7 +18,7 @@
                             <span><?=$exp?></span>
                         </div>
                         <div class="text-start d-flex justify-content-center mt-5 mb-4">
-                            <a href="<?= base_url(); ?>homepage/card"
+                            <a href="<?= base_url(); ?>card"
                                 class="btn-card-confirm-nocard  d-inline-flex align-items-center justify-content-center align-self-center">
                                 <span class="f-lexend">Confirm</span>
                             </a>

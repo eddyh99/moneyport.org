@@ -354,7 +354,7 @@ class Card extends CI_Controller
         $card_fee = @$mfee->message->card_fxd;
         $card_cost = @$mcost->message->card_fxd;
 
-        if ($_SESSION["carddetail"]["delivery_address"]["dispatch_method"]=="DHLGlobalMail"){
+        if ($_SESSION["shipdetail"]["dispatch_method"]=="DHLGlobalMail"){
             $ship_fee=@$mcost->message->card_ship_reg;
         }else{
             $ship_fee=@$mcost->message->card_ship_fast;
