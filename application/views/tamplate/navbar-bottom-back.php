@@ -1,4 +1,4 @@
-<?php if($card != 'confirm' && $card != 'success' && $requestcard != 'detailcard'){?>
+<?php if($card != 'confirm' && $card != 'success' && $requestcard != 'detailcard' && $requestcard_physical != 'success' && $requestcard_physical != 'summary'){?>
 <div class="navbar-app fixed-top d-flex justify-content-center">
     <div class="col-12 col-lg-8 col-xl-6 box-navbar-freedy d-flex flex-row justify-content-start align-items-center bottom">
         <a href="<?= base_url() ?>homepage" class="d-flex align-items-center border-0 ms-0 me-auto">
@@ -7,7 +7,7 @@
             </div>
         </a>
 
-        <a href="<?= base_url() ?>soon" class="d-none icon-soon align-items-center border-0 mx-2">
+        <a href="<?= base_url() ?>search" class="d-none icon-soon align-items-center border-0 mx-2">
             <div class="icon-menus d-flex align-items-center home-svg py-0">
                 <svg width="34" height="29" viewBox="0 0 34 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="0.787598" width="32.5366" height="29" rx="2" fill="#F9BB81"/>
@@ -19,7 +19,7 @@
 </div>
 <?php }?>
 
-<?php if($card != 'success' && $requestcard != 'activenow' && $requestcard != 'detailcard'){?>
+<?php if($card != 'success' && $requestcard != 'activenow' && $requestcard != 'detailcard' && $requestcard_physical != 'success' ){?>
 <div class="navbar-app fixed-bottom d-flex justify-content-center">
     <div class="col-12 col-lg-8 col-xl-6 box-navbar-freedy d-flex justify-content-center align-items-center top">
         <!-- Start Back -->
@@ -30,15 +30,15 @@
             <?php }?>
 
             <?php if($requestcard == 'virtual' ) {?>
-                <?= base_url() ?>homepage/requestcard?requestcard=<?= base64_encode('requestcard')?>
+                <?= base_url() ?>card
             <?php }?>
 
             <?php if($requestcard == 'activenow' ) {?>
-                <?= base_url() ?>homepage/requestcard?requestcard=<?= base64_encode('virtual')?>
+                <?= base_url() ?>card/requestcard?requestcard=<?= base64_encode('virtual')?>
             <?php }?>
 
             <?php if($requestcard == 'detailcard' ) {?>
-                <?= base_url() ?>homepage/requestcard?requestcard=<?= base64_encode('activenow')?>
+                <?= base_url() ?>card/requestcard?requestcard=<?= base64_encode('activenow')?>
             <?php }?>
 
             <?php if($card == 'card') {?>
@@ -46,11 +46,29 @@
             <?php }?>
 
             <?php if($card == 'topup' ) {?>
-                <?= base_url() ?>homepage/card?card=<?= base64_encode('card')?>
+                <?= base_url() ?>card
             <?php }?>
 
             <?php if($card == 'confirm' ) {?>
-                <?= base_url() ?>homepage/card?card=<?= base64_encode('topup')?>
+                <?= base_url() ?>card/topupcard
+            <?php }?>
+
+            <?php if($card == 'history' ) {?>
+                <?= base_url() ?>card
+            <?php }?>
+
+            <?php if($requestcard_physical == 'requestcard_physical' ) {?>
+                <?= base_url() ?>card
+            <?php }?>
+            <?php if($requestcard_physical == '3dpassword' ) {?>
+                <?= base_url() ?>card/requestcard_physical?requestcard_physical=<?= base64_encode('requestcard_physical')?>
+            <?php }?>
+            <?php if($requestcard_physical == 'shippingdetails' ) {?>
+                <?= base_url() ?>card/requestcard_physical?requestcard_physical=<?= base64_encode('requestcard_physical')?>
+            <?php }?>
+            
+            <?php if($requestcard_physical == 'summary' ) {?>
+                <?= base_url() ?>card/requestcard_physical?requestcard_physical=<?= base64_encode('3dpassword')?>
             <?php }?>
             
         " class="d-flex align-items-center me-auto">

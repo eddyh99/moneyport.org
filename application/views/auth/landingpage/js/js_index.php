@@ -66,7 +66,6 @@ $("#email").on("change", function() {
     $.ajax({
         url: "<?= base_url() ?>link/check_email?email=" + email,
         success: function(response) {
-            console.log(response);
             var data = JSON.parse(response);
             if (data.type == 'show') {
                 $('#question_div').removeClass("bg-disable");
@@ -112,7 +111,6 @@ function readreff() {
     $.ajax({
         url: "<?= base_url() ?>link/get_reff/" + readcurrency,
         success: function(response) {
-            console.log(response);
             var data = JSON.parse(response);
             $("#tu").html(data.referral_topup_pct + "%" + " + " + data.referral_topup_fxd)
             $("#wtwr").html(data.referral_receive_pct + "%" + " + " + data.referral_receive_fxd)

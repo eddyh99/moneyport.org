@@ -14,7 +14,7 @@ class Link extends CI_Controller
         $currency   = apitrackless($url)->message;
 
         $data = array(
-            "title"     => NAMETITLE . " - Lern Get Reward",
+            "title"     => NAMETITLE . " - Learn Get Reward",
             "content"   => "auth/landingpage/lern_reward",
             "extra"     => "auth/landingpage/js/js_index",
             "currency"     => $currency,
@@ -309,27 +309,11 @@ class Link extends CI_Controller
         $email          = $this->security->xss_clean($input->post("email"));
         $message        = $this->security->xss_clean($input->post("message"));
 
-        $result = send_email($email, $message, $this->phpmailer_lib->load());
-        if ($result) {
-            $this->session->set_flashdata("success", "Message successfully sent!");
-            redirect(base_url("#contactus"));
-        } else {
-            $this->session->set_flashdata("failed", 'Message failed to send!');
-            redirect(base_url("#contactus"));
-        }
 
-                
-        // $input        = $this->input;
-        // $email   = $this->security->xss_clean($input->post("email"));
+        send_email($email, $message, $this->phpmailer_lib->load());
+        $this->session->set_flashdata("success", "Message successfully sent!");
+        redirect(base_url("#contactus"));
 
-        // $data = array(
-        //     "title"     => NAMETITLE . " - Send Message",
-        //     "content"   => "auth/landingpage/message",
-        //     "extra"     => "auth/landingpage/js/js_index",
-        //     "email"     => $email,
-        // );
-
-        // $this->load->view('tamplate/wrapper', $data);
     }
 
     public function about()
