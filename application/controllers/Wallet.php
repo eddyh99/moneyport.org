@@ -52,9 +52,6 @@ class Wallet extends CI_Controller
         if (strpos($linkurl, "send?")) {
             $get_url = str_replace(LINKQRCODE . "?", "", $linkurl);
             $decode_urls = base64_decode($get_url);
-            print_r($decode_urls);
-            die;
-
             // Get currency
             $get_datacurr = str_replace("cur=", "", $decode_url);
             $curr = strstr($get_datacurr, '&', true);

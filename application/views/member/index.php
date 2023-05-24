@@ -64,12 +64,12 @@
                                     <span class="ms-2">Select Currencies</span>
                                 </a>
                             </div>
-                            <div class="col-12 col-md-6 text-center mx-auto">
+                            <!-- <div class="col-12 col-md-6 text-center mx-auto">
                                 <a href="<?= base_url() ?>card" class="d-flex align-items-center justify-content-center p-2 my-2 ">
                                     <img class="" src="<?= base_url()?>assets/img/cardhome.png" alt="">
                                     <span class="ms-5">Card</span>
                                 </a>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
 
